@@ -1,0 +1,28 @@
+{
+  "name": "ComputerVisionAzure",
+  "version": "0.1.0",
+  "summary": "A short description of ComputerVisionAzure.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/vladimir-shcherbakov/ComputerVisionAzure",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "vladimir-shcherbakov": "vlashch@microsoft.com"
+  },
+  "source": {
+    "git": "https://github.com/vladimir-shcherbakov/ComputerVisionAzure.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ComputerVisionAzure/Classes/**/*",
+  "public_header_files": "Pod/Classes/**/*.h",
+  "dependencies": {
+    "AzureClientRuntime": [
+      "~>0.1"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+platform :ios, '11.0'
+use_frameworks!
+
+target 'ComputerVisionAzure_Example' do
+  pod 'AzureClientRuntime', :git => 'https://github.com/vladimir-shcherbakov/azure-runtime-client-for-objectiveC.git', :branch => 'master'
+  pod 'ComputerVisionAzure', :path => '../'
+
+  target 'ComputerVisionAzure_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

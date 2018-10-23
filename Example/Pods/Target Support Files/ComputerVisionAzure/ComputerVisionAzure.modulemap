@@ -1,0 +1,6 @@
+framework module ComputerVisionAzure {
+  umbrella header "ComputerVisionAzure-umbrella.h"
+
+  export *
+  module * { export * }
+}
