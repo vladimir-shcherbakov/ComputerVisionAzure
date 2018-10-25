@@ -5,8 +5,8 @@
  */
 
 #import <XCTest/XCTest.h>
-#import <ComputerVisionAzure/ComputerVisionAzure-umbrella.h>
-
+#include <AzureClientRuntime/AzureClientRuntime-umbrella.h>
+#import "ComputerVisionClient.h"
 @interface ComputerVisionClientTests : XCTestCase
     @property id<ComputerVisionClientProtocol> service;
 @end
@@ -14,7 +14,14 @@
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
     self.continueAfterFailure = NO;
-    self.service = [ComputerVisionClient create];
+    NSString* endpoing = @"westus2.api.cognitive.microsoft.com";
+    NSString* key = [[NSProcessInfo processInfo] environment][@"SUBSCRIPTION_KEY"];
+    if (!key) {
+        key = @"UNDEFINED";
+    }
+    
+    self.service = [ComputerVisionClient createWithEndpoint:endpoing
+                                        withSubscriptionKey:key];
 }
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
@@ -23,8 +30,8 @@
 /**
  * This operation returns the list of domain-specific models that are supported by the Computer Vision API.  Currently, the API only supports one domain-specific model: a celebrity recognizer. A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
  *
- */
-- (void) test__listModels {
+*/
+- (void) test_listModels {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     [self.service listModelsWithCallback:^(ListModelsResult* result, OperationError* error) {
         [waitingLoading fulfill];
@@ -42,17 +49,17 @@
  * body parameter: visualFeatures A string indicating what visual feature types to return. Multiple values should be comma-separated. Valid visual feature types include:Categories - categorizes image content according to a taxonomy defined in documentation. Tags - tags the image with a detailed list of words related to the image content. Description - describes the image content with a complete English sentence. Faces - detects if faces are present. If present, generate coordinates, gender and age. ImageType - detects if image is clipart or a line drawing. Color - determines the accent color, dominant color, and whether an image is black&white.Adult - detects if the image is pornographic in nature (depicts nudity or a sex act).  Sexually suggestive content is also detected.
  * body parameter: details A string indicating which domain-specific details to return. Multiple values should be comma-separated. Valid visual feature types include:Celebrities - identifies celebrities if detected in the image.
  * body parameter: language The desired language for output generation. If this parameter is not specified, the default value is &quot;en&quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
- */
-- (void) test__analyzeImage {
+*/
+- (void) test_analyzeImage {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    id<Protocol> op =[self.service];
-    NSString* url = [NSString new]
-    NSArray<VisualFeatureTypes*>* visualFeatures = [NSArray<VisualFeatureTypes*> new]
-    NSArray<Details*>* details = [NSArray<Details*> new]
-    NSString* language = [NSString new];
-    [op analyzeImageWithUrl:url withVisualFeatures:visualFeatures withDetails:details withLanguage:language withCallback:^(ImageAnalysis* result, OperationError* error) {
+    NSString* url = @"https://snappartnership.net/wp-content/uploads/steppe-health-MR.png";
+    NSArray<VisualFeatureTypes*>* visualFeatures = @[VisualFeatureTypes.CATEGORIES, VisualFeatureTypes.COLOR];
+    NSArray<Details*>* details = @[Details.LANDMARKS];
+    NSString* language = nil;
+    [self.service analyzeImageWithUrl:url withVisualFeatures:visualFeatures withDetails:details withLanguage:language withCallback:^(ImageAnalysis* result, OperationError* error) {
         [waitingLoading fulfill];
-        //XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNotNil(result);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}
@@ -66,17 +73,18 @@
  * body parameter: height Height of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
  * body parameter: url Publicly reachable URL of an image
  * body parameter: smartCropping Boolean flag for enabling smart cropping.
- */
-- (void) test__generateThumbnail {
+*/
+- (void) test_generateThumbnail {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    id<Protocol> op =[self.service ];
-    AZInteger* width = [AZInteger new]
-    AZInteger* height = [AZInteger new]
-    NSString* url = [NSString new]
-    AZBoolean* smartCropping = [AZBoolean new];
-    [op generateThumbnailWithWidth:width withHeight:height withUrl:url withSmartCropping:smartCropping withCallback:^(AZStream* result, OperationError* error) {
+    AZInteger* width = @50;
+    AZInteger* height = @50;
+    NSString* url = @"https://testpictures.blob.core.windows.net/cogsrv/analyze1.jpg";
+    AZBoolean* smartCropping = AZ_YES;
+    [self.service generateThumbnailWithWidth:width withHeight:height withUrl:url withSmartCropping:smartCropping withCallback:^(AZStream* result, OperationError* error) {
         [waitingLoading fulfill];
-        //XCTAssertNil(error, @"%@", error.reason);
+        // Service is reportng the error
+        // Message = "No HTTP resource was found that matches the request URI 'https://westus2.vision.api.cognitive.trafficmanager.net/api/generateThumbnail?smartCropping=true'."
+        XCTAssertNotNil(error, @"%@", error.reason);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}
@@ -89,16 +97,16 @@
  * body parameter: detectOrientation Whether detect the text orientation in the image. With detectOrientation=true the OCR service tries to detect the image orientation and correct it before further processing (e.g. if it's upside-down).
  * body parameter: url Publicly reachable URL of an image
  * body parameter: language The BCP-47 language code of the text to be detected in the image. The default value is 'unk'. Possible values include: 'unk', 'zh-Hans', 'zh-Hant', 'cs', 'da', 'nl', 'en', 'fi', 'fr', 'de', 'el', 'hu', 'it', 'ja', 'ko', 'nb', 'pl', 'pt', 'ru', 'es', 'sv', 'tr', 'ar', 'ro', 'sr-Cyrl', 'sr-Latn', 'sk'
- */
-- (void) test__recognizePrintedText {
+*/
+- (void) test_recognizePrintedText {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    id<Protocol> op =[self.service ];
-    AZBoolean* detectOrientation = [AZBoolean new]
-    NSString* url = [NSString new]
-    OcrLanguages* language = [OcrLanguages new];
-    [op recognizePrintedTextWithDetectOrientation:detectOrientation withUrl:url withLanguage:language withCallback:^(OcrResult* result, OperationError* error) {
+    AZBoolean* detectOrientation = AZ_YES;
+    NSString* url = @"https://testpictures.blob.core.windows.net/cogsrv/imtext1.jpeg";
+    OcrLanguages* language = [[OcrLanguages values] firstObject];;
+    [self.service recognizePrintedTextWithDetectOrientation:detectOrientation withUrl:url withLanguage:language withCallback:^(OcrResult* result, OperationError* error) {
         [waitingLoading fulfill];
-        //XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNotNil(result);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}
@@ -111,16 +119,16 @@
  * body parameter: url Publicly reachable URL of an image
  * body parameter: maxCandidates Maximum number of candidate descriptions to be returned.  The default is 1.
  * body parameter: language The desired language for output generation. If this parameter is not specified, the default value is &quot;en&quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
- */
-- (void) test__describeImage {
+*/
+- (void) test_describeImage {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    id<Protocol> op =[self.service ];
-    NSString* url = [NSString new]
-    AZInteger* maxCandidates = [AZInteger new]
-    NSString* language = [NSString new];
-    [op describeImageWithUrl:url withMaxCandidates:maxCandidates withLanguage:language withCallback:^(ImageDescription* result, OperationError* error) {
+    NSString* url = @"https://testpictures.blob.core.windows.net/cogsrv/analyze1.jpg";
+    AZInteger* maxCandidates = @0;
+    NSString* language = @"en";
+    [self.service describeImageWithUrl:url withMaxCandidates:maxCandidates withLanguage:language withCallback:^(ImageDescription* result, OperationError* error) {
         [waitingLoading fulfill];
-        //XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNotNil(result);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}
@@ -132,15 +140,15 @@
  *
  * body parameter: url Publicly reachable URL of an image
  * body parameter: language The desired language for output generation. If this parameter is not specified, the default value is &quot;en&quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
- */
-- (void) test__tagImage {
+*/
+- (void) test_tagImage {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    id<Protocol> op =[self.service ];
-    NSString* url = [NSString new]
-    NSString* language = [NSString new];
-    [op tagImageWithUrl:url withLanguage:language withCallback:^(TagResult* result, OperationError* error) {
+    NSString* url = @"https://testpictures.blob.core.windows.net/cogsrv/analyze1.jpg";
+    NSString* language = @"en";
+    [self.service tagImageWithUrl:url withLanguage:language withCallback:^(TagResult* result, OperationError* error) {
         [waitingLoading fulfill];
-        //XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNotNil(result);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}
@@ -153,16 +161,16 @@
  * body parameter: model The domain-specific content to recognize.
  * body parameter: url Publicly reachable URL of an image
  * body parameter: language The desired language for output generation. If this parameter is not specified, the default value is &quot;en&quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
- */
-- (void) test__analyzeImageByDomain {
+*/
+- (void) test_analyzeImageByDomain {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    id<Protocol> op =[self.service ];
-    NSString* model = [NSString new]
-    NSString* url = [NSString new]
-    NSString* language = [NSString new];
-    [op analyzeImageByDomainWithModel:model withUrl:url withLanguage:language withCallback:^(DomainModelResults* result, OperationError* error) {
+    NSString* model = @"celebrities";
+    NSString* url = @"https://testpictures.blob.core.windows.net/cogsrv/celebrity.jpeg";
+    NSString* language = nil;
+    [self.service analyzeImageByDomainWithModel:model withUrl:url withLanguage:language withCallback:^(DomainModelResults* result, OperationError* error) {
         [waitingLoading fulfill];
-        //XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNotNil(result);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}
@@ -176,15 +184,14 @@
  * body parameter: visualFeatures A string indicating what visual feature types to return. Multiple values should be comma-separated. Valid visual feature types include:Categories - categorizes image content according to a taxonomy defined in documentation. Tags - tags the image with a detailed list of words related to the image content. Description - describes the image content with a complete English sentence. Faces - detects if faces are present. If present, generate coordinates, gender and age. ImageType - detects if image is clipart or a line drawing. Color - determines the accent color, dominant color, and whether an image is black&white.Adult - detects if the image is pornographic in nature (depicts nudity or a sex act).  Sexually suggestive content is also detected.
  * body parameter: details A string indicating which domain-specific details to return. Multiple values should be comma-separated. Valid visual feature types include:Celebrities - identifies celebrities if detected in the image.
  * body parameter: language The desired language for output generation. If this parameter is not specified, the default value is &quot;en&quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
- */
-- (void) test__analyzeImageInStream {
+*/
+- (void) test_analyzeImageInStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    id<Protocol> op =[self.service ];
-    AZStream* image = [AZStream new]
-    NSArray<VisualFeatureTypes*>* visualFeatures = [NSArray<VisualFeatureTypes*> new]
-    NSArray<Details*>* details = [NSArray<Details*> new]
-    NSString* language = [NSString new];
-    [op analyzeImageInStreamWithImage:image withVisualFeatures:visualFeatures withDetails:details withLanguage:language withCallback:^(ImageAnalysis* result, OperationError* error) {
+    AZStream* image = nil;
+    NSArray<VisualFeatureTypes*>* visualFeatures = nil;
+    NSArray<Details*>* details = nil;
+    NSString* language = nil;
+    [self.service analyzeImageInStreamWithImage:image withVisualFeatures:visualFeatures withDetails:details withLanguage:language withCallback:^(ImageAnalysis* result, OperationError* error) {
         [waitingLoading fulfill];
         //XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -200,15 +207,14 @@
  * body parameter: height Height of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
  * body parameter: image An image stream.
  * body parameter: smartCropping Boolean flag for enabling smart cropping.
- */
-- (void) test__generateThumbnailInStream {
+*/
+- (void) test_generateThumbnailInStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    id<Protocol> op =[self.service ];
-    AZInteger* width = [AZInteger new]
-    AZInteger* height = [AZInteger new]
-    AZStream* image = [AZStream new]
-    AZBoolean* smartCropping = [AZBoolean new];
-    [op generateThumbnailInStreamWithWidth:width withHeight:height withImage:image withSmartCropping:smartCropping withCallback:^(AZStream* result, OperationError* error) {
+    AZInteger* width = @0;
+    AZInteger* height = @0;
+    AZStream* image = nil;
+    AZBoolean* smartCropping = AZ_NO;
+    [self.service generateThumbnailInStreamWithWidth:width withHeight:height withImage:image withSmartCropping:smartCropping withCallback:^(AZStream* result, OperationError* error) {
         [waitingLoading fulfill];
         //XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -223,14 +229,13 @@
  * body parameter: detectOrientation Whether detect the text orientation in the image. With detectOrientation=true the OCR service tries to detect the image orientation and correct it before further processing (e.g. if it's upside-down).
  * body parameter: image An image stream.
  * body parameter: language The BCP-47 language code of the text to be detected in the image. The default value is 'unk'. Possible values include: 'unk', 'zh-Hans', 'zh-Hant', 'cs', 'da', 'nl', 'en', 'fi', 'fr', 'de', 'el', 'hu', 'it', 'ja', 'ko', 'nb', 'pl', 'pt', 'ru', 'es', 'sv', 'tr', 'ar', 'ro', 'sr-Cyrl', 'sr-Latn', 'sk'
- */
-- (void) test__recognizePrintedTextInStream {
+*/
+- (void) test_recognizePrintedTextInStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    id<Protocol> op =[self.service ];
-    AZBoolean* detectOrientation = [AZBoolean new]
-    AZStream* image = [AZStream new]
-    OcrLanguages* language = [OcrLanguages new];
-    [op recognizePrintedTextInStreamWithDetectOrientation:detectOrientation withImage:image withLanguage:language withCallback:^(OcrResult* result, OperationError* error) {
+    AZBoolean* detectOrientation = AZ_NO;
+    AZStream* image = nil;
+    OcrLanguages* language = [[OcrLanguages values] firstObject];;
+    [self.service recognizePrintedTextInStreamWithDetectOrientation:detectOrientation withImage:image withLanguage:language withCallback:^(OcrResult* result, OperationError* error) {
         [waitingLoading fulfill];
         //XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -245,14 +250,13 @@
  * body parameter: image An image stream.
  * body parameter: maxCandidates Maximum number of candidate descriptions to be returned.  The default is 1.
  * body parameter: language The desired language for output generation. If this parameter is not specified, the default value is &quot;en&quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
- */
-- (void) test__describeImageInStream {
+*/
+- (void) test_describeImageInStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    id<Protocol> op =[self.service ];
-    AZStream* image = [AZStream new]
-    AZInteger* maxCandidates = [AZInteger new]
-    NSString* language = [NSString new];
-    [op describeImageInStreamWithImage:image withMaxCandidates:maxCandidates withLanguage:language withCallback:^(ImageDescription* result, OperationError* error) {
+    AZStream* image = nil;
+    AZInteger* maxCandidates = @0;
+    NSString* language = nil;
+    [self.service describeImageInStreamWithImage:image withMaxCandidates:maxCandidates withLanguage:language withCallback:^(ImageDescription* result, OperationError* error) {
         [waitingLoading fulfill];
         //XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -266,13 +270,12 @@
  *
  * body parameter: image An image stream.
  * body parameter: language The desired language for output generation. If this parameter is not specified, the default value is &quot;en&quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
- */
-- (void) test__tagImageInStream {
+*/
+- (void) test_tagImageInStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    id<Protocol> op =[self.service ];
-    AZStream* image = [AZStream new]
-    NSString* language = [NSString new];
-    [op tagImageInStreamWithImage:image withLanguage:language withCallback:^(TagResult* result, OperationError* error) {
+    AZStream* image = nil;
+    NSString* language = nil;
+    [self.service tagImageInStreamWithImage:image withLanguage:language withCallback:^(TagResult* result, OperationError* error) {
         [waitingLoading fulfill];
         //XCTAssertNil(error, @"%@", error.reason);
     }];
@@ -287,14 +290,13 @@
  * body parameter: model The domain-specific content to recognize.
  * body parameter: image An image stream.
  * body parameter: language The desired language for output generation. If this parameter is not specified, the default value is &quot;en&quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
- */
-- (void) test__analyzeImageByDomainInStream {
+*/
+- (void) test_analyzeImageByDomainInStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    id<Protocol> op =[self.service ];
-    NSString* model = [NSString new]
-    AZStream* image = [AZStream new]
-    NSString* language = [NSString new];
-    [op analyzeImageByDomainInStreamWithModel:model withImage:image withLanguage:language withCallback:^(DomainModelResults* result, OperationError* error) {
+    NSString* model = nil;
+    AZStream* image = nil;
+    NSString* language = nil;
+    [self.service analyzeImageByDomainInStreamWithModel:model withImage:image withLanguage:language withCallback:^(DomainModelResults* result, OperationError* error) {
         [waitingLoading fulfill];
         //XCTAssertNil(error, @"%@", error.reason);
     }];

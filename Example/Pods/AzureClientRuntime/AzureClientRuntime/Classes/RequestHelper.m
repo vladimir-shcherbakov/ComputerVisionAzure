@@ -13,52 +13,58 @@
 
 @interface RequestHelper (private)
 
++(void) logRequestUrl: (NSString*) url;
 +(void) logRequestBody: (NSData*) body;
 +(void) logResponseBody: (NSData*) body;
 
 @end
 
 @implementation RequestHelper (private)
++(void) logRequestUrl: (NSString*) url {
+     NSLog(@"\n<<<< request url: %@", url);
+}
 
 + (void) logRequestBody: (NSData*) body {
+    NSString* prefix = @"\n<<<<";
     if (body && body.length > 0) {
-        if (body.length<1024) {
+        if (body.length<2048) {
             NSString* bodyAsString = [NSString stringWithUTF8String:[body bytes]];
             if (bodyAsString != nil) {
-                NSLog(@"\n===> request body: %@", bodyAsString);
+                NSLog(@"%@ request body: %@", prefix, bodyAsString);
             } else {
-                NSLog(@"\n===> request body: %@", body);
+                NSLog(@"%@ request body: %@", prefix, body);
             }
         } else {
-            NSLog(@"\n===> request body: %lu bytes", (unsigned long)body.length);
+            NSLog(@"%@ request body: %lu bytes", prefix, (unsigned long)body.length);
         }
     } else {
-        NSLog(@"\n<=== request body: <empty>");
+        NSLog(@"%@ request body: <empty>", prefix);
     }
 }
 
 + (void) logResponseBody: (NSData*) body {
+    NSString* prefix = @"\n>>>>";
     if (body && body.length > 0) {
-        if (body.length<1024) {
+        if (body.length<2048) {
             //NSString* bodyAsString = [NSString stringWithUTF8String:[body bytes]];
             NSError* error;
             id json = [NSJSONSerialization JSONObjectWithData: body
                                                       options: NSJSONReadingAllowFragments
                                                         error: &error];
             if (json != nil) {
-                NSLog(@"\n===> response body: %@", json);
+                NSLog(@"%@ response body: %@", prefix, json);
             } else {
                 NSString* bodyAsString = [NSString stringWithUTF8String:[body bytes]];
                 if (bodyAsString != nil)
-                    NSLog(@"\n===> response body: %@", bodyAsString);
+                    NSLog(@"%@ response body: %@", prefix, bodyAsString);
                 else
-                    NSLog(@"\n===> response body: %@", body);
+                    NSLog(@"%@ esponse body: %@", prefix, body);
             }
         } else {
-            NSLog(@"\n===> response body: %lu bytes", (unsigned long)body.length);
+            NSLog(@"%@ response body: %lu bytes", prefix, (unsigned long)body.length);
         }
     } else {
-        NSLog(@"\n===> response body: <empty>");
+        NSLog(@"%@ response body: <empty>", prefix);
     }
 }
 
@@ -80,13 +86,33 @@
                                                        withString:value];
     }
     
-    if ([queryParams count] > 0) {
+    if (queryParams.count > 0) {
         NSMutableArray * queries = [[NSMutableArray alloc] init];
         for (id key in [queryParams allKeys]) {
             id value = queryParams[key];
             if (![value isEqual:[NSNull null]]) {
-                if ([value conformsToProtocol:@protocol(AZBoolean)]) value = [value getBool] ? @"true" : @"false";
-                [queries addObject: [NSString stringWithFormat:@"%@=%@", key, value]];
+                if ([value isKindOfClass:[NSArray class]]) {
+                    NSArray* arr = value;
+                    if (arr.count > 0) {
+                        NSString *joined = arr[0];
+                        for (int i=1; i<arr.count; i++) {
+                            if ([arr[i] conformsToProtocol:@protocol(StringEnum)]
+                                || [arr[i] isKindOfClass:[NSString class]]) {
+                                joined = [joined stringByAppendingString: [@","stringByAppendingString:arr[i]]];
+                            } else {
+                                @throw [NSException
+                                        exceptionWithName:@"NotStringValue"
+                                        reason: [NSString stringWithFormat: @"Don't know to convert to string a query parameter for the key %@", key]
+                                        userInfo:nil];
+                            }
+                        }
+                        [queries addObject: [NSString stringWithFormat:@"%@=%@", key, joined]];
+                    }
+                }
+                if ([value conformsToProtocol:@protocol(AZBoolean)]) {
+                    NSString* boolString = [value getBool] ? @"true" : @"false";
+                    [queries addObject: [NSString stringWithFormat:@"%@=%@", key, boolString]];
+                }
             }
         }
 
@@ -101,6 +127,7 @@
 
 
     NSURL *url = [NSURL URLWithString:requestParams.url];
+    [RequestHelper logRequestUrl:requestParams.url];
     //NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod = requestParams.mehod;

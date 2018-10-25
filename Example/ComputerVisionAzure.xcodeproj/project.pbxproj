@@ -24,6 +24,7 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		B64AE0BFF0987B900B697646 /* Pods_ComputerVisionAzure_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D17E012179651A00587FF4 /* Pods_ComputerVisionAzure_Example.framework */; };
 		C8D17E0C21796F4300587FF4 /* Pods_ComputerVisionAzure_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D17E0B21796F4300587FF4 /* Pods_ComputerVisionAzure_Tests.framework */; };
+		C8D17E5721812D6300587FF4 /* ComputerVisionClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D17E5621812D6300587FF4 /* ComputerVisionClientTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,11 +67,11 @@
 		810F4EDEE5DCCCAEC62EACD4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A1A2149636FEB101DD9814A /* Pods-ComputerVisionAzure_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComputerVisionAzure_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComputerVisionAzure_Tests/Pods-ComputerVisionAzure_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C8D17D432179501C00587FF4 /* ComputerVisionClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComputerVisionClientTests.m; sourceTree = "<group>"; };
 		C8D17DFF2179641600587FF4 /* Pods_ComputerVisionAzure_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ComputerVisionAzure_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D17E012179651A00587FF4 /* Pods_ComputerVisionAzure_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ComputerVisionAzure_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D17E0B21796F4300587FF4 /* Pods_ComputerVisionAzure_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ComputerVisionAzure_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D17E12217BBC2F00587FF4 /* ComputerVisionAzure_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ComputerVisionAzure_Example.entitlements; sourceTree = "<group>"; };
+		C8D17E5621812D6300587FF4 /* ComputerVisionClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComputerVisionClientTests.m; sourceTree = "<group>"; };
 		FFD2C42A0E9DCDCA2722DE9A /* Pods-ComputerVisionAzure_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComputerVisionAzure_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComputerVisionAzure_Example/Pods-ComputerVisionAzure_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,7 +181,7 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				C8D17D432179501C00587FF4 /* ComputerVisionClientTests.m */,
+				C8D17E5621812D6300587FF4 /* ComputerVisionClientTests.m */,
 				6003F5BB195388D20070C39A /* Tests.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
@@ -401,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				C8D17E5721812D6300587FF4 /* ComputerVisionClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

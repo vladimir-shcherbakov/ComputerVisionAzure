@@ -92,7 +92,6 @@
     
     [self.service describeImageInStreamWithImage:imageData
                                     withCallback:^(ImageDescription *imageDescription, OperationError *error) {
-
                                         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                                             [self->_textView setText:@""];
                                             if (error) {

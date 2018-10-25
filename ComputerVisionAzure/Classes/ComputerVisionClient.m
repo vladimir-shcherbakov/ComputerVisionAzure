@@ -33,858 +33,975 @@
         return client;
     }
 
-    /**
-     * This operation returns the list of domain-specific models that are supported by the Computer Vision API.  Currently, the API only supports one domain-specific model: a celebrity recognizer. A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
-    *
-     * @param callback A block where ListModelsResult is a result object and OperationError is nil, if the operation is successful
-     */
-    - (void) listModelsWithCallback : (void(^)(ListModelsResult*, OperationError*)) callback {
-
-        if (self.endpoint == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter self.endpoint is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-
-        NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
-                                         withPath: @"/models"
-                                   withPathParams: @{@"{Endpoint}" : self.endpoint}
-                                  withQueryParams: @{}];
-
-        RequestParameters* __rp = [RequestParameters createWithUrl: __url
-                                                        withMethod: @"GET"
-                                                       withHeaders: @{@"Content-Type":@"application/json; charset=utf-8"}
-                                                          withBody: nil];
-        [__rp withSpecialHeaders:self.specialHeaders];
-
-        [RequestHelper executeRequest:__rp
-                    withResponseClass:[ListModelsResult class]
-                       withErrorClass:[ComputerVisionError class]
-                         withCallback:^(id _Nullable result, OperationError* _Nullable error) {
-            callback(result, error);
-        }];
-
+/**
+ * This operation returns the list of domain-specific models that are supported by the Computer Vision API.  Currently, the API only supports one domain-specific model: a celebrity recognizer. A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
+ *
+ * @param callback A block where ListModelsResult is a result object and OperationError is nil, if the operation is successful
+ */
+- (void) listModelsWithCallback : (void(^)(ListModelsResult*, OperationError*)) callback {
+    
+    if (self.endpoint == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter self.endpoint is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
+    
+    
+    
+    NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
+                                     withPath: @"/models"
+                               withPathParams: @{@"{Endpoint}" : self.endpoint}
+                              withQueryParams: @{}];
+    
+    RequestParameters* __rp = [RequestParameters createWithUrl: __url
+                                                    withMethod: @"GET"
+                                                   withHeaders: @{@"Content-Type" : @"application/json; charset=utf-8"}
+                                                      withBody: nil];
+    
+    [__rp withSpecialHeaders:self.specialHeaders];
+    
+    [RequestHelper executeRequest:__rp
+                withResponseClass:[ListModelsResult class]
+                   withErrorClass:[ComputerVisionError class]
+                     withCallback:^(id _Nullable result, OperationError* _Nullable error) {
+                         callback(result, error);
+                     }];
+    
+}
 
 
-    /**
-     * This operation extracts a rich set of visual features based on the image content. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL.  Within your request, there is an optional parameter to allow you to choose which features to return.  By default, image categories are returned in the response.
-     *
-     * @param url Publicly reachable URL of an image
-     * @param callback A block where ImageAnalysis is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a required parameter is not provided
-     */
-    - (void) analyzeImageWithUrl : (NSString *) url withCallback : (void(^)(ImageAnalysis*, OperationError*)) callback {
-        NSArray<VisualFeatureTypes*>* visualFeatures = nil;
-        NSArray<Details*>* details = nil;
-        NSString* language = nil;
-        [self analyzeImageWithUrl: url withVisualFeatures: visualFeatures withDetails: details withLanguage: language withCallback: callback];
+/**
+ * This operation extracts a rich set of visual features based on the image content. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL.  Within your request, there is an optional parameter to allow you to choose which features to return.  By default, image categories are returned in the response.
+ *
+ * @param url Publicly reachable URL of an image
+ * @param callback A block where ImageAnalysis is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a required parameter is not provided
+ */
+- (void) analyzeImageWithUrl : (NSString *) url withCallback : (void(^)(ImageAnalysis*, OperationError*)) callback {
+    NSArray<VisualFeatureTypes*>* visualFeatures = nil;
+    NSArray<Details*>* details = nil;
+    NSString* language = nil;
+    [self analyzeImageWithUrl: url withVisualFeatures: visualFeatures withDetails: details withLanguage: language withCallback: callback];
+}
+
+/**
+ * This operation extracts a rich set of visual features based on the image content. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL.  Within your request, there is an optional parameter to allow you to choose which features to return.  By default, image categories are returned in the response.
+ *
+ * @param url Publicly reachable URL of an image
+ * @param visualFeatures A string indicating what visual feature types to return. Multiple values should be comma-separated. Valid visual feature types include:Categories - categorizes image content according to a taxonomy defined in documentation. Tags - tags the image with a detailed list of words related to the image content. Description - describes the image content with a complete English sentence. Faces - detects if faces are present. If present, generate coordinates, gender and age. ImageType - detects if image is clipart or a line drawing. Color - determines the accent color, dominant color, and whether an image is black&amp;white.Adult - detects if the image is pornographic in nature (depicts nudity or a sex act).  Sexually suggestive content is also detected.
+ * @param details A string indicating which domain-specific details to return. Multiple values should be comma-separated. Valid visual feature types include:Celebrities - identifies celebrities if detected in the image.
+ * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
+ * @param callback A block where ImageAnalysis is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a requred parameter is not provided.
+ */
+- (void) analyzeImageWithUrl : (NSString *) url withVisualFeatures : (NSArray<VisualFeatureTypes*> *) visualFeatures withDetails : (NSArray<Details*> *) details withLanguage : (NSString *) language withCallback : (void(^)(ImageAnalysis*, OperationError*)) callback {
+    
+    if (self.endpoint == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter self.endpoint is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-    /**
-     * This operation extracts a rich set of visual features based on the image content. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL.  Within your request, there is an optional parameter to allow you to choose which features to return.  By default, image categories are returned in the response.
-    *
-     * @param url Publicly reachable URL of an image
-     * @param visualFeatures A string indicating what visual feature types to return. Multiple values should be comma-separated. Valid visual feature types include:Categories - categorizes image content according to a taxonomy defined in documentation. Tags - tags the image with a detailed list of words related to the image content. Description - describes the image content with a complete English sentence. Faces - detects if faces are present. If present, generate coordinates, gender and age. ImageType - detects if image is clipart or a line drawing. Color - determines the accent color, dominant color, and whether an image is black&amp;white.Adult - detects if the image is pornographic in nature (depicts nudity or a sex act).  Sexually suggestive content is also detected.
-     * @param details A string indicating which domain-specific details to return. Multiple values should be comma-separated. Valid visual feature types include:Celebrities - identifies celebrities if detected in the image.
-     * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
-     * @param callback A block where ImageAnalysis is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a requred parameter is not provided.
-     */
-    - (void) analyzeImageWithUrl : (NSString *) url withVisualFeatures : (NSArray<VisualFeatureTypes*> *) visualFeatures withDetails : (NSArray<Details*> *) details withLanguage : (NSString *) language withCallback : (void(^)(ImageAnalysis*, OperationError*)) callback {
-
-        if (self.endpoint == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter self.endpoint is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (url == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter url is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        ImageUrl* imageUrl = [ImageUrl new];
-        imageUrl.url = url;
-
-        NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
-                                         withPath: @"/analyze"
-                                   withPathParams: @{@"{Endpoint}" : self.endpoint}
-                                  withQueryParams: @{@"visualFeatures" : AZ_NULLABLE(visualFeatures),
-                                                     @"details" : AZ_NULLABLE(details),
-                                                     @"language" : AZ_NULLABLE(language)}];
-
-        RequestParameters* __rp = [RequestParameters createWithUrl: __url
-                                                        withMethod: @"POST"
-                                                       withHeaders: @{@"Content-Type" : @"application/json; charset=utf-8"}
-                                                          withBody: [JsonCoder encodeObject:imageUrl]];
-
-        [RequestHelper executeRequest:__rp
-                    withResponseClass:[ImageAnalysis class]
-                       withErrorClass:[ComputerVisionError class]
-                         withCallback:^(id _Nullable result, OperationError* _Nullable error) {
-            callback(result, error);
-        }];
-
+    
+    
+    if (url == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter url is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
+    
+    
+    ImageUrl* imageUrl = [ImageUrl new];
+    imageUrl.url = url;
+    
+    NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
+                                     withPath: @"/analyze"
+                               withPathParams: @{@"{Endpoint}" : self.endpoint}
+                              withQueryParams: @{@"visualFeatures" : AZ_NULLABLE(visualFeatures), @"details" : AZ_NULLABLE(details), @"language" : AZ_NULLABLE(language)}];
+    
+    RequestParameters* __rp = [RequestParameters createWithUrl: __url
+                                                    withMethod: @"POST"
+                                                   withHeaders: @{@"Content-Type" : @"application/json; charset=utf-8"}
+                                                      withBody: [JsonCoder encodeObject:imageUrl]];
+    
+    [__rp withSpecialHeaders:self.specialHeaders];
+    
+    [RequestHelper executeRequest:__rp
+                withResponseClass:[ImageAnalysis class]
+                   withErrorClass:[ComputerVisionError class]
+                     withCallback:^(id _Nullable result, OperationError* _Nullable error) {
+                         callback(result, error);
+                     }];
+    
+}
 
 
-    /**
-     * This operation generates a thumbnail image with the user-specified width and height. By default, the service analyzes the image, identifies the region of interest (ROI), and generates smart cropping coordinates based on the ROI. Smart cropping helps when you specify an aspect ratio that differs from that of the input image. A successful response contains the thumbnail image binary. If the request failed, the response contains an error code and a message to help determine what went wrong.
-     *
-     * @param width Width of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
-     * @param height Height of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
-     * @param url Publicly reachable URL of an image
-     * @param callback A block where AZStream is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a required parameter is not provided
-     */
-    - (void) generateThumbnailWithWidth : (AZInteger *) width withHeight : (AZInteger *) height withUrl : (NSString *) url withCallback : (void(^)(AZStream*, OperationError*)) callback {
-        AZBoolean* smartCropping = [AZBoolean asFalse];
-        [self generateThumbnailWithWidth: width withHeight: height withUrl: url withSmartCropping: smartCropping withCallback: callback];
+/**
+ * This operation generates a thumbnail image with the user-specified width and height. By default, the service analyzes the image, identifies the region of interest (ROI), and generates smart cropping coordinates based on the ROI. Smart cropping helps when you specify an aspect ratio that differs from that of the input image. A successful response contains the thumbnail image binary. If the request failed, the response contains an error code and a message to help determine what went wrong.
+ *
+ * @param width Width of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
+ * @param height Height of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
+ * @param url Publicly reachable URL of an image
+ * @param callback A block where AZStream is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a required parameter is not provided
+ */
+- (void) generateThumbnailWithWidth : (AZInteger *) width withHeight : (AZInteger *) height withUrl : (NSString *) url withCallback : (void(^)(AZStream*, OperationError*)) callback {
+    AZBoolean* smartCropping = AZ_NO;
+    [self generateThumbnailWithWidth: width withHeight: height withUrl: url withSmartCropping: smartCropping withCallback: callback];
+}
+
+/**
+ * This operation generates a thumbnail image with the user-specified width and height. By default, the service analyzes the image, identifies the region of interest (ROI), and generates smart cropping coordinates based on the ROI. Smart cropping helps when you specify an aspect ratio that differs from that of the input image. A successful response contains the thumbnail image binary. If the request failed, the response contains an error code and a message to help determine what went wrong.
+ *
+ * @param width Width of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
+ * @param height Height of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
+ * @param url Publicly reachable URL of an image
+ * @param smartCropping Boolean flag for enabling smart cropping.
+ * @param callback A block where AZStream is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a requred parameter is not provided.
+ */
+- (void) generateThumbnailWithWidth : (AZInteger *) width withHeight : (AZInteger *) height withUrl : (NSString *) url withSmartCropping : (AZBoolean *) smartCropping withCallback : (void(^)(AZStream*, OperationError*)) callback {
+    
+    if (self.endpoint == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter self.endpoint is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-    /**
-     * This operation generates a thumbnail image with the user-specified width and height. By default, the service analyzes the image, identifies the region of interest (ROI), and generates smart cropping coordinates based on the ROI. Smart cropping helps when you specify an aspect ratio that differs from that of the input image. A successful response contains the thumbnail image binary. If the request failed, the response contains an error code and a message to help determine what went wrong.
-    *
-     * @param width Width of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
-     * @param height Height of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
-     * @param url Publicly reachable URL of an image
-     * @param smartCropping Boolean flag for enabling smart cropping.
-     * @param callback A block where AZStream is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a requred parameter is not provided.
-     */
-    - (void) generateThumbnailWithWidth : (AZInteger *) width withHeight : (AZInteger *) height withUrl : (NSString *) url withSmartCropping : (AZBoolean *) smartCropping withCallback : (void(^)(AZStream*, OperationError*)) callback {
-
-        if (self.endpoint == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter self.endpoint is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (width == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter width is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (height == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter height is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (url == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter url is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        ImageUrl* imageUrl = [ImageUrl new];
-        imageUrl.url = url;
-
-        NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
-                                         withPath: @"/generateThumbnail"
-                                   withPathParams: @{@"{Endpoint}" : self.endpoint}
-                                  withQueryParams: @{@"width" : width, @"height" : height, @"smartCropping" : AZ_NULLABLE(smartCropping)}];
-
-        RequestParameters* __rp = [RequestParameters createWithUrl: __url
-                                                        withMethod: @"POST"
-                                                       withHeaders: @{@"Content-Type" : @"application/json; charset=utf-8"}
-                                                          withBody: [JsonCoder encodeObject:imageUrl]];
-
-        [RequestHelper executeRequest:__rp
-                    withResponseClass:[AZStream class]
-                       withErrorClass:[DefaultErrorModel class]
-                         withCallback:^(id _Nullable result, OperationError* _Nullable error) {
-            callback(result, error);
-        }];
-
+    
+    
+    if (width == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter width is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-
-    /**
-     * Optical Character Recognition (OCR) detects printed text in an image and extracts the recognized characters into a machine-usable character stream.   Upon success, the OCR results will be returned. Upon failure, the error code together with an error message will be returned. The error code can be one of InvalidImageUrl, InvalidImageFormat, InvalidImageSize, NotSupportedImage,  NotSupportedLanguage, or InternalServerError.
-     *
-     * @param detectOrientation Whether detect the text orientation in the image. With detectOrientation=true the OCR service tries to detect the image orientation and correct it before further processing (e.g. if it's upside-down).
-     * @param url Publicly reachable URL of an image
-     * @param callback A block where OcrResult is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a required parameter is not provided
-     */
-    - (void) recognizePrintedTextWithDetectOrientation : (AZBoolean *) detectOrientation withUrl : (NSString *) url withCallback : (void(^)(OcrResult*, OperationError*)) callback {
-        OcrLanguages* language = nil;
-        [self recognizePrintedTextWithDetectOrientation: detectOrientation withUrl: url withLanguage: language withCallback: callback];
+    
+    if (width != nil) {
+        if ([width intValue] > 1023) {
+            NSException *e = [NSException
+                              exceptionWithName: @"IllegalArgumentException"
+                              reason: @"Parameter width failed rule validation, rule name: InclusiveMaximum, constrain value: 1023."
+                              userInfo: nil];
+            @throw e;;
+        }
+        if ([width intValue] < 1) {
+            NSException *e = [NSException
+                              exceptionWithName: @"IllegalArgumentException"
+                              reason: @"Parameter width failed rule validation, rule name: InclusiveMinimum, constrain value: 1."
+                              userInfo: nil];
+            @throw e;;
+        }
     }
-
-    /**
-     * Optical Character Recognition (OCR) detects printed text in an image and extracts the recognized characters into a machine-usable character stream.   Upon success, the OCR results will be returned. Upon failure, the error code together with an error message will be returned. The error code can be one of InvalidImageUrl, InvalidImageFormat, InvalidImageSize, NotSupportedImage,  NotSupportedLanguage, or InternalServerError.
-    *
-     * @param detectOrientation Whether detect the text orientation in the image. With detectOrientation=true the OCR service tries to detect the image orientation and correct it before further processing (e.g. if it's upside-down).
-     * @param url Publicly reachable URL of an image
-     * @param language The BCP-47 language code of the text to be detected in the image. The default value is 'unk'. Possible values include: 'unk', 'zh-Hans', 'zh-Hant', 'cs', 'da', 'nl', 'en', 'fi', 'fr', 'de', 'el', 'hu', 'it', 'ja', 'ko', 'nb', 'pl', 'pt', 'ru', 'es', 'sv', 'tr', 'ar', 'ro', 'sr-Cyrl', 'sr-Latn', 'sk'
-     * @param callback A block where OcrResult is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a requred parameter is not provided.
-     */
-    - (void) recognizePrintedTextWithDetectOrientation : (AZBoolean *) detectOrientation withUrl : (NSString *) url withLanguage : (OcrLanguages *) language withCallback : (void(^)(OcrResult*, OperationError*)) callback {
-
-        if (self.endpoint == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter self.endpoint is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (detectOrientation == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter detectOrientation is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (url == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter url is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        ImageUrl* imageUrl = [ImageUrl new];
-        imageUrl.url = url;
-
-        NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
-                                         withPath: @"/ocr"
-                                   withPathParams: @{@"{Endpoint}" : self.endpoint}
-                                  withQueryParams: @{@"detectOrientation" : detectOrientation, @"language" : AZ_NULLABLE(language)}];
-
-        RequestParameters* __rp = [RequestParameters createWithUrl: __url
-                                                        withMethod: @"POST"
-                                                       withHeaders: @{@"Content-Type" : @"application/json; charset=utf-8"}
-                                                          withBody: [JsonCoder encodeObject:imageUrl]];
-
-        [RequestHelper executeRequest:__rp
-                    withResponseClass:[OcrResult class]
-                       withErrorClass:[ComputerVisionError class]
-                         withCallback:^(id _Nullable result, OperationError* _Nullable error) {
-            callback(result, error);
-        }];
-
+    
+    if (height == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter height is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-
-    /**
-     * This operation generates a description of an image in human readable language with complete sentences.  The description is based on a collection of content tags, which are also returned by the operation. More than one description can be generated for each image.  Descriptions are ordered by their confidence score. All descriptions are in English. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL.A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
-     *
-     * @param url Publicly reachable URL of an image
-     * @param callback A block where ImageDescription is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a required parameter is not provided
-     */
-    - (void) describeImageWithUrl : (NSString *) url withCallback : (void(^)(ImageDescription*, OperationError*)) callback {
-        AZInteger* maxCandidates = @0;
-        NSString* language = nil;
-        [self describeImageWithUrl: url withMaxCandidates: maxCandidates withLanguage: language withCallback: callback];
+    
+    if (height != nil) {
+        if ([height intValue] > 1023) {
+            NSException *e = [NSException
+                              exceptionWithName: @"IllegalArgumentException"
+                              reason: @"Parameter height failed rule validation, rule name: InclusiveMaximum, constrain value: 1023."
+                              userInfo: nil];
+            @throw e;;
+        }
+        if ([height intValue] < 1) {
+            NSException *e = [NSException
+                              exceptionWithName: @"IllegalArgumentException"
+                              reason: @"Parameter height failed rule validation, rule name: InclusiveMinimum, constrain value: 1."
+                              userInfo: nil];
+            @throw e;;
+        }
     }
-
-    /**
-     * This operation generates a description of an image in human readable language with complete sentences.  The description is based on a collection of content tags, which are also returned by the operation. More than one description can be generated for each image.  Descriptions are ordered by their confidence score. All descriptions are in English. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL.A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
-    *
-     * @param url Publicly reachable URL of an image
-     * @param maxCandidates Maximum number of candidate descriptions to be returned.  The default is 1.
-     * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
-     * @param callback A block where ImageDescription is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a requred parameter is not provided.
-     */
-    - (void) describeImageWithUrl : (NSString *) url withMaxCandidates : (AZInteger *) maxCandidates withLanguage : (NSString *) language withCallback : (void(^)(ImageDescription*, OperationError*)) callback {
-
-        if (self.endpoint == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter self.endpoint is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (url == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter url is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        ImageUrl* imageUrl = [ImageUrl new];
-        imageUrl.url = url;
-
-        NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
-                                         withPath: @"/describe"
-                                   withPathParams: @{@"{Endpoint}" : self.endpoint}
-                                  withQueryParams: @{@"maxCandidates" : AZ_NULLABLE(maxCandidates), @"language" : AZ_NULLABLE(language)}];
-
-        RequestParameters* __rp = [RequestParameters createWithUrl: __url
-                                                        withMethod: @"POST"
-                                                       withHeaders: @{@"Content-Type" : @"application/json; charset=utf-8"}
-                                                          withBody: [JsonCoder encodeObject:imageUrl]];
-
-        [RequestHelper executeRequest:__rp
-                    withResponseClass:[ImageDescription class]
-                       withErrorClass:[ComputerVisionError class]
-                         withCallback:^(id _Nullable result, OperationError* _Nullable error) {
-            callback(result, error);
-        }];
-
+    
+    if (url == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter url is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
+    
+    
+    ImageUrl* imageUrl = [ImageUrl new];
+    imageUrl.url = url;
+    
+    NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
+                                     withPath: @"/generateThumbnail"
+                               withPathParams: @{@"{Endpoint}" : self.endpoint}
+                              withQueryParams: @{@"width" : width, @"height" : height, @"smartCropping" : AZ_NULLABLE(smartCropping)}];
+    
+    RequestParameters* __rp = [RequestParameters createWithUrl: __url
+                                                    withMethod: @"POST"
+                                                   withHeaders: @{@"Content-Type" : @"application/json; charset=utf-8"}
+                                                      withBody: [JsonCoder encodeObject:imageUrl]];
+    
+    [__rp withSpecialHeaders:self.specialHeaders];
+    
+    [RequestHelper executeRequest:__rp
+                withResponseClass:[AZStream class]
+                   withErrorClass:[DefaultErrorModel class]
+                     withCallback:^(id _Nullable result, OperationError* _Nullable error) {
+                         callback(result, error);
+                     }];
+    
+}
 
 
-    /**
-     * This operation generates a list of words, or tags, that are relevant to the content of the supplied image. The Computer Vision API can return tags based on objects, living beings, scenery or actions found in images. Unlike categories, tags are not organized according to a hierarchical classification system, but correspond to image content. Tags may contain hints to avoid ambiguity or provide context, for example the tag 'cello' may be accompanied by the hint 'musical instrument'. All tags are in English.
-     *
-     * @param url Publicly reachable URL of an image
-     * @param callback A block where TagResult is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a required parameter is not provided
-     */
-    - (void) tagImageWithUrl : (NSString *) url withCallback : (void(^)(TagResult*, OperationError*)) callback {
-        NSString* language = nil;
-        [self tagImageWithUrl: url withLanguage: language withCallback: callback];
+/**
+ * Optical Character Recognition (OCR) detects printed text in an image and extracts the recognized characters into a machine-usable character stream.   Upon success, the OCR results will be returned. Upon failure, the error code together with an error message will be returned. The error code can be one of InvalidImageUrl, InvalidImageFormat, InvalidImageSize, NotSupportedImage,  NotSupportedLanguage, or InternalServerError.
+ *
+ * @param detectOrientation Whether detect the text orientation in the image. With detectOrientation=true the OCR service tries to detect the image orientation and correct it before further processing (e.g. if it's upside-down).
+ * @param url Publicly reachable URL of an image
+ * @param callback A block where OcrResult is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a required parameter is not provided
+ */
+- (void) recognizePrintedTextWithDetectOrientation : (AZBoolean *) detectOrientation withUrl : (NSString *) url withCallback : (void(^)(OcrResult*, OperationError*)) callback {
+    OcrLanguages* language = [[OcrLanguages values] firstObject];;
+    [self recognizePrintedTextWithDetectOrientation: detectOrientation withUrl: url withLanguage: language withCallback: callback];
+}
+
+/**
+ * Optical Character Recognition (OCR) detects printed text in an image and extracts the recognized characters into a machine-usable character stream.   Upon success, the OCR results will be returned. Upon failure, the error code together with an error message will be returned. The error code can be one of InvalidImageUrl, InvalidImageFormat, InvalidImageSize, NotSupportedImage,  NotSupportedLanguage, or InternalServerError.
+ *
+ * @param detectOrientation Whether detect the text orientation in the image. With detectOrientation=true the OCR service tries to detect the image orientation and correct it before further processing (e.g. if it's upside-down).
+ * @param url Publicly reachable URL of an image
+ * @param language The BCP-47 language code of the text to be detected in the image. The default value is 'unk'. Possible values include: 'unk', 'zh-Hans', 'zh-Hant', 'cs', 'da', 'nl', 'en', 'fi', 'fr', 'de', 'el', 'hu', 'it', 'ja', 'ko', 'nb', 'pl', 'pt', 'ru', 'es', 'sv', 'tr', 'ar', 'ro', 'sr-Cyrl', 'sr-Latn', 'sk'
+ * @param callback A block where OcrResult is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a requred parameter is not provided.
+ */
+- (void) recognizePrintedTextWithDetectOrientation : (AZBoolean *) detectOrientation withUrl : (NSString *) url withLanguage : (OcrLanguages *) language withCallback : (void(^)(OcrResult*, OperationError*)) callback {
+    
+    if (self.endpoint == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter self.endpoint is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-    /**
-     * This operation generates a list of words, or tags, that are relevant to the content of the supplied image. The Computer Vision API can return tags based on objects, living beings, scenery or actions found in images. Unlike categories, tags are not organized according to a hierarchical classification system, but correspond to image content. Tags may contain hints to avoid ambiguity or provide context, for example the tag 'cello' may be accompanied by the hint 'musical instrument'. All tags are in English.
-    *
-     * @param url Publicly reachable URL of an image
-     * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
-     * @param callback A block where TagResult is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a requred parameter is not provided.
-     */
-    - (void) tagImageWithUrl : (NSString *) url withLanguage : (NSString *) language withCallback : (void(^)(TagResult*, OperationError*)) callback {
-
-        if (self.endpoint == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter self.endpoint is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (url == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter url is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        ImageUrl* imageUrl = [ImageUrl new];
-        imageUrl.url = url;
-
-        NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
-                                         withPath: @"/tag"
-                                   withPathParams: @{@"{Endpoint}" : self.endpoint}
-                                  withQueryParams: @{@"language" : AZ_NULLABLE(language)}];
-
-        RequestParameters* __rp = [RequestParameters createWithUrl: __url
-                                                        withMethod: @"POST"
-                                                       withHeaders: @{@"Content-Type" : @"application/json; charset=utf-8"}
-                                                          withBody: [JsonCoder encodeObject:imageUrl]];
-
-        [RequestHelper executeRequest:__rp
-                    withResponseClass:[TagResult class]
-                       withErrorClass:[ComputerVisionError class]
-                         withCallback:^(id _Nullable result, OperationError* _Nullable error) {
-            callback(result, error);
-        }];
-
+    
+    
+    if (detectOrientation == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter detectOrientation is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-
-    /**
-     * This operation recognizes content within an image by applying a domain-specific model.  The list of domain-specific models that are supported by the Computer Vision API can be retrieved using the /models GET request.  Currently, the API only provides a single domain-specific model: celebrities. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL. A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
-     *
-     * @param model The domain-specific content to recognize.
-     * @param url Publicly reachable URL of an image
-     * @param callback A block where DomainModelResults is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a required parameter is not provided
-     */
-    - (void) analyzeImageByDomainWithModel : (NSString *) model withUrl : (NSString *) url withCallback : (void(^)(DomainModelResults*, OperationError*)) callback {
-        NSString* language = nil;
-        [self analyzeImageByDomainWithModel: model withUrl: url withLanguage: language withCallback: callback];
+    
+    
+    if (url == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter url is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
+    
+    
+    ImageUrl* imageUrl = [ImageUrl new];
+    imageUrl.url = url;
+    
+    NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
+                                     withPath: @"/ocr"
+                               withPathParams: @{@"{Endpoint}" : self.endpoint}
+                              withQueryParams: @{@"detectOrientation" : detectOrientation, @"language" : AZ_NULLABLE(language)}];
+    
+    RequestParameters* __rp = [RequestParameters createWithUrl: __url
+                                                    withMethod: @"POST"
+                                                   withHeaders: @{@"Content-Type" : @"application/json; charset=utf-8"}
+                                                      withBody: [JsonCoder encodeObject:imageUrl]];
+    
+    [__rp withSpecialHeaders:self.specialHeaders];
+    
+    [RequestHelper executeRequest:__rp
+                withResponseClass:[OcrResult class]
+                   withErrorClass:[ComputerVisionError class]
+                     withCallback:^(id _Nullable result, OperationError* _Nullable error) {
+                         callback(result, error);
+                     }];
+    
+}
 
-    /**
-     * This operation recognizes content within an image by applying a domain-specific model.  The list of domain-specific models that are supported by the Computer Vision API can be retrieved using the /models GET request.  Currently, the API only provides a single domain-specific model: celebrities. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL. A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
-    *
-     * @param model The domain-specific content to recognize.
-     * @param url Publicly reachable URL of an image
-     * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
-     * @param callback A block where DomainModelResults is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a requred parameter is not provided.
-     */
-    - (void) analyzeImageByDomainWithModel : (NSString *) model withUrl : (NSString *) url withLanguage : (NSString *) language withCallback : (void(^)(DomainModelResults*, OperationError*)) callback {
 
-        if (self.endpoint == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter self.endpoint is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
+/**
+ * This operation generates a description of an image in human readable language with complete sentences.  The description is based on a collection of content tags, which are also returned by the operation. More than one description can be generated for each image.  Descriptions are ordered by their confidence score. All descriptions are in English. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL.A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
+ *
+ * @param url Publicly reachable URL of an image
+ * @param callback A block where ImageDescription is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a required parameter is not provided
+ */
+- (void) describeImageWithUrl : (NSString *) url withCallback : (void(^)(ImageDescription*, OperationError*)) callback {
+    AZInteger* maxCandidates = @0;
+    NSString* language = nil;
+    [self describeImageWithUrl: url withMaxCandidates: maxCandidates withLanguage: language withCallback: callback];
+}
 
-        if (model == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter model is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (url == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter url is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        ImageUrl* imageUrl = [ImageUrl new];
-        imageUrl.url = url;
-
-        NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
-                                         withPath: @"/models/{model}/analyze"
-                                   withPathParams: @{@"{Endpoint}" : self.endpoint, @"{model}" : model}
-                                  withQueryParams: @{@"language" : AZ_NULLABLE(language)}];
-
-        RequestParameters* __rp = [RequestParameters createWithUrl: __url
-                                                        withMethod: @"POST"
-                                                       withHeaders: @{@"Content-Type" : @"application/json; charset=utf-8"}
-                                                          withBody: [JsonCoder encodeObject:imageUrl]];
-
-        [RequestHelper executeRequest:__rp
-                    withResponseClass:[DomainModelResults class]
-                       withErrorClass:[ComputerVisionError class]
-                         withCallback:^(id _Nullable result, OperationError* _Nullable error) {
-            callback(result, error);
-        }];
-
+/**
+ * This operation generates a description of an image in human readable language with complete sentences.  The description is based on a collection of content tags, which are also returned by the operation. More than one description can be generated for each image.  Descriptions are ordered by their confidence score. All descriptions are in English. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL.A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
+ *
+ * @param url Publicly reachable URL of an image
+ * @param maxCandidates Maximum number of candidate descriptions to be returned.  The default is 1.
+ * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
+ * @param callback A block where ImageDescription is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a requred parameter is not provided.
+ */
+- (void) describeImageWithUrl : (NSString *) url withMaxCandidates : (AZInteger *) maxCandidates withLanguage : (NSString *) language withCallback : (void(^)(ImageDescription*, OperationError*)) callback {
+    
+    if (self.endpoint == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter self.endpoint is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-
-    /**
-     * This operation extracts a rich set of visual features based on the image content.
-     *
-     * @param image An image stream.
-     * @param callback A block where ImageAnalysis is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a required parameter is not provided
-     */
-    - (void) analyzeImageInStreamWithImage : (AZStream *) image withCallback : (void(^)(ImageAnalysis*, OperationError*)) callback {
-        NSArray<VisualFeatureTypes*>* visualFeatures = nil;
-        NSArray<Details*>* details = nil;
-        NSString* language = nil;
-        [self analyzeImageInStreamWithImage: image withVisualFeatures: visualFeatures withDetails: details withLanguage: language withCallback: callback];
+    
+    
+    if (url == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter url is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-    /**
-     * This operation extracts a rich set of visual features based on the image content.
-    *
-     * @param image An image stream.
-     * @param visualFeatures A string indicating what visual feature types to return. Multiple values should be comma-separated. Valid visual feature types include:Categories - categorizes image content according to a taxonomy defined in documentation. Tags - tags the image with a detailed list of words related to the image content. Description - describes the image content with a complete English sentence. Faces - detects if faces are present. If present, generate coordinates, gender and age. ImageType - detects if image is clipart or a line drawing. Color - determines the accent color, dominant color, and whether an image is black&amp;white.Adult - detects if the image is pornographic in nature (depicts nudity or a sex act).  Sexually suggestive content is also detected.
-     * @param details A string indicating which domain-specific details to return. Multiple values should be comma-separated. Valid visual feature types include:Celebrities - identifies celebrities if detected in the image.
-     * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
-     * @param callback A block where ImageAnalysis is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a requred parameter is not provided.
-     */
-    - (void) analyzeImageInStreamWithImage : (AZStream *) image withVisualFeatures : (NSArray<VisualFeatureTypes*> *) visualFeatures withDetails : (NSArray<Details*> *) details withLanguage : (NSString *) language withCallback : (void(^)(ImageAnalysis*, OperationError*)) callback {
-
-        if (self.endpoint == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter self.endpoint is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (image == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter image is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
+    
+    
+    ImageUrl* imageUrl = [ImageUrl new];
+    imageUrl.url = url;
+    
+    NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
+                                     withPath: @"/describe"
+                               withPathParams: @{@"{Endpoint}" : self.endpoint}
+                              withQueryParams: @{@"maxCandidates" : AZ_NULLABLE(maxCandidates), @"language" : AZ_NULLABLE(language)}];
+    
+    RequestParameters* __rp = [RequestParameters createWithUrl: __url
+                                                    withMethod: @"POST"
+                                                   withHeaders: @{@"Content-Type" : @"application/json; charset=utf-8"}
+                                                      withBody: [JsonCoder encodeObject:imageUrl]];
+    
+    [__rp withSpecialHeaders:self.specialHeaders];
+    
+    [RequestHelper executeRequest:__rp
+                withResponseClass:[ImageDescription class]
+                   withErrorClass:[ComputerVisionError class]
+                     withCallback:^(id _Nullable result, OperationError* _Nullable error) {
+                         callback(result, error);
+                     }];
+    
+}
 
 
-        NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
-                                         withPath: @"/analyze"
-                                   withPathParams: @{@"{Endpoint}" : self.endpoint}
-                                  withQueryParams: @{@"visualFeatures" : AZ_NULLABLE(visualFeatures), @"details" : AZ_NULLABLE(details), @"language" : AZ_NULLABLE(language)}];
+/**
+ * This operation generates a list of words, or tags, that are relevant to the content of the supplied image. The Computer Vision API can return tags based on objects, living beings, scenery or actions found in images. Unlike categories, tags are not organized according to a hierarchical classification system, but correspond to image content. Tags may contain hints to avoid ambiguity or provide context, for example the tag 'cello' may be accompanied by the hint 'musical instrument'. All tags are in English.
+ *
+ * @param url Publicly reachable URL of an image
+ * @param callback A block where TagResult is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a required parameter is not provided
+ */
+- (void) tagImageWithUrl : (NSString *) url withCallback : (void(^)(TagResult*, OperationError*)) callback {
+    NSString* language = nil;
+    [self tagImageWithUrl: url withLanguage: language withCallback: callback];
+}
 
-        RequestParameters* __rp = [RequestParameters createWithUrl: __url
-                                                        withMethod: @"POST"
-                                                       withHeaders: @{@"Content-Type" : @"application/octet-stream"}
-                                                          withBody: [JsonCoder encodeObject:image]];
-
-        [RequestHelper executeRequest:__rp
-                    withResponseClass:[ImageAnalysis class]
-                       withErrorClass:[ComputerVisionError class]
-                         withCallback:^(id _Nullable result, OperationError* _Nullable error) {
-            callback(result, error);
-        }];
-
+/**
+ * This operation generates a list of words, or tags, that are relevant to the content of the supplied image. The Computer Vision API can return tags based on objects, living beings, scenery or actions found in images. Unlike categories, tags are not organized according to a hierarchical classification system, but correspond to image content. Tags may contain hints to avoid ambiguity or provide context, for example the tag 'cello' may be accompanied by the hint 'musical instrument'. All tags are in English.
+ *
+ * @param url Publicly reachable URL of an image
+ * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
+ * @param callback A block where TagResult is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a requred parameter is not provided.
+ */
+- (void) tagImageWithUrl : (NSString *) url withLanguage : (NSString *) language withCallback : (void(^)(TagResult*, OperationError*)) callback {
+    
+    if (self.endpoint == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter self.endpoint is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-
-    /**
-     * This operation generates a thumbnail image with the user-specified width and height. By default, the service analyzes the image, identifies the region of interest (ROI), and generates smart cropping coordinates based on the ROI. Smart cropping helps when you specify an aspect ratio that differs from that of the input image. A successful response contains the thumbnail image binary. If the request failed, the response contains an error code and a message to help determine what went wrong.
-     *
-     * @param width Width of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
-     * @param height Height of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
-     * @param image An image stream.
-     * @param callback A block where AZStream is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a required parameter is not provided
-     */
-    - (void) generateThumbnailInStreamWithWidth : (AZInteger *) width withHeight : (AZInteger *) height withImage : (AZStream *) image withCallback : (void(^)(AZStream*, OperationError*)) callback {
-        AZBoolean* smartCropping = [AZBoolean asFalse];
-        [self generateThumbnailInStreamWithWidth: width withHeight: height withImage: image withSmartCropping: smartCropping withCallback: callback];
+    
+    
+    if (url == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter url is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-    /**
-     * This operation generates a thumbnail image with the user-specified width and height. By default, the service analyzes the image, identifies the region of interest (ROI), and generates smart cropping coordinates based on the ROI. Smart cropping helps when you specify an aspect ratio that differs from that of the input image. A successful response contains the thumbnail image binary. If the request failed, the response contains an error code and a message to help determine what went wrong.
-    *
-     * @param width Width of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
-     * @param height Height of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
-     * @param image An image stream.
-     * @param smartCropping Boolean flag for enabling smart cropping.
-     * @param callback A block where AZStream is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a requred parameter is not provided.
-     */
-    - (void) generateThumbnailInStreamWithWidth : (AZInteger *) width withHeight : (AZInteger *) height withImage : (AZStream *) image withSmartCropping : (AZBoolean *) smartCropping withCallback : (void(^)(AZStream*, OperationError*)) callback {
-
-        if (self.endpoint == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter self.endpoint is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (width == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter width is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (height == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter height is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (image == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter image is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
+    
+    
+    ImageUrl* imageUrl = [ImageUrl new];
+    imageUrl.url = url;
+    
+    NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
+                                     withPath: @"/tag"
+                               withPathParams: @{@"{Endpoint}" : self.endpoint}
+                              withQueryParams: @{@"language" : AZ_NULLABLE(language)}];
+    
+    RequestParameters* __rp = [RequestParameters createWithUrl: __url
+                                                    withMethod: @"POST"
+                                                   withHeaders: @{@"Content-Type" : @"application/json; charset=utf-8"}
+                                                      withBody: [JsonCoder encodeObject:imageUrl]];
+    
+    [__rp withSpecialHeaders:self.specialHeaders];
+    
+    [RequestHelper executeRequest:__rp
+                withResponseClass:[TagResult class]
+                   withErrorClass:[ComputerVisionError class]
+                     withCallback:^(id _Nullable result, OperationError* _Nullable error) {
+                         callback(result, error);
+                     }];
+    
+}
 
 
-        NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
-                                         withPath: @"/generateThumbnail"
-                                   withPathParams: @{@"{Endpoint}" : self.endpoint}
-                                  withQueryParams: @{@"width" : width, @"height" : height, @"smartCropping" : AZ_NULLABLE(smartCropping)}];
+/**
+ * This operation recognizes content within an image by applying a domain-specific model.  The list of domain-specific models that are supported by the Computer Vision API can be retrieved using the /models GET request.  Currently, the API only provides a single domain-specific model: celebrities. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL. A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
+ *
+ * @param model The domain-specific content to recognize.
+ * @param url Publicly reachable URL of an image
+ * @param callback A block where DomainModelResults is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a required parameter is not provided
+ */
+- (void) analyzeImageByDomainWithModel : (NSString *) model withUrl : (NSString *) url withCallback : (void(^)(DomainModelResults*, OperationError*)) callback {
+    NSString* language = nil;
+    [self analyzeImageByDomainWithModel: model withUrl: url withLanguage: language withCallback: callback];
+}
 
-        RequestParameters* __rp = [RequestParameters createWithUrl: __url
-                                                        withMethod: @"POST"
-                                                       withHeaders: @{@"Content-Type" : @"application/octet-stream"}
-                                                          withBody: [JsonCoder encodeObject:image]];
-
-        [RequestHelper executeRequest:__rp
-                    withResponseClass:[AZStream class]
-                       withErrorClass:[DefaultErrorModel class]
-                         withCallback:^(id _Nullable result, OperationError* _Nullable error) {
-            callback(result, error);
-        }];
-
+/**
+ * This operation recognizes content within an image by applying a domain-specific model.  The list of domain-specific models that are supported by the Computer Vision API can be retrieved using the /models GET request.  Currently, the API only provides a single domain-specific model: celebrities. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL. A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
+ *
+ * @param model The domain-specific content to recognize.
+ * @param url Publicly reachable URL of an image
+ * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
+ * @param callback A block where DomainModelResults is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a requred parameter is not provided.
+ */
+- (void) analyzeImageByDomainWithModel : (NSString *) model withUrl : (NSString *) url withLanguage : (NSString *) language withCallback : (void(^)(DomainModelResults*, OperationError*)) callback {
+    
+    if (self.endpoint == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter self.endpoint is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-
-    /**
-     * Optical Character Recognition (OCR) detects printed text in an image and extracts the recognized characters into a machine-usable character stream.   Upon success, the OCR results will be returned. Upon failure, the error code together with an error message will be returned. The error code can be one of InvalidImageUrl, InvalidImageFormat, InvalidImageSize, NotSupportedImage,  NotSupportedLanguage, or InternalServerError.
-     *
-     * @param detectOrientation Whether detect the text orientation in the image. With detectOrientation=true the OCR service tries to detect the image orientation and correct it before further processing (e.g. if it's upside-down).
-     * @param image An image stream.
-     * @param callback A block where OcrResult is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a required parameter is not provided
-     */
-    - (void) recognizePrintedTextInStreamWithDetectOrientation : (AZBoolean *) detectOrientation withImage : (AZStream *) image withCallback : (void(^)(OcrResult*, OperationError*)) callback {
-        OcrLanguages* language = OcrLanguages.UNK;
-        [self recognizePrintedTextInStreamWithDetectOrientation: detectOrientation withImage: image withLanguage: language withCallback: callback];
+    
+    
+    if (model == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter model is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-    /**
-     * Optical Character Recognition (OCR) detects printed text in an image and extracts the recognized characters into a machine-usable character stream.   Upon success, the OCR results will be returned. Upon failure, the error code together with an error message will be returned. The error code can be one of InvalidImageUrl, InvalidImageFormat, InvalidImageSize, NotSupportedImage,  NotSupportedLanguage, or InternalServerError.
-    *
-     * @param detectOrientation Whether detect the text orientation in the image. With detectOrientation=true the OCR service tries to detect the image orientation and correct it before further processing (e.g. if it's upside-down).
-     * @param image An image stream.
-     * @param language The BCP-47 language code of the text to be detected in the image. The default value is 'unk'. Possible values include: 'unk', 'zh-Hans', 'zh-Hant', 'cs', 'da', 'nl', 'en', 'fi', 'fr', 'de', 'el', 'hu', 'it', 'ja', 'ko', 'nb', 'pl', 'pt', 'ru', 'es', 'sv', 'tr', 'ar', 'ro', 'sr-Cyrl', 'sr-Latn', 'sk'
-     * @param callback A block where OcrResult is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a requred parameter is not provided.
-     */
-    - (void) recognizePrintedTextInStreamWithDetectOrientation : (AZBoolean *) detectOrientation withImage : (AZStream *) image withLanguage : (OcrLanguages *) language withCallback : (void(^)(OcrResult*, OperationError*)) callback {
-
-        if (self.endpoint == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter self.endpoint is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (detectOrientation == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter detectOrientation is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (image == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter image is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
-                                         withPath: @"/ocr"
-                                   withPathParams: @{@"{Endpoint}" : self.endpoint}
-                                  withQueryParams: @{@"language" : AZ_NULLABLE(language), @"detectOrientation" : detectOrientation}];
-
-        RequestParameters* __rp = [RequestParameters createWithUrl: __url
-                                                        withMethod: @"POST"
-                                                       withHeaders: @{@"Content-Type" : @"application/octet-stream"}
-                                                          withBody: image];
-        
-        [__rp withSpecialHeaders:self.specialHeaders];
-
-        [RequestHelper executeRequest:__rp
-                    withResponseClass:[OcrResult class]
-                       withErrorClass:[ComputerVisionError class]
-                         withCallback:^(id _Nullable result, OperationError* _Nullable error) {
-            callback(result, error);
-        }];
-
+    
+    
+    if (url == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter url is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
+    
+    
+    ImageUrl* imageUrl = [ImageUrl new];
+    imageUrl.url = url;
+    
+    NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
+                                     withPath: @"/models/{model}/analyze"
+                               withPathParams: @{@"{Endpoint}" : self.endpoint, @"{model}" : model}
+                              withQueryParams: @{@"language" : AZ_NULLABLE(language)}];
+    
+    RequestParameters* __rp = [RequestParameters createWithUrl: __url
+                                                    withMethod: @"POST"
+                                                   withHeaders: @{@"Content-Type" : @"application/json; charset=utf-8"}
+                                                      withBody: [JsonCoder encodeObject:imageUrl]];
+    
+    [__rp withSpecialHeaders:self.specialHeaders];
+    
+    [RequestHelper executeRequest:__rp
+                withResponseClass:[DomainModelResults class]
+                   withErrorClass:[ComputerVisionError class]
+                     withCallback:^(id _Nullable result, OperationError* _Nullable error) {
+                         callback(result, error);
+                     }];
+    
+}
 
 
-    /**
-     * This operation generates a description of an image in human readable language with complete sentences.  The description is based on a collection of content tags, which are also returned by the operation. More than one description can be generated for each image.  Descriptions are ordered by their confidence score. All descriptions are in English. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL.A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
-     *
-     * @param image An image stream.
-     * @param callback A block where ImageDescription is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a required parameter is not provided
-     */
-    - (void) describeImageInStreamWithImage : (AZStream *) image withCallback : (void(^)(ImageDescription*, OperationError*)) callback {
-        AZInteger* maxCandidates = @0;
-        NSString* language = @"en";
-        [self describeImageInStreamWithImage: image withMaxCandidates: maxCandidates withLanguage: language withCallback: callback];
+/**
+ * This operation extracts a rich set of visual features based on the image content.
+ *
+ * @param image An image stream.
+ * @param callback A block where ImageAnalysis is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a required parameter is not provided
+ */
+- (void) analyzeImageInStreamWithImage : (AZStream *) image withCallback : (void(^)(ImageAnalysis*, OperationError*)) callback {
+    NSArray<VisualFeatureTypes*>* visualFeatures = nil;
+    NSArray<Details*>* details = nil;
+    NSString* language = nil;
+    [self analyzeImageInStreamWithImage: image withVisualFeatures: visualFeatures withDetails: details withLanguage: language withCallback: callback];
+}
+
+/**
+ * This operation extracts a rich set of visual features based on the image content.
+ *
+ * @param image An image stream.
+ * @param visualFeatures A string indicating what visual feature types to return. Multiple values should be comma-separated. Valid visual feature types include:Categories - categorizes image content according to a taxonomy defined in documentation. Tags - tags the image with a detailed list of words related to the image content. Description - describes the image content with a complete English sentence. Faces - detects if faces are present. If present, generate coordinates, gender and age. ImageType - detects if image is clipart or a line drawing. Color - determines the accent color, dominant color, and whether an image is black&amp;white.Adult - detects if the image is pornographic in nature (depicts nudity or a sex act).  Sexually suggestive content is also detected.
+ * @param details A string indicating which domain-specific details to return. Multiple values should be comma-separated. Valid visual feature types include:Celebrities - identifies celebrities if detected in the image.
+ * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
+ * @param callback A block where ImageAnalysis is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a requred parameter is not provided.
+ */
+- (void) analyzeImageInStreamWithImage : (AZStream *) image withVisualFeatures : (NSArray<VisualFeatureTypes*> *) visualFeatures withDetails : (NSArray<Details*> *) details withLanguage : (NSString *) language withCallback : (void(^)(ImageAnalysis*, OperationError*)) callback {
+    
+    if (self.endpoint == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter self.endpoint is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-    /**
-     * This operation generates a description of an image in human readable language with complete sentences.  The description is based on a collection of content tags, which are also returned by the operation. More than one description can be generated for each image.  Descriptions are ordered by their confidence score. All descriptions are in English. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL.A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
-    *
-     * @param image An image stream.
-     * @param maxCandidates Maximum number of candidate descriptions to be returned.  The default is 1.
-     * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
-     * @param callback A block where ImageDescription is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a requred parameter is not provided.
-     */
-    - (void) describeImageInStreamWithImage : (AZStream *) image withMaxCandidates : (AZInteger *) maxCandidates withLanguage : (NSString *) language withCallback : (void(^)(ImageDescription*, OperationError*)) callback {
-
-        if (self.endpoint == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter self.endpoint is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (image == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter image is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-
-        NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
-                                         withPath: @"/describe"
-                                   withPathParams: @{@"{Endpoint}" : self.endpoint}
-                                  withQueryParams: @{@"maxCandidates" : AZ_NULLABLE(maxCandidates), @"language" : AZ_NULLABLE(language)}];
-
-        RequestParameters* __rp = [RequestParameters createWithUrl: __url
-                                                        withMethod: @"POST"
-                                                       withHeaders: @{@"Content-Type" : @"application/octet-stream"}
-                                                          withBody: image];
-        [__rp withSpecialHeaders:self.specialHeaders];
-        
-        [RequestHelper executeRequest:__rp
-                    withResponseClass:[ImageDescription class]
-                       withErrorClass:[ComputerVisionError class]
-                         withCallback:^(id _Nullable result, OperationError* _Nullable error) {
-            callback(result, error);
-        }];
-
+    
+    
+    if (image == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter image is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
+    
+    
+    
+    NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
+                                     withPath: @"/analyze"
+                               withPathParams: @{@"{Endpoint}" : self.endpoint}
+                              withQueryParams: @{@"visualFeatures" : AZ_NULLABLE(visualFeatures), @"details" : AZ_NULLABLE(details), @"language" : AZ_NULLABLE(language)}];
+    
+    RequestParameters* __rp = [RequestParameters createWithUrl: __url
+                                                    withMethod: @"POST"
+                                                   withHeaders: @{@"Content-Type" : @"application/octet-stream"}
+                                                      withBody: image];
+    
+    [__rp withSpecialHeaders:self.specialHeaders];
+    
+    [RequestHelper executeRequest:__rp
+                withResponseClass:[ImageAnalysis class]
+                   withErrorClass:[ComputerVisionError class]
+                     withCallback:^(id _Nullable result, OperationError* _Nullable error) {
+                         callback(result, error);
+                     }];
+    
+}
 
 
-    /**
-     * This operation generates a list of words, or tags, that are relevant to the content of the supplied image. The Computer Vision API can return tags based on objects, living beings, scenery or actions found in images. Unlike categories, tags are not organized according to a hierarchical classification system, but correspond to image content. Tags may contain hints to avoid ambiguity or provide context, for example the tag 'cello' may be accompanied by the hint 'musical instrument'. All tags are in English.
-     *
-     * @param image An image stream.
-     * @param callback A block where TagResult is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a required parameter is not provided
-     */
-    - (void) tagImageInStreamWithImage : (AZStream *) image withCallback : (void(^)(TagResult*, OperationError*)) callback {
-        NSString* language = @"en";
-        [self tagImageInStreamWithImage: image withLanguage: language withCallback: callback];
+/**
+ * This operation generates a thumbnail image with the user-specified width and height. By default, the service analyzes the image, identifies the region of interest (ROI), and generates smart cropping coordinates based on the ROI. Smart cropping helps when you specify an aspect ratio that differs from that of the input image. A successful response contains the thumbnail image binary. If the request failed, the response contains an error code and a message to help determine what went wrong.
+ *
+ * @param width Width of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
+ * @param height Height of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
+ * @param image An image stream.
+ * @param callback A block where AZStream is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a required parameter is not provided
+ */
+- (void) generateThumbnailInStreamWithWidth : (AZInteger *) width withHeight : (AZInteger *) height withImage : (AZStream *) image withCallback : (void(^)(AZStream*, OperationError*)) callback {
+    AZBoolean* smartCropping = AZ_NO;
+    [self generateThumbnailInStreamWithWidth: width withHeight: height withImage: image withSmartCropping: smartCropping withCallback: callback];
+}
+
+/**
+ * This operation generates a thumbnail image with the user-specified width and height. By default, the service analyzes the image, identifies the region of interest (ROI), and generates smart cropping coordinates based on the ROI. Smart cropping helps when you specify an aspect ratio that differs from that of the input image. A successful response contains the thumbnail image binary. If the request failed, the response contains an error code and a message to help determine what went wrong.
+ *
+ * @param width Width of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
+ * @param height Height of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
+ * @param image An image stream.
+ * @param smartCropping Boolean flag for enabling smart cropping.
+ * @param callback A block where AZStream is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a requred parameter is not provided.
+ */
+- (void) generateThumbnailInStreamWithWidth : (AZInteger *) width withHeight : (AZInteger *) height withImage : (AZStream *) image withSmartCropping : (AZBoolean *) smartCropping withCallback : (void(^)(AZStream*, OperationError*)) callback {
+    
+    if (self.endpoint == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter self.endpoint is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-    /**
-     * This operation generates a list of words, or tags, that are relevant to the content of the supplied image. The Computer Vision API can return tags based on objects, living beings, scenery or actions found in images. Unlike categories, tags are not organized according to a hierarchical classification system, but correspond to image content. Tags may contain hints to avoid ambiguity or provide context, for example the tag 'cello' may be accompanied by the hint 'musical instrument'. All tags are in English.
-    *
-     * @param image An image stream.
-     * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
-     * @param callback A block where TagResult is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a requred parameter is not provided.
-     */
-    - (void) tagImageInStreamWithImage : (AZStream *) image withLanguage : (NSString *) language withCallback : (void(^)(TagResult*, OperationError*)) callback {
-
-        if (self.endpoint == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter self.endpoint is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (image == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter image is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-
-        NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
-                                         withPath: @"/tag"
-                                   withPathParams: @{@"{Endpoint}" : self.endpoint}
-                                  withQueryParams: @{@"language" : AZ_NULLABLE(language)}];
-
-        RequestParameters* __rp = [RequestParameters createWithUrl: __url
-                                                        withMethod: @"POST"
-                                                       withHeaders: @{@"Content-Type" : @"application/octet-stream"}
-                                                          withBody: image];
-        [__rp withSpecialHeaders:self.specialHeaders];
-
-        [RequestHelper executeRequest:__rp
-                    withResponseClass:[TagResult class]
-                       withErrorClass:[ComputerVisionError class]
-                         withCallback:^(id _Nullable result, OperationError* _Nullable error) {
-            callback(result, error);
-        }];
-
+    
+    
+    if (width == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter width is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
-
-
-    /**
-     * This operation recognizes content within an image by applying a domain-specific model.  The list of domain-specific models that are supported by the Computer Vision API can be retrieved using the /models GET request.  Currently, the API only provides a single domain-specific model: celebrities. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL. A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
-     *
-     * @param model The domain-specific content to recognize.
-     * @param image An image stream.
-     * @param callback A block where DomainModelResults is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a required parameter is not provided
-     */
-    - (void) analyzeImageByDomainInStreamWithModel : (NSString *) model withImage : (AZStream *) image withCallback : (void(^)(DomainModelResults*, OperationError*)) callback {
-        NSString* language = nil;
-        [self analyzeImageByDomainInStreamWithModel: model withImage: image withLanguage: language withCallback: callback];
+    
+    if (width != nil) {
+        if ([width intValue] > 1023) {
+            NSException *e = [NSException
+                              exceptionWithName: @"IllegalArgumentException"
+                              reason: @"Parameter width failed rule validation, rule name: InclusiveMaximum, constrain value: 1023."
+                              userInfo: nil];
+            @throw e;;
+        }
+        if ([width intValue] < 1) {
+            NSException *e = [NSException
+                              exceptionWithName: @"IllegalArgumentException"
+                              reason: @"Parameter width failed rule validation, rule name: InclusiveMinimum, constrain value: 1."
+                              userInfo: nil];
+            @throw e;;
+        }
     }
-
-    /**
-     * This operation recognizes content within an image by applying a domain-specific model.  The list of domain-specific models that are supported by the Computer Vision API can be retrieved using the /models GET request.  Currently, the API only provides a single domain-specific model: celebrities. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL. A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
-    *
-     * @param model The domain-specific content to recognize.
-     * @param image An image stream.
-     * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
-     * @param callback A block where DomainModelResults is a result object and OperationError is nil, if the operation is successful
-     * @throws IllegalArgumentException if a requred parameter is not provided.
-     */
-    - (void) analyzeImageByDomainInStreamWithModel : (NSString *) model withImage : (AZStream *) image withLanguage : (NSString *) language withCallback : (void(^)(DomainModelResults*, OperationError*)) callback {
-
-        if (self.endpoint == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter self.endpoint is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (model == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter model is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-        if (image == nil) {
-            NSException *e = [NSException
-                exceptionWithName: @"IllegalArgumentException"
-                reason: @"Parameter image is required and cannot be nil."
-                userInfo: nil];
-            @throw e;
-        }
-
-
-        NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
-                                         withPath: @"/models/{model}/analyze"
-                                   withPathParams: @{@"{Endpoint}" : self.endpoint, @"{model}" : model}
-                                  withQueryParams: @{@"language" : AZ_NULLABLE(language)}];
-
-        RequestParameters* __rp = [RequestParameters createWithUrl: __url
-                                                        withMethod: @"POST"
-                                                       withHeaders: @{@"Content-Type" : @"application/octet-stream"}
-                                                          withBody: [JsonCoder encodeObject:image]];
-
-        [RequestHelper executeRequest:__rp
-                    withResponseClass:[DomainModelResults class]
-                       withErrorClass:[ComputerVisionError class]
-                         withCallback:^(id _Nullable result, OperationError* _Nullable error) {
-            callback(result, error);
-        }];
-
+    
+    if (height == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter height is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
     }
+    
+    if (height != nil) {
+        if ([height intValue] > 1023) {
+            NSException *e = [NSException
+                              exceptionWithName: @"IllegalArgumentException"
+                              reason: @"Parameter height failed rule validation, rule name: InclusiveMaximum, constrain value: 1023."
+                              userInfo: nil];
+            @throw e;;
+        }
+        if ([height intValue] < 1) {
+            NSException *e = [NSException
+                              exceptionWithName: @"IllegalArgumentException"
+                              reason: @"Parameter height failed rule validation, rule name: InclusiveMinimum, constrain value: 1."
+                              userInfo: nil];
+            @throw e;;
+        }
+    }
+    
+    if (image == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter image is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
+    }
+    
+    
+    
+    NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
+                                     withPath: @"/generateThumbnail"
+                               withPathParams: @{@"{Endpoint}" : self.endpoint}
+                              withQueryParams: @{@"width" : width, @"height" : height, @"smartCropping" : AZ_NULLABLE(smartCropping)}];
+    
+    RequestParameters* __rp = [RequestParameters createWithUrl: __url
+                                                    withMethod: @"POST"
+                                                   withHeaders: @{@"Content-Type" : @"application/octet-stream"}
+                                                      withBody: image];
+    
+    [__rp withSpecialHeaders:self.specialHeaders];
+    
+    [RequestHelper executeRequest:__rp
+                withResponseClass:[AZStream class]
+                   withErrorClass:[DefaultErrorModel class]
+                     withCallback:^(id _Nullable result, OperationError* _Nullable error) {
+                         callback(result, error);
+                     }];
+    
+}
+
+
+/**
+ * Optical Character Recognition (OCR) detects printed text in an image and extracts the recognized characters into a machine-usable character stream.   Upon success, the OCR results will be returned. Upon failure, the error code together with an error message will be returned. The error code can be one of InvalidImageUrl, InvalidImageFormat, InvalidImageSize, NotSupportedImage,  NotSupportedLanguage, or InternalServerError.
+ *
+ * @param detectOrientation Whether detect the text orientation in the image. With detectOrientation=true the OCR service tries to detect the image orientation and correct it before further processing (e.g. if it's upside-down).
+ * @param image An image stream.
+ * @param callback A block where OcrResult is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a required parameter is not provided
+ */
+- (void) recognizePrintedTextInStreamWithDetectOrientation : (AZBoolean *) detectOrientation withImage : (AZStream *) image withCallback : (void(^)(OcrResult*, OperationError*)) callback {
+    OcrLanguages* language = [[OcrLanguages values] firstObject];;
+    [self recognizePrintedTextInStreamWithDetectOrientation: detectOrientation withImage: image withLanguage: language withCallback: callback];
+}
+
+/**
+ * Optical Character Recognition (OCR) detects printed text in an image and extracts the recognized characters into a machine-usable character stream.   Upon success, the OCR results will be returned. Upon failure, the error code together with an error message will be returned. The error code can be one of InvalidImageUrl, InvalidImageFormat, InvalidImageSize, NotSupportedImage,  NotSupportedLanguage, or InternalServerError.
+ *
+ * @param detectOrientation Whether detect the text orientation in the image. With detectOrientation=true the OCR service tries to detect the image orientation and correct it before further processing (e.g. if it's upside-down).
+ * @param image An image stream.
+ * @param language The BCP-47 language code of the text to be detected in the image. The default value is 'unk'. Possible values include: 'unk', 'zh-Hans', 'zh-Hant', 'cs', 'da', 'nl', 'en', 'fi', 'fr', 'de', 'el', 'hu', 'it', 'ja', 'ko', 'nb', 'pl', 'pt', 'ru', 'es', 'sv', 'tr', 'ar', 'ro', 'sr-Cyrl', 'sr-Latn', 'sk'
+ * @param callback A block where OcrResult is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a requred parameter is not provided.
+ */
+- (void) recognizePrintedTextInStreamWithDetectOrientation : (AZBoolean *) detectOrientation withImage : (AZStream *) image withLanguage : (OcrLanguages *) language withCallback : (void(^)(OcrResult*, OperationError*)) callback {
+    
+    if (self.endpoint == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter self.endpoint is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
+    }
+    
+    
+    if (detectOrientation == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter detectOrientation is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
+    }
+    
+    
+    if (image == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter image is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
+    }
+    
+    
+    
+    NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
+                                     withPath: @"/ocr"
+                               withPathParams: @{@"{Endpoint}" : self.endpoint}
+                              withQueryParams: @{@"language" : AZ_NULLABLE(language), @"detectOrientation" : detectOrientation}];
+    
+    RequestParameters* __rp = [RequestParameters createWithUrl: __url
+                                                    withMethod: @"POST"
+                                                   withHeaders: @{@"Content-Type" : @"application/octet-stream"}
+                                                      withBody: image];
+    
+    [__rp withSpecialHeaders:self.specialHeaders];
+    
+    [RequestHelper executeRequest:__rp
+                withResponseClass:[OcrResult class]
+                   withErrorClass:[ComputerVisionError class]
+                     withCallback:^(id _Nullable result, OperationError* _Nullable error) {
+                         callback(result, error);
+                     }];
+    
+}
+
+
+/**
+ * This operation generates a description of an image in human readable language with complete sentences.  The description is based on a collection of content tags, which are also returned by the operation. More than one description can be generated for each image.  Descriptions are ordered by their confidence score. All descriptions are in English. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL.A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
+ *
+ * @param image An image stream.
+ * @param callback A block where ImageDescription is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a required parameter is not provided
+ */
+- (void) describeImageInStreamWithImage : (AZStream *) image withCallback : (void(^)(ImageDescription*, OperationError*)) callback {
+    AZInteger* maxCandidates = @0;
+    NSString* language = nil;
+    [self describeImageInStreamWithImage: image withMaxCandidates: maxCandidates withLanguage: language withCallback: callback];
+}
+
+/**
+ * This operation generates a description of an image in human readable language with complete sentences.  The description is based on a collection of content tags, which are also returned by the operation. More than one description can be generated for each image.  Descriptions are ordered by their confidence score. All descriptions are in English. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL.A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
+ *
+ * @param image An image stream.
+ * @param maxCandidates Maximum number of candidate descriptions to be returned.  The default is 1.
+ * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
+ * @param callback A block where ImageDescription is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a requred parameter is not provided.
+ */
+- (void) describeImageInStreamWithImage : (AZStream *) image withMaxCandidates : (AZInteger *) maxCandidates withLanguage : (NSString *) language withCallback : (void(^)(ImageDescription*, OperationError*)) callback {
+    
+    if (self.endpoint == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter self.endpoint is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
+    }
+    
+    
+    if (image == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter image is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
+    }
+    
+    
+    
+    NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
+                                     withPath: @"/describe"
+                               withPathParams: @{@"{Endpoint}" : self.endpoint}
+                              withQueryParams: @{@"maxCandidates" : AZ_NULLABLE(maxCandidates), @"language" : AZ_NULLABLE(language)}];
+    
+    RequestParameters* __rp = [RequestParameters createWithUrl: __url
+                                                    withMethod: @"POST"
+                                                   withHeaders: @{@"Content-Type" : @"application/octet-stream"}
+                                                      withBody: image];
+    
+    [__rp withSpecialHeaders:self.specialHeaders];
+    
+    [RequestHelper executeRequest:__rp
+                withResponseClass:[ImageDescription class]
+                   withErrorClass:[ComputerVisionError class]
+                     withCallback:^(id _Nullable result, OperationError* _Nullable error) {
+                         callback(result, error);
+                     }];
+    
+}
+
+
+/**
+ * This operation generates a list of words, or tags, that are relevant to the content of the supplied image. The Computer Vision API can return tags based on objects, living beings, scenery or actions found in images. Unlike categories, tags are not organized according to a hierarchical classification system, but correspond to image content. Tags may contain hints to avoid ambiguity or provide context, for example the tag 'cello' may be accompanied by the hint 'musical instrument'. All tags are in English.
+ *
+ * @param image An image stream.
+ * @param callback A block where TagResult is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a required parameter is not provided
+ */
+- (void) tagImageInStreamWithImage : (AZStream *) image withCallback : (void(^)(TagResult*, OperationError*)) callback {
+    NSString* language = nil;
+    [self tagImageInStreamWithImage: image withLanguage: language withCallback: callback];
+}
+
+/**
+ * This operation generates a list of words, or tags, that are relevant to the content of the supplied image. The Computer Vision API can return tags based on objects, living beings, scenery or actions found in images. Unlike categories, tags are not organized according to a hierarchical classification system, but correspond to image content. Tags may contain hints to avoid ambiguity or provide context, for example the tag 'cello' may be accompanied by the hint 'musical instrument'. All tags are in English.
+ *
+ * @param image An image stream.
+ * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
+ * @param callback A block where TagResult is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a requred parameter is not provided.
+ */
+- (void) tagImageInStreamWithImage : (AZStream *) image withLanguage : (NSString *) language withCallback : (void(^)(TagResult*, OperationError*)) callback {
+    
+    if (self.endpoint == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter self.endpoint is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
+    }
+    
+    
+    if (image == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter image is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
+    }
+    
+    
+    
+    NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
+                                     withPath: @"/tag"
+                               withPathParams: @{@"{Endpoint}" : self.endpoint}
+                              withQueryParams: @{@"language" : AZ_NULLABLE(language)}];
+    
+    RequestParameters* __rp = [RequestParameters createWithUrl: __url
+                                                    withMethod: @"POST"
+                                                   withHeaders: @{@"Content-Type" : @"application/octet-stream"}
+                                                      withBody: image];
+    
+    [__rp withSpecialHeaders:self.specialHeaders];
+    
+    [RequestHelper executeRequest:__rp
+                withResponseClass:[TagResult class]
+                   withErrorClass:[ComputerVisionError class]
+                     withCallback:^(id _Nullable result, OperationError* _Nullable error) {
+                         callback(result, error);
+                     }];
+    
+}
+
+
+/**
+ * This operation recognizes content within an image by applying a domain-specific model.  The list of domain-specific models that are supported by the Computer Vision API can be retrieved using the /models GET request.  Currently, the API only provides a single domain-specific model: celebrities. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL. A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
+ *
+ * @param model The domain-specific content to recognize.
+ * @param image An image stream.
+ * @param callback A block where DomainModelResults is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a required parameter is not provided
+ */
+- (void) analyzeImageByDomainInStreamWithModel : (NSString *) model withImage : (AZStream *) image withCallback : (void(^)(DomainModelResults*, OperationError*)) callback {
+    NSString* language = nil;
+    [self analyzeImageByDomainInStreamWithModel: model withImage: image withLanguage: language withCallback: callback];
+}
+
+/**
+ * This operation recognizes content within an image by applying a domain-specific model.  The list of domain-specific models that are supported by the Computer Vision API can be retrieved using the /models GET request.  Currently, the API only provides a single domain-specific model: celebrities. Two input methods are supported -- (1) Uploading an image or (2) specifying an image URL. A successful response will be returned in JSON.  If the request failed, the response will contain an error code and a message to help understand what went wrong.
+ *
+ * @param model The domain-specific content to recognize.
+ * @param image An image stream.
+ * @param language The desired language for output generation. If this parameter is not specified, the default value is &amp;quot;en&amp;quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
+ * @param callback A block where DomainModelResults is a result object and OperationError is nil, if the operation is successful
+ * @throws IllegalArgumentException if a requred parameter is not provided.
+ */
+- (void) analyzeImageByDomainInStreamWithModel : (NSString *) model withImage : (AZStream *) image withLanguage : (NSString *) language withCallback : (void(^)(DomainModelResults*, OperationError*)) callback {
+    
+    if (self.endpoint == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter self.endpoint is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
+    }
+    
+    
+    if (model == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter model is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
+    }
+    
+    
+    if (image == nil) {
+        NSException *e = [NSException
+                          exceptionWithName: @"IllegalArgumentException"
+                          reason: @"Parameter image is required and cannot be nil."
+                          userInfo: nil];
+        @throw e;
+    }
+    
+    
+    
+    NSString* __url = [RequestHelper buildUrl: self.DEFAULT_BASE_URL
+                                     withPath: @"/models/{model}/analyze"
+                               withPathParams: @{@"{Endpoint}" : self.endpoint, @"{model}" : model}
+                              withQueryParams: @{@"language" : AZ_NULLABLE(language)}];
+    
+    RequestParameters* __rp = [RequestParameters createWithUrl: __url
+                                                    withMethod: @"POST"
+                                                   withHeaders: @{@"Content-Type" : @"application/octet-stream"}
+                                                      withBody: image];
+    
+    [__rp withSpecialHeaders:self.specialHeaders];
+    
+    [RequestHelper executeRequest:__rp
+                withResponseClass:[DomainModelResults class]
+                   withErrorClass:[ComputerVisionError class]
+                     withCallback:^(id _Nullable result, OperationError* _Nullable error) {
+                         callback(result, error);
+                     }];
+    
+}
 
 
 
