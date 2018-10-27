@@ -114,10 +114,11 @@
                         }
                         [queries addObject: [NSString stringWithFormat:@"%@=%@", key, joined]];
                     }
-                }
-                if ([value conformsToProtocol:@protocol(AZBoolean)]) {
+                } else if ([value conformsToProtocol:@protocol(AZBoolean)]) {
                     NSString* boolString = [value getBool] ? @"true" : @"false";
                     [queries addObject: [NSString stringWithFormat:@"%@=%@", key, boolString]];
+                } else {
+                    [queries addObject: [NSString stringWithFormat:@"%@=%@", key, value]];
                 }
             }
         }

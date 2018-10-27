@@ -93,9 +93,9 @@
     AZBoolean* smartCropping = AZ_YES;
     [self.service generateThumbnailWithWidth:width withHeight:height withUrl:url withSmartCropping:smartCropping withCallback:^(AZStream* result, OperationError* error) {
         [waitingLoading fulfill];
-        // Service is reportng the error
+        // Service is reportng the error sometime
         // Message = "No HTTP resource was found that matches the request URI 'https://westus2.vision.api.cognitive.trafficmanager.net/api/generateThumbnail?smartCropping=true'."
-        XCTAssertNotNil(error, @"%@", error.reason);
+        XCTAssertNil(error, @"%@", error.reason);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}
@@ -233,8 +233,8 @@
     AZBoolean* smartCropping = AZ_NO;
     [self.service generateThumbnailInStreamWithWidth:width withHeight:height withImage:image withSmartCropping:smartCropping withCallback:^(AZStream* result, OperationError* error) {
         [waitingLoading fulfill];
-        // permanent server error
-        XCTAssertNotNil(error, @"%@", error.reason);
+        // intermitten server error
+        XCTAssertNil(error, @"%@", error.reason);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}
