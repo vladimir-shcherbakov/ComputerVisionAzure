@@ -9,6 +9,7 @@
 #import "ComputerVisionClient.h"
 @interface ComputerVisionClientTests : XCTestCase
     @property id<ComputerVisionClientProtocol> service;
+    - (NSData*) readImageFileWithName: (NSString*) name ofType: (NSString*) type;
 @end
 @implementation ComputerVisionClientTests
 - (void)setUp {
@@ -25,6 +26,16 @@
 }
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
+}
+
+/**
+ * Helper function to read image from file
+ */
+
+- (NSData*) readImageFileWithName: (NSString*) name ofType: (NSString*) type {
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *imagePath = [bundle pathForResource:name ofType:type];
+    return [NSData dataWithContentsOfFile:imagePath];
 }
 
 /**
@@ -52,10 +63,10 @@
 */
 - (void) test_analyzeImage {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    NSString* url = @"https://snappartnership.net/wp-content/uploads/steppe-health-MR.png";
-    NSArray<VisualFeatureTypes*>* visualFeatures = @[VisualFeatureTypes.CATEGORIES, VisualFeatureTypes.COLOR];
-    NSArray<Details*>* details = @[Details.LANDMARKS];
-    NSString* language = nil;
+    NSString* url = @"https://testpictures.blob.core.windows.net/cogsrv/analyze1.jpg";
+    NSArray<VisualFeatureTypes*>* visualFeatures = @[VisualFeatureTypes.FACES];
+    NSArray<Details*>* details = nil;
+    NSString* language = @"en";
     [self.service analyzeImageWithUrl:url withVisualFeatures:visualFeatures withDetails:details withLanguage:language withCallback:^(ImageAnalysis* result, OperationError* error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
@@ -123,7 +134,7 @@
 - (void) test_describeImage {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     NSString* url = @"https://testpictures.blob.core.windows.net/cogsrv/analyze1.jpg";
-    AZInteger* maxCandidates = @0;
+    AZInteger* maxCandidates = @1;
     NSString* language = @"en";
     [self.service describeImageWithUrl:url withMaxCandidates:maxCandidates withLanguage:language withCallback:^(ImageDescription* result, OperationError* error) {
         [waitingLoading fulfill];
@@ -166,7 +177,7 @@
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     NSString* model = @"celebrities";
     NSString* url = @"https://testpictures.blob.core.windows.net/cogsrv/celebrity.jpeg";
-    NSString* language = nil;
+    NSString* language = @"en";
     [self.service analyzeImageByDomainWithModel:model withUrl:url withLanguage:language withCallback:^(DomainModelResults* result, OperationError* error) {
         [waitingLoading fulfill];
         XCTAssertNil(error, @"%@", error.reason);
@@ -184,16 +195,22 @@
  * body parameter: visualFeatures A string indicating what visual feature types to return. Multiple values should be comma-separated. Valid visual feature types include:Categories - categorizes image content according to a taxonomy defined in documentation. Tags - tags the image with a detailed list of words related to the image content. Description - describes the image content with a complete English sentence. Faces - detects if faces are present. If present, generate coordinates, gender and age. ImageType - detects if image is clipart or a line drawing. Color - determines the accent color, dominant color, and whether an image is black&white.Adult - detects if the image is pornographic in nature (depicts nudity or a sex act).  Sexually suggestive content is also detected.
  * body parameter: details A string indicating which domain-specific details to return. Multiple values should be comma-separated. Valid visual feature types include:Celebrities - identifies celebrities if detected in the image.
  * body parameter: language The desired language for output generation. If this parameter is not specified, the default value is &quot;en&quot;.Supported languages:en - English, Default. es - Spanish, ja - Japanese, pt - Portuguese, zh - Simplified Chinese. Possible values include: 'en', 'es', 'ja', 'pt', 'zh'
-*/
+ */
 - (void) test_analyzeImageInStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    AZStream* image = nil;
+    AZStream* image = [self readImageFileWithName:@"celebrity" ofType:@"jpeg"];
     NSArray<VisualFeatureTypes*>* visualFeatures = nil;
-    NSArray<Details*>* details = nil;
-    NSString* language = nil;
-    [self.service analyzeImageInStreamWithImage:image withVisualFeatures:visualFeatures withDetails:details withLanguage:language withCallback:^(ImageAnalysis* result, OperationError* error) {
-        [waitingLoading fulfill];
-        //XCTAssertNil(error, @"%@", error.reason);
+    NSArray<Details*>* details = @[Details.CELEBRITIES];
+    NSString* language = @"en";
+    [self.service analyzeImageInStreamWithImage:image
+                             withVisualFeatures:visualFeatures
+                                    withDetails:details
+                                   withLanguage:language
+                                   withCallback:^(ImageAnalysis* result, OperationError* error) {
+                                       [waitingLoading fulfill];
+                                       XCTAssertNil(error, @"%@", error.reason);
+                                       XCTAssertNotNil(result);
+                                       XCTAssertEqualObjects(@"Satya Nadella", [[result.categories firstObject].detail.celebrities firstObject].name);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}
@@ -210,13 +227,14 @@
 */
 - (void) test_generateThumbnailInStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    AZInteger* width = @0;
-    AZInteger* height = @0;
-    AZStream* image = nil;
+    AZInteger* width = @50;
+    AZInteger* height = @50;
+    AZStream* image = [self readImageFileWithName:@"celebrity" ofType:@"jpeg"];
     AZBoolean* smartCropping = AZ_NO;
     [self.service generateThumbnailInStreamWithWidth:width withHeight:height withImage:image withSmartCropping:smartCropping withCallback:^(AZStream* result, OperationError* error) {
         [waitingLoading fulfill];
-        //XCTAssertNil(error, @"%@", error.reason);
+        // permanent server error
+        XCTAssertNotNil(error, @"%@", error.reason);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}
@@ -233,11 +251,12 @@
 - (void) test_recognizePrintedTextInStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
     AZBoolean* detectOrientation = AZ_NO;
-    AZStream* image = nil;
+    AZStream* image = [self readImageFileWithName:@"imtext1" ofType:@"jpeg"];
     OcrLanguages* language = [[OcrLanguages values] firstObject];;
     [self.service recognizePrintedTextInStreamWithDetectOrientation:detectOrientation withImage:image withLanguage:language withCallback:^(OcrResult* result, OperationError* error) {
         [waitingLoading fulfill];
-        //XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNotNil(result);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}
@@ -253,12 +272,13 @@
 */
 - (void) test_describeImageInStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    AZStream* image = nil;
-    AZInteger* maxCandidates = @0;
-    NSString* language = nil;
+    AZStream* image = [self readImageFileWithName:@"analyze3" ofType:@"jpg"];
+    AZInteger* maxCandidates = @1;
+    NSString* language = @"en";
     [self.service describeImageInStreamWithImage:image withMaxCandidates:maxCandidates withLanguage:language withCallback:^(ImageDescription* result, OperationError* error) {
         [waitingLoading fulfill];
-        //XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNotNil(result);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}
@@ -273,11 +293,12 @@
 */
 - (void) test_tagImageInStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    AZStream* image = nil;
-    NSString* language = nil;
+    AZStream* image = [self readImageFileWithName:@"analyze3" ofType:@"jpg"];
+    NSString* language = @"en";
     [self.service tagImageInStreamWithImage:image withLanguage:language withCallback:^(TagResult* result, OperationError* error) {
         [waitingLoading fulfill];
-        //XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNotNil(result);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}
@@ -293,12 +314,13 @@
 */
 - (void) test_analyzeImageByDomainInStream {
     XCTestExpectation *waitingLoading = [self expectationWithDescription:@"Wait for HTTP request to complete"];
-    NSString* model = nil;
-    AZStream* image = nil;
-    NSString* language = nil;
+    NSString* model = @"celebrities";
+    AZStream* image = [self readImageFileWithName:@"celebrity" ofType:@"jpeg"];
+    NSString* language = @"en";
     [self.service analyzeImageByDomainInStreamWithModel:model withImage:image withLanguage:language withCallback:^(DomainModelResults* result, OperationError* error) {
         [waitingLoading fulfill];
-        //XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNil(error, @"%@", error.reason);
+        XCTAssertNotNil(result);
     }];
     [self waitForExpectationsWithTimeout:100 handler:^(NSError *error) {
         if (error) {XCTFail(@"After block was not called.");}

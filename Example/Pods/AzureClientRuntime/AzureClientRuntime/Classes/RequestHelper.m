@@ -16,10 +16,16 @@
 +(void) logRequestUrl: (NSString*) url;
 +(void) logRequestBody: (NSData*) body;
 +(void) logResponseBody: (NSData*) body;
++(NSDictionary*)specialHeaders;
 
 @end
 
 @implementation RequestHelper (private)
+
++(NSDictionary*)specialHeaders {
+    return @{@"user-agent":@"AutoRest-ObjectiveC"};
+}
+
 +(void) logRequestUrl: (NSString*) url {
      NSLog(@"\n<<<< request url: %@", url);
 }
@@ -125,10 +131,10 @@
 + (void) executeRequest: (RequestParameters*) requestParams
            withCallback: (void (^)(NSData* _Nullable, NSInteger statusCode, NSError* _Nullable)) callback {
 
+    [requestParams withSpecialHeaders: [RequestHelper specialHeaders]];
 
     NSURL *url = [NSURL URLWithString:requestParams.url];
     [RequestHelper logRequestUrl:requestParams.url];
-    //NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod = requestParams.mehod;
     for (id key in requestParams.headers) {
