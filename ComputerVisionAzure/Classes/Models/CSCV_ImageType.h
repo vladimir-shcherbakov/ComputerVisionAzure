@@ -4,7 +4,7 @@
  * regenerated.
 */
 
-#import <AzureClientRuntime/AzureClientRuntime-umbrella.h>
+#import <AzureClientRuntime/AzureClientRuntime.h>
 
 /**
  * An object providing possible image types and matching confidence levels.

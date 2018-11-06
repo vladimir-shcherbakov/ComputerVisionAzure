@@ -4,7 +4,7 @@
  * regenerated.
 */
 
-#import <AzureClientRuntime/AzureClientRuntime-umbrella.h>
+#import <AzureClientRuntime/AzureClientRuntime.h>
 #import "CSCV_ImageTag.h"
 #import "CSCV_ImageMetadata.h"
 

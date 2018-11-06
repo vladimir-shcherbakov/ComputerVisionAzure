@@ -4,7 +4,7 @@
  * regenerated.
 */
 
-#import <AzureClientRuntime/AzureClientRuntime-umbrella.h>
+#import <AzureClientRuntime/AzureClientRuntime.h>
 
 /**
  * An image caption, i.e. a brief description of what the image depicts.

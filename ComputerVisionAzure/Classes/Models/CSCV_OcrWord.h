@@ -4,7 +4,7 @@
  * regenerated.
 */
 
-#import <AzureClientRuntime/AzureClientRuntime-umbrella.h>
+#import <AzureClientRuntime/AzureClientRuntime.h>
 
 /**
  * Information on a recognized word.

@@ -4,7 +4,7 @@
  * regenerated.
 */
 
-#import <AzureClientRuntime/AzureClientRuntime-umbrella.h>
+#import <AzureClientRuntime/AzureClientRuntime.h>
 #import "CSCV_CelebritiesModel.h"
 #import "CSCV_LandmarksModel.h"
 

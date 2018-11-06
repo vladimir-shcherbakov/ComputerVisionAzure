@@ -4,7 +4,7 @@
  * regenerated.
 */
 
-#import <AzureClientRuntime/AzureClientRuntime-umbrella.h>
+#import <AzureClientRuntime/AzureClientRuntime.h>
 #import "CSCV_Category.h"
 #import "CSCV_AdultInfo.h"
 #import "CSCV_ColorInfo.h"

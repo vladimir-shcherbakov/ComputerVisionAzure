@@ -12,7 +12,7 @@
 		07477838796D2BF5B948E1CF6010AE48 /* CSCV_ImageMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = CBDE8984B28461CD06766B9D0AF18727 /* CSCV_ImageMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0BD19865CAF5DD141AB0F2C4CC7B61AC /* CSCV_LandmarksModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EAA67BCEE3F4BB0100B0A4047A199C /* CSCV_LandmarksModel.m */; };
 		0CAC2D310BE1170AD732D8562493EF17 /* CSCV_OcrRegion.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BBD61D23F5E80ECA9B63D7729D609ED /* CSCV_OcrRegion.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DD2D2270B8257BFCF0B1E4DAE2C36DD /* AzureClientRuntime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DD2D2270B8257BFCF0B1E4DAE2C36DD /* AzureClientRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0DD6E87A24C981B52FD5819E477141F0 /* AzureDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E25183921AD5D8FA4DA0A9F3BF100CF /* AzureDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		10AE80647E31FC221FB475E705C994C3 /* CSCV_OcrWord.m in Sources */ = {isa = PBXBuildFile; fileRef = B94C04FBE9D5EFEC1C166D2B04FB5848 /* CSCV_OcrWord.m */; };
 		121C88BF492150C9F08D721ABA9A6398 /* CSCV_OcrRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E63F08B05D6DF28D8D69F72385D65A /* CSCV_OcrRegion.m */; };
@@ -146,7 +146,7 @@
 		07DD0E5705EA51864755A28C76C93C3B /* Pods-ComputerVisionAzure_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ComputerVisionAzure_Example-umbrella.h"; sourceTree = "<group>"; };
 		08EAA67BCEE3F4BB0100B0A4047A199C /* CSCV_LandmarksModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_LandmarksModel.m; sourceTree = "<group>"; };
 		0BB2505E367ED1574D746C7F1C542A1F /* CSCV_CelebrityResults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_CelebrityResults.m; sourceTree = "<group>"; };
-		0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AzureClientRuntime-umbrella.h"; sourceTree = "<group>"; };
+		0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AzureClientRuntime.h; sourceTree = "<group>"; };
 		10B1A25C9CE048AA9C5752DE3F8CE944 /* CSCV_VisualFeatureTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_VisualFeatureTypes.h; sourceTree = "<group>"; };
 		1512942B79B7541B5CF52C394EF741BE /* Pods-ComputerVisionAzure_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ComputerVisionAzure_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1532B4A335F788D4C0265D6F3A79205A /* Pods_ComputerVisionAzure_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComputerVisionAzure_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -371,7 +371,7 @@
 				8F1E9993059268CF9FF43A4FFB6C5E59 /* AzureClientRuntime.xcconfig */,
 				B0B79478533E4D249594B27DDD245759 /* AzureClientRuntime-dummy.m */,
 				EE416F9CB6D83C3EE38B8352181C2A76 /* AzureClientRuntime-prefix.pch */,
-				0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime-umbrella.h */,
+				0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime.h */,
 				E1CBFAC896F8EE71C3FDB740513BF144 /* Info.plist */,
 			);
 			name = "Support Files";
@@ -570,7 +570,7 @@
 				FAD76B3F982D5A85B9C4B3CBBA9AE4FE /* AZOperationError.h in Headers */,
 				6580A53E2728D096C39E4E7B11ECAF02 /* AZRequestHelper.h in Headers */,
 				5A3CDAA672B2034D45BB203D4862C85C /* AZRequestParameters.h in Headers */,
-				0DD2D2270B8257BFCF0B1E4DAE2C36DD /* AzureClientRuntime-umbrella.h in Headers */,
+				0DD2D2270B8257BFCF0B1E4DAE2C36DD /* AzureClientRuntime.h in Headers */,
 				0DD6E87A24C981B52FD5819E477141F0 /* AzureDate.h in Headers */,
 				C0CA4D06410919FD54DAB36A1C97E5AD /* AzureTypes.h in Headers */,
 			);
