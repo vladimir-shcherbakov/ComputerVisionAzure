@@ -7,14 +7,14 @@
 #import "CSCV_ComputerVisionError.h"
 
 @implementation CSCV_ComputerVisionError
-    - (id) initWithcode:(CSCV_ComputerVisionErrorCodes *)code withmessage:(NSString *)message {
-        self = [super init];
-        if (self) {
-            _code = code;
-            _message = message;
-        }
-        return self;
+- (id) initWithCode:(CSCV_ComputerVisionErrorCodes *)code withmessage:(NSString *)message {
+    self = [super init];
+    if (self) {
+        _code = code;
+        _message = message;
     }
+    return self;
+}
 - (void)encodeWithCoder:(id<AZCoder>)encoder {
 
     [encoder encodeObject:self.code forKey:@"code"];

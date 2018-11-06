@@ -7,13 +7,13 @@
 #import "CSCV_ImageUrl.h"
 
 @implementation CSCV_ImageUrl
-    - (id) initWithurl:(NSString *)url {
-        self = [super init];
-        if (self) {
-            _url = url;
-        }
-        return self;
+- (id) initWithUrl:(NSString *)url {
+    self = [super init];
+    if (self) {
+        _url = url;
     }
+    return self;
+}
 - (void)encodeWithCoder:(id<AZCoder>)encoder {
 
     [encoder encodeObject:self.url forKey:@"url"];

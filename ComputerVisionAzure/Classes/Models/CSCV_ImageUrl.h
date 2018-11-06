@@ -18,5 +18,5 @@
 * Creates an instance of CSCV_ImageUrl class.
 * @param url publicly reachable URL of an image.
 */
-- (id) initWithurl:(NSString *)url;
+- (id) initWithUrl:(NSString *)url;
 @end

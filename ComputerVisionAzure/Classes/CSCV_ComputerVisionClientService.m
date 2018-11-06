@@ -5,9 +5,8 @@
  */
 
 #import "CSCV_ComputerVisionClientService.h"
-//#import "Models/AZDefaultErrorModel.h"
-#import "Models/CSCV_ComputerVisionError.h"
-#import "Models/CSCV_ImageUrl.h"
+#import "CSCV_ComputerVisionError.h"
+#import "CSCV_ImageUrl.h"
 
 /**
  * Initializes a new instance of the CSCV_ComputerVisionClientService class.

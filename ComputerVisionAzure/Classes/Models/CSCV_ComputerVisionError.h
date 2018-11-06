@@ -32,5 +32,5 @@
 * @param code the error code. Possible values include: 'InvalidImageUrl', 'InvalidImageFormat', 'InvalidImageSize', 'NotSupportedVisualFeature', 'NotSupportedImage', 'InvalidDetails', 'NotSupportedLanguage', 'BadArgument', 'FailedToProcess', 'Timeout', 'InternalServerError', 'Unspecified', 'StorageException'.
 * @param message a message explaining the error reported by the service.
 */
-- (id) initWithcode:(CSCV_ComputerVisionErrorCodes *)code withmessage:(NSString *)message;
+- (id) initWithCode:(CSCV_ComputerVisionErrorCodes *)code withmessage:(NSString *)message;
 @end
