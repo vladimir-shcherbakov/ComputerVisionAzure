@@ -22,8 +22,8 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		B64AE0BFF0987B900B697646 /* Pods_ComputerVisionAzure_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D17E012179651A00587FF4 /* Pods_ComputerVisionAzure_Example.framework */; };
+		C89023EA219120D100ECFF82 /* CSCV_ComputerVisionClientServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C89023E9219120D100ECFF82 /* CSCV_ComputerVisionClientServiceTests.m */; };
 		C8D17E0C21796F4300587FF4 /* Pods_ComputerVisionAzure_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D17E0B21796F4300587FF4 /* Pods_ComputerVisionAzure_Tests.framework */; };
-		C8D17E5721812D6300587FF4 /* ComputerVisionClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D17E5621812D6300587FF4 /* ComputerVisionClientTests.m */; };
 		C8D17E5A2183DBB400587FF4 /* celebrity.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C8D17E592183DBB400587FF4 /* celebrity.jpeg */; };
 		C8D17E5C2183E73100587FF4 /* imtext1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C8D17E5B2183E73100587FF4 /* imtext1.jpeg */; };
 		C8D17E5E2183EA1A00587FF4 /* analyze3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8D17E5D2183EA1A00587FF4 /* analyze3.jpg */; };
@@ -68,11 +68,10 @@
 		810F4EDEE5DCCCAEC62EACD4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A1A2149636FEB101DD9814A /* Pods-ComputerVisionAzure_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComputerVisionAzure_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComputerVisionAzure_Tests/Pods-ComputerVisionAzure_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C89023E9219120D100ECFF82 /* CSCV_ComputerVisionClientServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCV_ComputerVisionClientServiceTests.m; sourceTree = "<group>"; };
 		C8D17DFF2179641600587FF4 /* Pods_ComputerVisionAzure_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ComputerVisionAzure_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D17E012179651A00587FF4 /* Pods_ComputerVisionAzure_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ComputerVisionAzure_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D17E0B21796F4300587FF4 /* Pods_ComputerVisionAzure_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ComputerVisionAzure_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8D17E12217BBC2F00587FF4 /* ComputerVisionAzure_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ComputerVisionAzure_Example.entitlements; sourceTree = "<group>"; };
-		C8D17E5621812D6300587FF4 /* ComputerVisionClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComputerVisionClientTests.m; sourceTree = "<group>"; };
 		C8D17E592183DBB400587FF4 /* celebrity.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = celebrity.jpeg; sourceTree = "<group>"; };
 		C8D17E5B2183E73100587FF4 /* imtext1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imtext1.jpeg; sourceTree = "<group>"; };
 		C8D17E5D2183EA1A00587FF4 /* analyze3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = analyze3.jpg; sourceTree = "<group>"; };
@@ -120,7 +119,6 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
-				C8D17E12217BBC2F00587FF4 /* ComputerVisionAzure_Example.entitlements */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for ComputerVisionAzure */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -185,8 +183,8 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				C89023E9219120D100ECFF82 /* CSCV_ComputerVisionClientServiceTests.m */,
 				C8D17E582183DBB400587FF4 /* Images */,
-				C8D17E5621812D6300587FF4 /* ComputerVisionClientTests.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -418,7 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8D17E5721812D6300587FF4 /* ComputerVisionClientTests.m in Sources */,
+				C89023EA219120D100ECFF82 /* CSCV_ComputerVisionClientServiceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

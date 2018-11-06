@@ -7,104 +7,104 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01C2E3E60E25036C78C3558222F6DAC5 /* ModelDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 418C4CFAB53F57224689B39F50D7D83D /* ModelDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0290AF8A2237ADB49CE7ABF8A400233A /* ModelDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F5ACD28F1A93B5BBEBA6D55C229513 /* ModelDescription.m */; };
-		06EF57A36F0A98882200C35DEC88094E /* TextRecognitionMode.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F69BCFA23C70075E4573BE969E905F /* TextRecognitionMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0988E4B782A6AD0E267122C69BA2D401 /* OcrResult.m in Sources */ = {isa = PBXBuildFile; fileRef = C0200578E9E8F875CC645091571C7127 /* OcrResult.m */; };
-		119A14427F371C2FFC43486785033E84 /* TagResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 5529C36483FDDDA9F85BEC8FBA7F604E /* TagResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		12D5A74D2E0E89B2763A8944652B3DE0 /* TextRecognitionMode.m in Sources */ = {isa = PBXBuildFile; fileRef = E72982C580EFC50B73DF80DD07A6F0A0 /* TextRecognitionMode.m */; };
-		1B59290BFEBB9D8F56D90896DF1D0510 /* LandmarkResults.m in Sources */ = {isa = PBXBuildFile; fileRef = C066B6C851E29C691BDB7B0B3B833D0C /* LandmarkResults.m */; };
-		1F64D9CDE41B801ECDD3D45DCE2CCCFB /* ImageMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 17018E157D09240E5161B87271E29021 /* ImageMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0055BFDF5E96FC80A0F572C25895E28A /* CSCV_ComputerVisionErrorCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = B53774460107D52F0E0DA62013E5B88F /* CSCV_ComputerVisionErrorCodes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		04CF6E839A0D0E888BA204581B8592AF /* CSCV_LandmarksModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F035AAAA8870ACE8A08DD0705234661C /* CSCV_LandmarksModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07477838796D2BF5B948E1CF6010AE48 /* CSCV_ImageMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = CBDE8984B28461CD06766B9D0AF18727 /* CSCV_ImageMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BD19865CAF5DD141AB0F2C4CC7B61AC /* CSCV_LandmarksModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EAA67BCEE3F4BB0100B0A4047A199C /* CSCV_LandmarksModel.m */; };
+		0CAC2D310BE1170AD732D8562493EF17 /* CSCV_OcrRegion.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BBD61D23F5E80ECA9B63D7729D609ED /* CSCV_OcrRegion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DD2D2270B8257BFCF0B1E4DAE2C36DD /* AzureClientRuntime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DD6E87A24C981B52FD5819E477141F0 /* AzureDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E25183921AD5D8FA4DA0A9F3BF100CF /* AzureDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10AE80647E31FC221FB475E705C994C3 /* CSCV_OcrWord.m in Sources */ = {isa = PBXBuildFile; fileRef = B94C04FBE9D5EFEC1C166D2B04FB5848 /* CSCV_OcrWord.m */; };
+		121C88BF492150C9F08D721ABA9A6398 /* CSCV_OcrRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E63F08B05D6DF28D8D69F72385D65A /* CSCV_OcrRegion.m */; };
+		123F2107E1B9652596A19D173C9C19A7 /* AZRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5A9C7D3D3CE2DEBA1E850FD87A32D6 /* AZRequestParameters.m */; };
+		1572A3BD2E49F00FE9A212071B8AF6ED /* CSCV_ListModelsResult.h in Headers */ = {isa = PBXBuildFile; fileRef = F76F55EC7A090331E39233688A52D728 /* CSCV_ListModelsResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		169BF3CCB15BC61474498704C02D8BC3 /* CSCV_ImageCaption.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C12D81F5BA2A1EA2617D3A55EB3B796 /* CSCV_ImageCaption.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16C84F43CDFBA2044A221538434CE551 /* AZDefaultErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5C88E77F98D4E8DF7DBB399BCDF9FE /* AZDefaultErrorModel.m */; };
+		1D93B591433EDEC552486DA9B1E17E0E /* AZOperationError.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF4DE84EC7412D829249BCC153692A5 /* AZOperationError.m */; };
+		1F85DCE88D75B679F1CD36DBB27FA9BE /* AzureClientRuntime-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B79478533E4D249594B27DDD245759 /* AzureClientRuntime-dummy.m */; };
 		1FE2478F272D125E1A634F810BE3C0D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C403087E2B58ABE99ED48871F34D7A40 /* Foundation.framework */; };
 		204BBD207A50DE6D36CA74F376789A57 /* Pods-ComputerVisionAzure_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 04A4B8CE7866E765FF7DE4CFDFBA4446 /* Pods-ComputerVisionAzure_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		26F5B07E1A82DAA1E715AACC903E5E58 /* AzureDate.h in Headers */ = {isa = PBXBuildFile; fileRef = BAE8A664AD69DFB4545890EE874EBCA9 /* AzureDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		297962DC3E993AC094491C48F3AECDBA /* ImageCaption.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA921F9CAFA7368F69F0FF41C4BBCC /* ImageCaption.m */; };
-		2A368B170F7BA9C5894C22295758E3FF /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B06B0283C8E2055E0F87FC62C6FAB2 /* ReplaceMe.m */; };
-		2C578E9CDEC1DC4DFCDA048CE2B07F52 /* DefaultErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B21A13B5CCED8EC18343A091B08C3EA6 /* DefaultErrorModel.m */; };
-		2C9F81E61DC1DB3118A1CA7784767128 /* Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 675EFF4E22F6F188A81420EC4A2F5056 /* Details.m */; };
-		32A4BAE3200D22FE7A3618FD064FE84A /* OperationError.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D565BE006182CCD01818D6042852A4 /* OperationError.m */; };
-		32A5FD3367859C05B8D6B35FCBB85CC6 /* ImageType.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A631FA80CAB6D63533605DCC09B9DD /* ImageType.m */; };
+		2C1006ECDBE15D8C1E22866CE781AB3B /* CSCV_ImageDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = A0814B4B43647D1069B42C290D375012 /* CSCV_ImageDescription.m */; };
+		2CFEB075329430A869B441B1E587C109 /* CSCV_ImageMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = A271824B1396B6C7B7C0054054955936 /* CSCV_ImageMetadata.m */; };
+		2F544765B6B31EE15E43CD47A9785200 /* CSCV_ListModelsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2660AC266529B9E984826859217AA5DE /* CSCV_ListModelsResult.m */; };
 		330F66314CF84ABFFB92C03ABC759E81 /* AzureClientRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C09CE897F271F6E9F055B9EE1AFD80 /* AzureClientRuntime.framework */; };
-		3371D2B9AF0AA88CCB9895F9F80FD372 /* AzureClientRuntime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 383FFAF73AB30B1B6782125945C49B54 /* AzureClientRuntime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		33D1379CBF06547AA3A7730BEB5F0A2F /* OcrLanguages.h in Headers */ = {isa = PBXBuildFile; fileRef = 33BE589E27206B98D214B7E9B8667606 /* OcrLanguages.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AFF0B8C6261F0C9244E362D91E6F694 /* FaceDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = FB87074A9BDC2C66C186423D2C6E14AE /* FaceDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3D03B0ADFFCAD71C51E7A81DEC523635 /* ImageTag.h in Headers */ = {isa = PBXBuildFile; fileRef = C492027484F99156F0648B7E6B6BA382 /* ImageTag.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3D620F80B8C638D93DD9D2AD1C86BD55 /* ComputerVisionAzure-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9073BBFF735C3077A3423463E00F53D4 /* ComputerVisionAzure-dummy.m */; };
-		43C912CA403D354A856A5C06B7FE8ACE /* ComputerVisionErrorCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1FD98FBFD464BAD41F8208F1D2534D /* ComputerVisionErrorCodes.m */; };
-		446317D529D568A1D9A458F75C313229 /* LandmarksModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8225D73835C130CC556F12960A398169 /* LandmarksModel.m */; };
-		4588423010BC734AC6B891112075D0B6 /* ComputerVisionClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C0AC1571483E478078B7F33289ED58E /* ComputerVisionClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		466BADAF1FE7E463D80EF847104AC223 /* ImageMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 58684BF97246CF31E89E3A844E63CD5C /* ImageMetadata.m */; };
-		4B4E0E30D029C042FD5F53C382E41FD9 /* ComputerVisionError.m in Sources */ = {isa = PBXBuildFile; fileRef = FA30CB84FC1619FB5DCE0ADDD9D0B4C9 /* ComputerVisionError.m */; };
-		4CB78B45B087396A9B80339BF8E1310B /* Coder.h in Headers */ = {isa = PBXBuildFile; fileRef = 39D32CDE0B2F7B321B8359C57CAD4865 /* Coder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4FA5D50DDF94D503500C1112FFE2D2D8 /* ComputerVisionErrorCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = F1E0B47CCDF41086F0490CEF08E0B537 /* ComputerVisionErrorCodes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4FA6F1A6454C2A11C9034878A4DA9F93 /* ColorInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F86FE1877085014F1CDDDC397A80118 /* ColorInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4FF01A7AE25EF29A57170B27FE710084 /* AdultInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 55309A4696D063CF479173B82385FD7A /* AdultInfo.m */; };
-		5328AE41C0889C871F2E218D5ACC9270 /* AzureDate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CEDFDE0717B171B50584A094004ABB /* AzureDate.m */; };
-		53CAD4153C7C10F09CA07DE466F023D2 /* VisualFeatureTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = F74E679DD6BAC7C73E80A588BCB7C9B1 /* VisualFeatureTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5714F91CF89B5964A49F96F784891E23 /* CelebritiesModel.h in Headers */ = {isa = PBXBuildFile; fileRef = A8D2BDA525320FB0EEC5053923306E62 /* CelebritiesModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5AAEFC1988F9737B637B5F8206284471 /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 394CC5BD0A47E8155504F45D15D81E66 /* RequestHelper.m */; };
-		5D887907DF357DD259E0496B3240EC90 /* RequestHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = D6EF3A75DE50F7F78419FE3FC7EE95ED /* RequestHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5EACD88DFCE622CCE43BCEF5F1E6F143 /* DomainModelResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FAA6613A94704E6772602128965CA4 /* DomainModelResults.m */; };
+		3519E665BA0F4B0491F29F884626BCDF /* CSCV_OcrWord.h in Headers */ = {isa = PBXBuildFile; fileRef = 41612C1FDDBFCAC73CA9ED04F70B4BA0 /* CSCV_OcrWord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3532D4CBD8C11E25388ABB9036DCF32E /* CSCV_TextRecognitionMode.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87EA0A26A1BA4DA2BDE0644E43F27D /* CSCV_TextRecognitionMode.m */; };
+		36E2E3D261B1B79A698BDFAF1CDE0962 /* AZCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 422F6A3EEEBB2366C064AE9657CCED39 /* AZCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		389C08DC9322F6685D1ADDBF57EC4FFA /* CSCV_ImageDescriptionDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7C5050C2F9A656DAD2C7E8D45F75FF /* CSCV_ImageDescriptionDetails.m */; };
+		395E5EEE0AFB4994836016BD9681E82B /* CSCV_ImageAnalysis.h in Headers */ = {isa = PBXBuildFile; fileRef = CEF72B7375F9D873FDEFD7443EDB0405 /* CSCV_ImageAnalysis.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A536D5193DAFE8897409A6D5C64F2D7 /* CSCV_CelebrityResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2505E367ED1574D746C7F1C542A1F /* CSCV_CelebrityResults.m */; };
+		4118CABCB15903CED6D61E6372FBF6F2 /* CSCV_VisualFeatureTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 10B1A25C9CE048AA9C5752DE3F8CE944 /* CSCV_VisualFeatureTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		421D0AABC9D47DB71EAE8964282D17A3 /* CSCV_CelebritiesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C830AF27C061B9984A56BA6791F44FF1 /* CSCV_CelebritiesModel.m */; };
+		4708B1478281FDB4EBF15E6D9AEAB293 /* CSCV_ImageUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D583EEB04435572B7DAFB83369582E /* CSCV_ImageUrl.m */; };
+		4B213145F772114EC0B27FA8529CABD4 /* CSCV_ComputerVisionError.m in Sources */ = {isa = PBXBuildFile; fileRef = B863E91639CC381F4AA3A8ED7AA5985B /* CSCV_ComputerVisionError.m */; };
+		4DB0C5C20242F3CA05B1D2A1D5BB4720 /* CSCV_AdultInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C86E18574D5C951A1FDD80FCD8507CB8 /* CSCV_AdultInfo.m */; };
+		522F1035E7D710011B19542F14178567 /* CSCV_ImageDescriptionDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 28DCBFC730DE233C5063CBC158237954 /* CSCV_ImageDescriptionDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		537F5FE0505C87159FEBF1F889C0EA9D /* AzureTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 62719D5693BAF37600F35437832CF6FE /* AzureTypes.m */; };
+		538BF93ABE4D59C1786A28AF3E34936D /* CSCV_TextRecognitionMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 21773DC506A586CC4D80C51BE049007F /* CSCV_TextRecognitionMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5616FE34E06BBBA4E8C15AD701412018 /* CSCV_ComputerVisionClientService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B7A11B4A947FBE8344B3CE9F5137837 /* CSCV_ComputerVisionClientService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A3CDAA672B2034D45BB203D4862C85C /* AZRequestParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F415308B0C0B15856D1638E4B7B39EC /* AZRequestParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AF7BC0B2AC456A23F18DDCCC7754AF6 /* CSCV_ModelDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = F3A25600A2D6CACFAE9462B452615FFF /* CSCV_ModelDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E1D15A66D89817D4FFBF80590A963A0 /* AZRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2AAEA0560299B028D8F4CADB35FE07 /* AZRequestHelper.m */; };
+		5E9A762BB68B0E6B8E42050497079280 /* CSCV_FaceRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = FABFD59B1025A310C018FC29D4D9B7FD /* CSCV_FaceRectangle.m */; };
 		5EDF1E6DB0D7CBE90B54436CD715414C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C403087E2B58ABE99ED48871F34D7A40 /* Foundation.framework */; };
-		5F0CB1239B7E3EFF1EC6488F404BAC86 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEF4D69B77CEFB6C791F69C4DC0EA33 /* Category.m */; };
 		60826206317517E90F82BAEFB51BBD74 /* Pods-ComputerVisionAzure_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3374A1D0A85AAF1BEF6D14FC2D39426E /* Pods-ComputerVisionAzure_Example-dummy.m */; };
-		60BCF6194438F912DEADCF8327722358 /* OperationError.h in Headers */ = {isa = PBXBuildFile; fileRef = E962B0F3161462BE2AA88B6B0A46854C /* OperationError.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		61C9CFDECF5965D6A7D83962358091B2 /* Codable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCFA1E80144A0A71603570E45EB81D0 /* Codable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6457FA29CF827BD17C3EC5FD7F9E16C6 /* RequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = AD60892DE985E6FB828002E0B424E188 /* RequestParameters.m */; };
-		659300C745E862E04D899AE0D41B4492 /* ImageTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AC98B57FB5675BD4546F57EFB3FC33 /* ImageTag.m */; };
-		65E86590FB2EA891A0B05764CF1A80C4 /* ImageUrl.h in Headers */ = {isa = PBXBuildFile; fileRef = CF3F27CFBB3C359A2ED69211B3AFD234 /* ImageUrl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61B272BD791C732819EF5A21ED8BC5A9 /* AZJsonCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C03FF4316556F94CC30CA669F2591A7 /* AZJsonCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6580A53E2728D096C39E4E7B11ECAF02 /* AZRequestHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 19C135D5FFB38ED9FA0B227628E81A48 /* AZRequestHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65E7192FC5E2178E5A51A62AA1FB605E /* CSCV_ImageCaption.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EACF8274FF50F645F8B2879286E7FC /* CSCV_ImageCaption.m */; };
 		66A39F1B9FE6B06C82C44D87EE66F769 /* Pods-ComputerVisionAzure_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE47F73C01542196AC42D3C6B48BE549 /* Pods-ComputerVisionAzure_Tests-dummy.m */; };
-		68BE585BFED374FDBFD4A194494F0646 /* FaceRectangle.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1E76A4C550A2B8F995D6BCD6DCD065 /* FaceRectangle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6D0620936556CACDDA4C33FDCC170E89 /* Category.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EBBC2E9C6D7B3FE1374377684BE3C5E /* Category.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6F97C118B50A2EDCB9C5BF19B4AD44E5 /* OcrWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D3DE155751766E6245D4ECA18CFCA0 /* OcrWord.m */; };
-		72A95DF03E6C74EE585B97F50F840FA2 /* VisualFeatureTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = D67EF12C6CD3C7885850DE2F54641D53 /* VisualFeatureTypes.m */; };
-		77ADDB4656A4BA8E286F30184B49F097 /* RequestParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = D726C000FAA81CBBDD376CD964F49C75 /* RequestParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7A75B307E473102BA912D055265F7CC3 /* Gender.h in Headers */ = {isa = PBXBuildFile; fileRef = F5EB09351A2F7EBFCF6A08CCE4F1D249 /* Gender.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		80B9FCE83517784A9CA3576FE589A16F /* CelebrityResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BBC264D52A619F25BD37CADFE4EB280 /* CelebrityResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		82592A229534E47CC2E2B5E5ABBDC59A /* DefaultErrorModel.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAABF29005826DC2975A897EBC8E9DA /* DefaultErrorModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		826BC21CE6AE65FBC8BFEBBF9739F4E2 /* ComputerVisionAzure-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 838742E38F672B04BE0F713CF4F78DB7 /* ComputerVisionAzure-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		82D9CD457121BFB84B828BA59BBECA12 /* OcrRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 012A36AB1EB6FF38F4B9319BD2CE44E9 /* OcrRegion.m */; };
-		83D34010D497CF59A1E9E17A7A3A097F /* ImageDescriptionDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = E8C85B5FCD9C74C55907F7A5AE8406EF /* ImageDescriptionDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84D20A92C6B8D0F485F23F0F15379C6C /* ColorInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8F6CA27D6F612F7C2C086A32FA0776 /* ColorInfo.m */; };
-		84FF4359077CED0BDB4B715D85884807 /* OcrResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ED0737AC34C58B384C4CA09599B5084 /* OcrResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		86C632A51C50D3718B8C015DED3030F0 /* Details.h in Headers */ = {isa = PBXBuildFile; fileRef = 836A75F008D44F20B8DF96045CCEA6C4 /* Details.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		88D81AA79E0D556218C7A7688E777E7D /* AzureClientRuntime-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF7391626FF1DF3170CFB3981A4E03 /* AzureClientRuntime-dummy.m */; };
-		8AA7A91C8997AC60731CEB8350043CE8 /* ComputerVisionError.h in Headers */ = {isa = PBXBuildFile; fileRef = E7532195066946E64E1B4EF01A26E00C /* ComputerVisionError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6BEAE4C0879CB629F523269DFEE0742D /* CSCV_AdultInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = C26C6D8A76184E5B182F5C90525DCB1C /* CSCV_AdultInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C7DC75535AEDEDEE8D13F255FCEBBCA /* AZJsonCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CB85512BFD73AE9C60C7B369984D7F7B /* AZJsonCoder.m */; };
+		6CA10B17BFF1C3A1D5A9368E103F27E9 /* CSCV_OcrLine.h in Headers */ = {isa = PBXBuildFile; fileRef = EBB83B80266119168852C71ECFBE9DF3 /* CSCV_OcrLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DAF6D2B48D33E748AB7BD1743C53A5E /* CSCV_CelebritiesModel.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AD454A2CBE1D400DBC32692CA48592 /* CSCV_CelebritiesModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DE6C9F729289916EA4A20D9B0B90E6D /* CSCV_ComputerVisionError.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BBF5E973B7611C8C9D4509A1EE05572 /* CSCV_ComputerVisionError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7065148843749B5D7D08C3FE8A377DD0 /* AzureDate.m in Sources */ = {isa = PBXBuildFile; fileRef = A79019659894C76FFCA4530894195FCA /* AzureDate.m */; };
+		758E3815622BC92ED6F6558CC42AB81D /* CSCV_ColorInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 9788558DC28D43107DF759037AD1F64B /* CSCV_ColorInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76215408AA629372DA3B80581393D559 /* AZDefaultErrorModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 557C5E4486BB019431BC4006D3F676FB /* AZDefaultErrorModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7859511D01326094F7CE268670134054 /* CSCV_FaceDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A821ED1FE1F024A559AE61CC131BCD /* CSCV_FaceDescription.m */; };
+		7E4982173BC84E60EA376828E85715A2 /* CSCV_DomainModelResults.h in Headers */ = {isa = PBXBuildFile; fileRef = BCE3C231B3C7EE84B86BF8A7FD08780D /* CSCV_DomainModelResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E9576506C3DE6DC48923058CF572ED6 /* CSCV_Category.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFAB827B3F2B4CD430F05CA2282B02D /* CSCV_Category.m */; };
+		8172B2CD4A602A4BCE140C75F3924CDF /* CSCV_OcrLanguages.h in Headers */ = {isa = PBXBuildFile; fileRef = 17B2BA07149438EFE8EA575DC01D13E0 /* CSCV_OcrLanguages.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		85C3C7775F02E37370BB2C574B830403 /* CSCV_TagResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DB9DA69439EF28C70D28A7546AD3444 /* CSCV_TagResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89252CF9B615B2130A606DBAC03A9E8E /* CSCV_ImageUrl.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E4A2F25E2E18F3E36DFFDD17193ADCA /* CSCV_ImageUrl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8ADC366F9E67F963F07802E3D39ACC45 /* ComputerVisionAzure-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 44392BD313BD7FD9D757E2D70D0D2B2A /* ComputerVisionAzure-dummy.m */; };
 		9109E613D81C6CCA67ECAE066B6531CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C403087E2B58ABE99ED48871F34D7A40 /* Foundation.framework */; };
-		92DC171E6149053E33AF6C9E313EFDCE /* ImageDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C54E7C30FD8A11B754E5159E5D5349 /* ImageDescription.m */; };
-		93395699C55886506A98265794D3B957 /* AzureTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 604300106FF727446C3FD3D0B4B4710C /* AzureTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		98EC8AB417D0C8048E243A4E1780CD88 /* LandmarksModel.h in Headers */ = {isa = PBXBuildFile; fileRef = B638F1977AA18F0256328D072B75C96E /* LandmarksModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9A69225CA47411F9691D5C0803C0066F /* LandmarkResults.h in Headers */ = {isa = PBXBuildFile; fileRef = FFB20BE13A65A5D32E873C4644E5E61D /* LandmarkResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C085047F68CD3AA4FDEDACE2AC313F2 /* OcrWord.h in Headers */ = {isa = PBXBuildFile; fileRef = A5F4DB47CEB18155FA0347A1A1749B1E /* OcrWord.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A549AABF156CAE149ABB1949415A9607 /* ImageDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = A3D887FF6A5A3DBDD444359521CCBBBF /* ImageDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9753C771C32368EAE3D0C963EF18E062 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2B4158C73CED763B9D333A514B67A /* ReplaceMe.m */; };
+		9AEF9C768859B5B32EAB472A90D70922 /* CSCV_OcrLanguages.m in Sources */ = {isa = PBXBuildFile; fileRef = 071DBEB0BEEF76CA48EDDDA91E6899E2 /* CSCV_OcrLanguages.m */; };
+		A00200011A53A24FBECF92B7B65DFC33 /* CSCV_ImageTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DA13BBFB7BE69CB59F55F2C7AAF5AC9 /* CSCV_ImageTag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0CC70CA0A9C576EA5A8DF00C475017D /* AZCodable.h in Headers */ = {isa = PBXBuildFile; fileRef = 974A14947F618C253CAB4BE258DC33D2 /* AZCodable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A8DD9F696F11D9A0CEF96549910DC437 /* Pods-ComputerVisionAzure_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DD0E5705EA51864755A28C76C93C3B /* Pods-ComputerVisionAzure_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AC792BEB14923CF4974D4972F4822E64 /* OcrLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FA9E5802BA7FDDAC06C1C7D8B0D426 /* OcrLine.m */; };
 		ACA7708271E53AE332C5383117C7588B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C403087E2B58ABE99ED48871F34D7A40 /* Foundation.framework */; };
-		ADB79244E8FF3A4DE33EE78D9DAB2CA2 /* ImageAnalysis.h in Headers */ = {isa = PBXBuildFile; fileRef = 729841391E8841A64E792F6CFAEF927F /* ImageAnalysis.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0313D1E216C744DF87DEFA126ECA348 /* JsonCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 258210048EFA184EFC23A3CA40521652 /* JsonCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B12E1231BD3A4F43B998709B77E98F37 /* OcrLanguages.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AF45F1B0A8FB1B9D45C7A0B8D0FD17 /* OcrLanguages.m */; };
-		BAEC1F45B16CA197720431680D310AD0 /* ImageUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4088826B9B6EAC1C8B8DCA886B948898 /* ImageUrl.m */; };
-		BB95351D924E490F15C1B54C0D3DB915 /* CategoryDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4055360CB2F4F36544FEBCFB0A1D38 /* CategoryDetail.m */; };
-		BC9A0ABB49754869982D9BBCBBBA5E86 /* ImageAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EF0D834D639FC3B030DF44AAD0F183 /* ImageAnalysis.m */; };
-		C04974601EF70A4A162AFE23FC59422F /* TagResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C082455F197BD3D5796D84755709863 /* TagResult.m */; };
-		C50701CE2606D30CB1DCC4777AFAA083 /* CelebritiesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 436950662FFA94F5B3E92098C9F35114 /* CelebritiesModel.m */; };
-		C94823E697D968AAA228C461516FF0E4 /* AdultInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 74C3DE10BC3F7DFA135D53E6F24E6FAD /* AdultInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB5AAEE0C1D0FE4A19A42DCDA03D9916 /* AzureTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FA404E59480862C99AE39CB203AC02 /* AzureTypes.m */; };
-		DE622DEDA818780478A2A1E1B5F57495 /* ListModelsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 783FD51971881A707536EF710A31D104 /* ListModelsResult.m */; };
-		E1ED8A7000F55FB86A20B0B8C3EDBC07 /* Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC506D2F3BF6AD18C26CB90D96377A /* Gender.m */; };
-		E36435574CAFCF3C9CA64CA638D6EC95 /* FaceDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A30A2DA9C0F8C03ABBF9DC69B4CB5B2 /* FaceDescription.m */; };
-		E49333EC2296564D27F2E24E26F4E098 /* OcrLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B8110286BB753DDDFEDF5C48138D47F /* OcrLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E5253515653FFC8BB043806B3E0A5C91 /* CelebrityResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0843362DE5944DCEE84499CB378822B3 /* CelebrityResults.m */; };
-		E83101C5FA92B431AB1FB5286911B137 /* OcrRegion.h in Headers */ = {isa = PBXBuildFile; fileRef = 97854C1122419329A2F84C75E44F8022 /* OcrRegion.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E976BC7DB8CA8852C1FB2995A3D1C619 /* DomainModelResults.h in Headers */ = {isa = PBXBuildFile; fileRef = CA827D9CAF2FEAF8A63A7ECBA5DE433E /* DomainModelResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E9CB58D632AF9666FCE51002096F21BB /* ImageType.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B88BFA7D3CC0BCA9C96A1EF910B9C2A /* ImageType.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA001A39BD0ABABDB5EC2DFB79D6EB57 /* FaceRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = BE64432FABFEB3EA84EF3DE839AD6E99 /* FaceRectangle.m */; };
-		EAEFE956F14E55537737666628515224 /* ComputerVisionClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A37710F4927FA2EB85468245FC1FD8D /* ComputerVisionClient.m */; };
-		F0712AB3A11120B15AAE02A473F07554 /* ImageDescriptionDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF6498B1F5A25195F7FA02CC9BBD904 /* ImageDescriptionDetails.m */; };
-		F0F7AC633205DD4D2B6B49DD7646AB48 /* ImageCaption.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A5415F13D1EB43F8AACB8DBB64672E8 /* ImageCaption.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F75160C51B46DE33B78AAF9EAD8F4EDC /* JsonCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D47DCE289DCA990C0D36796A62588044 /* JsonCoder.m */; };
-		F9EE83538FBC7E64494A946219DB813C /* ListModelsResult.h in Headers */ = {isa = PBXBuildFile; fileRef = A134CB89B435091A6BB5EE695FA8C4A8 /* ListModelsResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FDA603567897FFC0F2F416A7A37667AE /* CategoryDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 842093B06BE9C33E08F9AA99A76321EC /* CategoryDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADAC3093478DB54A28EC1B1075DD2ED2 /* CSCV_LandmarkResults.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E1E2F6C3F4621F11B597911FF021C /* CSCV_LandmarkResults.m */; };
+		B0E4827BB302007E3B3E70247B7221DE /* CSCV_ComputerVisionErrorCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4E39057317EB2039E46374A9532620 /* CSCV_ComputerVisionErrorCodes.m */; };
+		B113172E676E7B1BE2B859F7CC7D54E9 /* CSCV_OcrLine.m in Sources */ = {isa = PBXBuildFile; fileRef = AA768045140DEF377DD743293FB1055C /* CSCV_OcrLine.m */; };
+		B1A51841F11E5F458AB905763C18BFDA /* CSCV_ComputerVisionClientService.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B001F5091F637A47784EDAECC6A166 /* CSCV_ComputerVisionClientService.m */; };
+		B2B4F65835645E645043E2D5C6940083 /* CSCV_LandmarkResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FC56355FA5F087C6EA73B493C81FCC5 /* CSCV_LandmarkResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B77EA6309F1A147AE04688F04F0258F1 /* CSCV_FaceRectangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 8678682D55334666A480E58BD678A474 /* CSCV_FaceRectangle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B928E0AE7354431CF3666D554706321F /* CSCV_FaceDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF61411783C451C7F672B580F1C2117 /* CSCV_FaceDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9FF8EF8D342AD668A0CCC14D45EEF68 /* CSCV_VisualFeatureTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = F616A7F3EF2DAFD737520093EDCC7373 /* CSCV_VisualFeatureTypes.m */; };
+		BDCD4CCC83718EB0BFAF230F37413828 /* CSCV_Details.h in Headers */ = {isa = PBXBuildFile; fileRef = 02EF4F7C54A8447E343E0C677701B862 /* CSCV_Details.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0CA4D06410919FD54DAB36A1C97E5AD /* AzureTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A58F27097EF96901AD1AFD51931EA7F /* AzureTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3387175C2CAEC9DE230ED02A2ECD411 /* CSCV_DomainModelResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CBC5D3E18DC854314757E689646641 /* CSCV_DomainModelResults.m */; };
+		C41225D962B66E1A6940C802E58C2464 /* ComputerVisionAzure-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2E73DFF76AB04D9081E3655D5F7D67E /* ComputerVisionAzure-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5886F9E7AC0FD9F33DEF5F939E7FB00 /* CSCV_Gender.h in Headers */ = {isa = PBXBuildFile; fileRef = 4377A0530544673EF0CAB0325E369FA8 /* CSCV_Gender.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6F59C17C75DE1F1A7045F037AFD297E /* CSCV_ImageType.m in Sources */ = {isa = PBXBuildFile; fileRef = 6152D38F35B9D82A27BDDDD5B7C5603E /* CSCV_ImageType.m */; };
+		C761E90CBB40EDF791B13F5D3EFF0B5F /* CSCV_ColorInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0737B5C88C058884F98747F015B358 /* CSCV_ColorInfo.m */; };
+		CC58FC116277A28747FDA12FFBE4E78C /* CSCV_ImageDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = C505FFBBD612C77A041DADB24320615B /* CSCV_ImageDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D25C866D92605EA6F23EF37648E134C3 /* CSCV_ImageType.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CA3B830B2D8892EEAA79CF8298F2AF /* CSCV_ImageType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D51BA3E836002070D7953F2903F608CB /* CSCV_ImageAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 610893D6540575CD45CD4C4CEC6C5A2B /* CSCV_ImageAnalysis.m */; };
+		D5E0B1658878EEE76A55CD7C569B27B2 /* CSCV_Category.h in Headers */ = {isa = PBXBuildFile; fileRef = BDD3EA114C04B8ED71A054578E37A8D2 /* CSCV_Category.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD7A48EC30952C7F1EF490AD0D5BAA3F /* CSCV_Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8705840ABCE6E97449A8804FD758BA /* CSCV_Gender.m */; };
+		E6B5D2FBC60577890805CDD9DA5695CB /* CSCV_CategoryDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 71E221DA531924D06EB8152FDB320CC1 /* CSCV_CategoryDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9C6EEC8094C11721E4BD234C005437C /* CSCV_Details.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE7CC57333ED9B8D5C4FF7B45D74BB9 /* CSCV_Details.m */; };
+		ED11E416870E06D78EAE7A3C53E58582 /* CSCV_OcrResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B4122709991531FADF5BE305F606DBA0 /* CSCV_OcrResult.m */; };
+		F17C553924548464F6066D7D02FBE318 /* CSCV_OcrResult.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B6B011FBC9F698549913C0DC4935D7 /* CSCV_OcrResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5FEBAA084C0730FCB758FF071256D6A /* CSCV_CelebrityResults.h in Headers */ = {isa = PBXBuildFile; fileRef = BDDCC3FD1F36E6D34B8504FA9C28B71F /* CSCV_CelebrityResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F70A9461282DBF34E826AF1C6683B200 /* CSCV_TagResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8FDB52C687734F182F6012148AA864 /* CSCV_TagResult.m */; };
+		FAD76B3F982D5A85B9C4B3CBBA9AE4FE /* AZOperationError.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8F30502D6C67FA1DBA85306C40C4FC /* AZOperationError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD05FAAD85DBBD310DD6ADBBBBD1281D /* CSCV_ModelDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FA0234A09C22DD711F390B48113B29 /* CSCV_ModelDescription.m */; };
+		FD53AA8D9228DA0A77235BDF9B343DC6 /* CSCV_ImageTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D1662559AD4770003D2D404B1134F /* CSCV_ImageTag.m */; };
+		FE72D34DE68B4DB8303F3A588EE1C172 /* CSCV_CategoryDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FC9EF94B69A7B18A798FAF673D716 /* CSCV_CategoryDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,133 +139,133 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00C54E7C30FD8A11B754E5159E5D5349 /* ImageDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ImageDescription.m; sourceTree = "<group>"; };
-		012A36AB1EB6FF38F4B9319BD2CE44E9 /* OcrRegion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OcrRegion.m; sourceTree = "<group>"; };
+		02EF4F7C54A8447E343E0C677701B862 /* CSCV_Details.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_Details.h; sourceTree = "<group>"; };
 		04A4B8CE7866E765FF7DE4CFDFBA4446 /* Pods-ComputerVisionAzure_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ComputerVisionAzure_Tests-umbrella.h"; sourceTree = "<group>"; };
 		0551F759D5065A3703DF501A33A1D073 /* Pods-ComputerVisionAzure_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ComputerVisionAzure_Tests.modulemap"; sourceTree = "<group>"; };
+		071DBEB0BEEF76CA48EDDDA91E6899E2 /* CSCV_OcrLanguages.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_OcrLanguages.m; sourceTree = "<group>"; };
 		07DD0E5705EA51864755A28C76C93C3B /* Pods-ComputerVisionAzure_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ComputerVisionAzure_Example-umbrella.h"; sourceTree = "<group>"; };
-		0843362DE5944DCEE84499CB378822B3 /* CelebrityResults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CelebrityResults.m; sourceTree = "<group>"; };
-		08FAA6613A94704E6772602128965CA4 /* DomainModelResults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DomainModelResults.m; sourceTree = "<group>"; };
-		0A30A2DA9C0F8C03ABBF9DC69B4CB5B2 /* FaceDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FaceDescription.m; sourceTree = "<group>"; };
+		08EAA67BCEE3F4BB0100B0A4047A199C /* CSCV_LandmarksModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_LandmarksModel.m; sourceTree = "<group>"; };
+		0BB2505E367ED1574D746C7F1C542A1F /* CSCV_CelebrityResults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_CelebrityResults.m; sourceTree = "<group>"; };
+		0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AzureClientRuntime-umbrella.h"; sourceTree = "<group>"; };
+		10B1A25C9CE048AA9C5752DE3F8CE944 /* CSCV_VisualFeatureTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_VisualFeatureTypes.h; sourceTree = "<group>"; };
 		1512942B79B7541B5CF52C394EF741BE /* Pods-ComputerVisionAzure_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ComputerVisionAzure_Example.release.xcconfig"; sourceTree = "<group>"; };
-		1532B4A335F788D4C0265D6F3A79205A /* Pods_ComputerVisionAzure_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ComputerVisionAzure_Example.framework; path = "Pods-ComputerVisionAzure_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		17018E157D09240E5161B87271E29021 /* ImageMetadata.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ImageMetadata.h; sourceTree = "<group>"; };
-		17D565BE006182CCD01818D6042852A4 /* OperationError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OperationError.m; path = AzureClientRuntime/Classes/OperationError.m; sourceTree = "<group>"; };
+		1532B4A335F788D4C0265D6F3A79205A /* Pods_ComputerVisionAzure_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComputerVisionAzure_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17B2BA07149438EFE8EA575DC01D13E0 /* CSCV_OcrLanguages.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_OcrLanguages.h; sourceTree = "<group>"; };
+		18E63F08B05D6DF28D8D69F72385D65A /* CSCV_OcrRegion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_OcrRegion.m; sourceTree = "<group>"; };
 		195CA0C52EBB7DB94A495E6E486737AC /* Pods-ComputerVisionAzure_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ComputerVisionAzure_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		1B88BFA7D3CC0BCA9C96A1EF910B9C2A /* ImageType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ImageType.h; sourceTree = "<group>"; };
-		1CCFA1E80144A0A71603570E45EB81D0 /* Codable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Codable.h; path = AzureClientRuntime/Classes/Codable.h; sourceTree = "<group>"; };
+		19C135D5FFB38ED9FA0B227628E81A48 /* AZRequestHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZRequestHelper.h; path = AzureClientRuntime/Classes/AZRequestHelper.h; sourceTree = "<group>"; };
+		1A2D1662559AD4770003D2D404B1134F /* CSCV_ImageTag.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_ImageTag.m; sourceTree = "<group>"; };
+		1B7A11B4A947FBE8344B3CE9F5137837 /* CSCV_ComputerVisionClientService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSCV_ComputerVisionClientService.h; path = ComputerVisionAzure/Classes/CSCV_ComputerVisionClientService.h; sourceTree = "<group>"; };
 		1CFF08DB8891F27CE52B76B55F1855A0 /* Pods-ComputerVisionAzure_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ComputerVisionAzure_Tests-resources.sh"; sourceTree = "<group>"; };
-		258210048EFA184EFC23A3CA40521652 /* JsonCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JsonCoder.h; path = AzureClientRuntime/Classes/JsonCoder.h; sourceTree = "<group>"; };
-		2C082455F197BD3D5796D84755709863 /* TagResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TagResult.m; sourceTree = "<group>"; };
+		1FF61411783C451C7F672B580F1C2117 /* CSCV_FaceDescription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_FaceDescription.h; sourceTree = "<group>"; };
+		21773DC506A586CC4D80C51BE049007F /* CSCV_TextRecognitionMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_TextRecognitionMode.h; sourceTree = "<group>"; };
+		22B2B4158C73CED763B9D333A514B67A /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = ComputerVisionAzure/Classes/ReplaceMe.m; sourceTree = "<group>"; };
+		2330A7AF6431783780F05593E5544D3E /* ComputerVisionAzure.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ComputerVisionAzure.xcconfig; sourceTree = "<group>"; };
+		2660AC266529B9E984826859217AA5DE /* CSCV_ListModelsResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_ListModelsResult.m; sourceTree = "<group>"; };
+		28DCBFC730DE233C5063CBC158237954 /* CSCV_ImageDescriptionDetails.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_ImageDescriptionDetails.h; sourceTree = "<group>"; };
+		2C03FF4316556F94CC30CA669F2591A7 /* AZJsonCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZJsonCoder.h; path = AzureClientRuntime/Classes/AZJsonCoder.h; sourceTree = "<group>"; };
+		2C8F30502D6C67FA1DBA85306C40C4FC /* AZOperationError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZOperationError.h; path = AzureClientRuntime/Classes/AZOperationError.h; sourceTree = "<group>"; };
+		2D0737B5C88C058884F98747F015B358 /* CSCV_ColorInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_ColorInfo.m; sourceTree = "<group>"; };
+		2DA13BBFB7BE69CB59F55F2C7AAF5AC9 /* CSCV_ImageTag.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_ImageTag.h; sourceTree = "<group>"; };
+		2DB9DA69439EF28C70D28A7546AD3444 /* CSCV_TagResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_TagResult.h; sourceTree = "<group>"; };
 		3374A1D0A85AAF1BEF6D14FC2D39426E /* Pods-ComputerVisionAzure_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ComputerVisionAzure_Example-dummy.m"; sourceTree = "<group>"; };
-		33BE589E27206B98D214B7E9B8667606 /* OcrLanguages.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OcrLanguages.h; sourceTree = "<group>"; };
 		3561A3DD61E256D2B707E908E5F9F4F6 /* Pods-ComputerVisionAzure_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ComputerVisionAzure_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		36FA404E59480862C99AE39CB203AC02 /* AzureTypes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AzureTypes.m; path = AzureClientRuntime/Classes/AzureTypes.m; sourceTree = "<group>"; };
-		383FFAF73AB30B1B6782125945C49B54 /* AzureClientRuntime-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AzureClientRuntime-umbrella.h"; sourceTree = "<group>"; };
-		394CC5BD0A47E8155504F45D15D81E66 /* RequestHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RequestHelper.m; path = AzureClientRuntime/Classes/RequestHelper.m; sourceTree = "<group>"; };
-		39D32CDE0B2F7B321B8359C57CAD4865 /* Coder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Coder.h; path = AzureClientRuntime/Classes/Coder.h; sourceTree = "<group>"; };
-		3BBA921F9CAFA7368F69F0FF41C4BBCC /* ImageCaption.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ImageCaption.m; sourceTree = "<group>"; };
-		3C0796455BF44C1B9363FD2CB05DA39C /* AzureClientRuntime.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AzureClientRuntime.xcconfig; sourceTree = "<group>"; };
-		3C0AC1571483E478078B7F33289ED58E /* ComputerVisionClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ComputerVisionClient.h; path = ComputerVisionAzure/Classes/ComputerVisionClient.h; sourceTree = "<group>"; };
-		3EFCE0C4602A1209E251918420405763 /* ComputerVisionAzure.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ComputerVisionAzure.xcconfig; sourceTree = "<group>"; };
-		4088826B9B6EAC1C8B8DCA886B948898 /* ImageUrl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ImageUrl.m; sourceTree = "<group>"; };
-		418C4CFAB53F57224689B39F50D7D83D /* ModelDescription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ModelDescription.h; sourceTree = "<group>"; };
-		42FA9E5802BA7FDDAC06C1C7D8B0D426 /* OcrLine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OcrLine.m; sourceTree = "<group>"; };
-		436950662FFA94F5B3E92098C9F35114 /* CelebritiesModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CelebritiesModel.m; sourceTree = "<group>"; };
-		44A631FA80CAB6D63533605DCC09B9DD /* ImageType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ImageType.m; sourceTree = "<group>"; };
+		41612C1FDDBFCAC73CA9ED04F70B4BA0 /* CSCV_OcrWord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_OcrWord.h; sourceTree = "<group>"; };
+		422F6A3EEEBB2366C064AE9657CCED39 /* AZCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZCoder.h; path = AzureClientRuntime/Classes/AZCoder.h; sourceTree = "<group>"; };
+		4377A0530544673EF0CAB0325E369FA8 /* CSCV_Gender.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_Gender.h; sourceTree = "<group>"; };
+		44392BD313BD7FD9D757E2D70D0D2B2A /* ComputerVisionAzure-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ComputerVisionAzure-dummy.m"; sourceTree = "<group>"; };
 		45A489F9C529D2F656665BA3A379556B /* Pods-ComputerVisionAzure_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ComputerVisionAzure_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		45BC506D2F3BF6AD18C26CB90D96377A /* Gender.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Gender.m; sourceTree = "<group>"; };
-		48AC98B57FB5675BD4546F57EFB3FC33 /* ImageTag.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ImageTag.m; sourceTree = "<group>"; };
-		48AF45F1B0A8FB1B9D45C7A0B8D0FD17 /* OcrLanguages.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OcrLanguages.m; sourceTree = "<group>"; };
-		4E4055360CB2F4F36544FEBCFB0A1D38 /* CategoryDetail.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CategoryDetail.m; sourceTree = "<group>"; };
-		4ED0737AC34C58B384C4CA09599B5084 /* OcrResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OcrResult.h; sourceTree = "<group>"; };
-		4F1FD98FBFD464BAD41F8208F1D2534D /* ComputerVisionErrorCodes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ComputerVisionErrorCodes.m; sourceTree = "<group>"; };
-		5529C36483FDDDA9F85BEC8FBA7F604E /* TagResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TagResult.h; sourceTree = "<group>"; };
-		55309A4696D063CF479173B82385FD7A /* AdultInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AdultInfo.m; sourceTree = "<group>"; };
-		58684BF97246CF31E89E3A844E63CD5C /* ImageMetadata.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ImageMetadata.m; sourceTree = "<group>"; };
-		5A5415F13D1EB43F8AACB8DBB64672E8 /* ImageCaption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ImageCaption.h; sourceTree = "<group>"; };
+		48B6C390914D3AEE4CEC47ABB46798AB /* AzureClientRuntime.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AzureClientRuntime.modulemap; sourceTree = "<group>"; };
+		4A58F27097EF96901AD1AFD51931EA7F /* AzureTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AzureTypes.h; path = AzureClientRuntime/Classes/AzureTypes.h; sourceTree = "<group>"; };
+		4AD2FAA3E879A60B1F7678141CF8EA2E /* ComputerVisionAzure-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ComputerVisionAzure-prefix.pch"; sourceTree = "<group>"; };
+		4F415308B0C0B15856D1638E4B7B39EC /* AZRequestParameters.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZRequestParameters.h; path = AzureClientRuntime/Classes/AZRequestParameters.h; sourceTree = "<group>"; };
+		50CBC5D3E18DC854314757E689646641 /* CSCV_DomainModelResults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_DomainModelResults.m; sourceTree = "<group>"; };
+		53D583EEB04435572B7DAFB83369582E /* CSCV_ImageUrl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_ImageUrl.m; sourceTree = "<group>"; };
+		557C5E4486BB019431BC4006D3F676FB /* AZDefaultErrorModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZDefaultErrorModel.h; path = AzureClientRuntime/Classes/AZDefaultErrorModel.h; sourceTree = "<group>"; };
+		59FA0234A09C22DD711F390B48113B29 /* CSCV_ModelDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_ModelDescription.m; sourceTree = "<group>"; };
+		5C12D81F5BA2A1EA2617D3A55EB3B796 /* CSCV_ImageCaption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_ImageCaption.h; sourceTree = "<group>"; };
+		5D8FDB52C687734F182F6012148AA864 /* CSCV_TagResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_TagResult.m; sourceTree = "<group>"; };
+		5E5A9C7D3D3CE2DEBA1E850FD87A32D6 /* AZRequestParameters.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZRequestParameters.m; path = AzureClientRuntime/Classes/AZRequestParameters.m; sourceTree = "<group>"; };
 		5FC9749424973851353654DC338FB1CE /* Pods-ComputerVisionAzure_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ComputerVisionAzure_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5FF6498B1F5A25195F7FA02CC9BBD904 /* ImageDescriptionDetails.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ImageDescriptionDetails.m; sourceTree = "<group>"; };
-		604300106FF727446C3FD3D0B4B4710C /* AzureTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AzureTypes.h; path = AzureClientRuntime/Classes/AzureTypes.h; sourceTree = "<group>"; };
-		675EFF4E22F6F188A81420EC4A2F5056 /* Details.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Details.m; sourceTree = "<group>"; };
-		67E88FEC597855C8B6E94A789629406A /* ComputerVisionAzure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ComputerVisionAzure.modulemap; sourceTree = "<group>"; };
-		6C1478229FB83F2A29B7C7A007E71B80 /* AzureClientRuntime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AzureClientRuntime.framework; path = AzureClientRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		722D233E9ED7CCEBC84351C12E06D706 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		729841391E8841A64E792F6CFAEF927F /* ImageAnalysis.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ImageAnalysis.h; sourceTree = "<group>"; };
-		74C3DE10BC3F7DFA135D53E6F24E6FAD /* AdultInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdultInfo.h; sourceTree = "<group>"; };
-		75B25557B83BC3F765884FB3FD510D4D /* ComputerVisionAzure-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ComputerVisionAzure-prefix.pch"; sourceTree = "<group>"; };
-		77D3DE155751766E6245D4ECA18CFCA0 /* OcrWord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OcrWord.m; sourceTree = "<group>"; };
-		783FD51971881A707536EF710A31D104 /* ListModelsResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ListModelsResult.m; sourceTree = "<group>"; };
+		610893D6540575CD45CD4C4CEC6C5A2B /* CSCV_ImageAnalysis.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_ImageAnalysis.m; sourceTree = "<group>"; };
+		6152D38F35B9D82A27BDDDD5B7C5603E /* CSCV_ImageType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_ImageType.m; sourceTree = "<group>"; };
+		62719D5693BAF37600F35437832CF6FE /* AzureTypes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AzureTypes.m; path = AzureClientRuntime/Classes/AzureTypes.m; sourceTree = "<group>"; };
+		6BBF5E973B7611C8C9D4509A1EE05572 /* CSCV_ComputerVisionError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_ComputerVisionError.h; sourceTree = "<group>"; };
+		6C1478229FB83F2A29B7C7A007E71B80 /* AzureClientRuntime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AzureClientRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E4A2F25E2E18F3E36DFFDD17193ADCA /* CSCV_ImageUrl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_ImageUrl.h; sourceTree = "<group>"; };
+		6FC56355FA5F087C6EA73B493C81FCC5 /* CSCV_LandmarkResults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_LandmarkResults.h; sourceTree = "<group>"; };
+		70EACF8274FF50F645F8B2879286E7FC /* CSCV_ImageCaption.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_ImageCaption.m; sourceTree = "<group>"; };
+		71E221DA531924D06EB8152FDB320CC1 /* CSCV_CategoryDetail.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_CategoryDetail.h; sourceTree = "<group>"; };
 		7A192567D76BB017F0743068FC76A32B /* Pods-ComputerVisionAzure_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ComputerVisionAzure_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7AEF9030D67FC53B600FE1E2FE7FF79F /* ComputerVisionAzure.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = ComputerVisionAzure.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		7BEF4D69B77CEFB6C791F69C4DC0EA33 /* Category.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
-		7EBBC2E9C6D7B3FE1374377684BE3C5E /* Category.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
-		7F86FE1877085014F1CDDDC397A80118 /* ColorInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ColorInfo.h; sourceTree = "<group>"; };
 		8182934924E6E988CC64142F5F4ED2FA /* Pods-ComputerVisionAzure_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ComputerVisionAzure_Example-resources.sh"; sourceTree = "<group>"; };
-		8225D73835C130CC556F12960A398169 /* LandmarksModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LandmarksModel.m; sourceTree = "<group>"; };
-		836A75F008D44F20B8DF96045CCEA6C4 /* Details.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Details.h; sourceTree = "<group>"; };
-		838742E38F672B04BE0F713CF4F78DB7 /* ComputerVisionAzure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ComputerVisionAzure-umbrella.h"; sourceTree = "<group>"; };
-		842093B06BE9C33E08F9AA99A76321EC /* CategoryDetail.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CategoryDetail.h; sourceTree = "<group>"; };
+		8678682D55334666A480E58BD678A474 /* CSCV_FaceRectangle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_FaceRectangle.h; sourceTree = "<group>"; };
 		867FA23FFA51DF980627AC9195DDBA00 /* Pods-ComputerVisionAzure_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ComputerVisionAzure_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		88B06B0283C8E2055E0F87FC62C6FAB2 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = ComputerVisionAzure/Classes/ReplaceMe.m; sourceTree = "<group>"; };
-		8A37710F4927FA2EB85468245FC1FD8D /* ComputerVisionClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ComputerVisionClient.m; path = ComputerVisionAzure/Classes/ComputerVisionClient.m; sourceTree = "<group>"; };
-		8B8110286BB753DDDFEDF5C48138D47F /* OcrLine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OcrLine.h; sourceTree = "<group>"; };
-		8BBC264D52A619F25BD37CADFE4EB280 /* CelebrityResults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CelebrityResults.h; sourceTree = "<group>"; };
-		9073BBFF735C3077A3423463E00F53D4 /* ComputerVisionAzure-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ComputerVisionAzure-dummy.m"; sourceTree = "<group>"; };
-		90EF0D834D639FC3B030DF44AAD0F183 /* ImageAnalysis.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ImageAnalysis.m; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		97854C1122419329A2F84C75E44F8022 /* OcrRegion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OcrRegion.h; sourceTree = "<group>"; };
+		88A821ED1FE1F024A559AE61CC131BCD /* CSCV_FaceDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_FaceDescription.m; sourceTree = "<group>"; };
+		8BBD61D23F5E80ECA9B63D7729D609ED /* CSCV_OcrRegion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_OcrRegion.h; sourceTree = "<group>"; };
+		8E25183921AD5D8FA4DA0A9F3BF100CF /* AzureDate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AzureDate.h; path = AzureClientRuntime/Classes/AzureDate.h; sourceTree = "<group>"; };
+		8F1E9993059268CF9FF43A4FFB6C5E59 /* AzureClientRuntime.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AzureClientRuntime.xcconfig; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		974A14947F618C253CAB4BE258DC33D2 /* AZCodable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AZCodable.h; path = AzureClientRuntime/Classes/AZCodable.h; sourceTree = "<group>"; };
+		9788558DC28D43107DF759037AD1F64B /* CSCV_ColorInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_ColorInfo.h; sourceTree = "<group>"; };
 		99C09CE897F271F6E9F055B9EE1AFD80 /* AzureClientRuntime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AzureClientRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DCF7391626FF1DF3170CFB3981A4E03 /* AzureClientRuntime-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AzureClientRuntime-dummy.m"; sourceTree = "<group>"; };
 		9DFF1FE9F6B2350A7CD235D8C1E56D00 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A134CB89B435091A6BB5EE695FA8C4A8 /* ListModelsResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ListModelsResult.h; sourceTree = "<group>"; };
+		A0814B4B43647D1069B42C290D375012 /* CSCV_ImageDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_ImageDescription.m; sourceTree = "<group>"; };
+		A271824B1396B6C7B7C0054054955936 /* CSCV_ImageMetadata.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_ImageMetadata.m; sourceTree = "<group>"; };
 		A366ECC466963E716EF8A81F8236261B /* Pods-ComputerVisionAzure_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ComputerVisionAzure_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		A3D887FF6A5A3DBDD444359521CCBBBF /* ImageDescription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ImageDescription.h; sourceTree = "<group>"; };
-		A5F4DB47CEB18155FA0347A1A1749B1E /* OcrWord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OcrWord.h; sourceTree = "<group>"; };
-		A8D2BDA525320FB0EEC5053923306E62 /* CelebritiesModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CelebritiesModel.h; sourceTree = "<group>"; };
+		A4B6B011FBC9F698549913C0DC4935D7 /* CSCV_OcrResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_OcrResult.h; sourceTree = "<group>"; };
+		A79019659894C76FFCA4530894195FCA /* AzureDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AzureDate.m; path = AzureClientRuntime/Classes/AzureDate.m; sourceTree = "<group>"; };
+		A8ACED2BDD47D6166FBB55CF4610176F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A90C6315CA9A3516E1693CDEB3BD8205 /* Pods-ComputerVisionAzure_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ComputerVisionAzure_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		AD60892DE985E6FB828002E0B424E188 /* RequestParameters.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RequestParameters.m; path = AzureClientRuntime/Classes/RequestParameters.m; sourceTree = "<group>"; };
-		B21A13B5CCED8EC18343A091B08C3EA6 /* DefaultErrorModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DefaultErrorModel.m; path = AzureClientRuntime/Classes/DefaultErrorModel.m; sourceTree = "<group>"; };
-		B638F1977AA18F0256328D072B75C96E /* LandmarksModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LandmarksModel.h; sourceTree = "<group>"; };
-		B6E82B07FE4D550AE4917109F033A5F4 /* Pods_ComputerVisionAzure_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ComputerVisionAzure_Tests.framework; path = "Pods-ComputerVisionAzure_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA768045140DEF377DD743293FB1055C /* CSCV_OcrLine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_OcrLine.m; sourceTree = "<group>"; };
+		ACCDB7F2A5A0BADEC8968B4FF842AF56 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AFE7CC57333ED9B8D5C4FF7B45D74BB9 /* CSCV_Details.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_Details.m; sourceTree = "<group>"; };
+		AFF4DE84EC7412D829249BCC153692A5 /* AZOperationError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZOperationError.m; path = AzureClientRuntime/Classes/AZOperationError.m; sourceTree = "<group>"; };
+		B0B79478533E4D249594B27DDD245759 /* AzureClientRuntime-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AzureClientRuntime-dummy.m"; sourceTree = "<group>"; };
+		B4122709991531FADF5BE305F606DBA0 /* CSCV_OcrResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_OcrResult.m; sourceTree = "<group>"; };
+		B53774460107D52F0E0DA62013E5B88F /* CSCV_ComputerVisionErrorCodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_ComputerVisionErrorCodes.h; sourceTree = "<group>"; };
+		B5AD454A2CBE1D400DBC32692CA48592 /* CSCV_CelebritiesModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_CelebritiesModel.h; sourceTree = "<group>"; };
+		B6E82B07FE4D550AE4917109F033A5F4 /* Pods_ComputerVisionAzure_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComputerVisionAzure_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A89197CBC5B44A82817C2F19A4CED2 /* Pods-ComputerVisionAzure_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ComputerVisionAzure_Example-frameworks.sh"; sourceTree = "<group>"; };
-		B91591FA88D9AD53EAA6B17CDD3B16A7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAE8A664AD69DFB4545890EE874EBCA9 /* AzureDate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AzureDate.h; path = AzureClientRuntime/Classes/AzureDate.h; sourceTree = "<group>"; };
-		BE64432FABFEB3EA84EF3DE839AD6E99 /* FaceRectangle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FaceRectangle.m; sourceTree = "<group>"; };
-		C0200578E9E8F875CC645091571C7127 /* OcrResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OcrResult.m; sourceTree = "<group>"; };
-		C066B6C851E29C691BDB7B0B3B833D0C /* LandmarkResults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LandmarkResults.m; sourceTree = "<group>"; };
-		C19F2FBBFA49E72C49BA432A58ABFB48 /* AzureClientRuntime.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AzureClientRuntime.modulemap; sourceTree = "<group>"; };
-		C2F5ACD28F1A93B5BBEBA6D55C229513 /* ModelDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ModelDescription.m; sourceTree = "<group>"; };
-		C3CEDFDE0717B171B50584A094004ABB /* AzureDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AzureDate.m; path = AzureClientRuntime/Classes/AzureDate.m; sourceTree = "<group>"; };
+		B863E91639CC381F4AA3A8ED7AA5985B /* CSCV_ComputerVisionError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_ComputerVisionError.m; sourceTree = "<group>"; };
+		B94C04FBE9D5EFEC1C166D2B04FB5848 /* CSCV_OcrWord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_OcrWord.m; sourceTree = "<group>"; };
+		B9CA3B830B2D8892EEAA79CF8298F2AF /* CSCV_ImageType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_ImageType.h; sourceTree = "<group>"; };
+		BCE3C231B3C7EE84B86BF8A7FD08780D /* CSCV_DomainModelResults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_DomainModelResults.h; sourceTree = "<group>"; };
+		BDD3EA114C04B8ED71A054578E37A8D2 /* CSCV_Category.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_Category.h; sourceTree = "<group>"; };
+		BDDCC3FD1F36E6D34B8504FA9C28B71F /* CSCV_CelebrityResults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_CelebrityResults.h; sourceTree = "<group>"; };
+		BE5C88E77F98D4E8DF7DBB399BCDF9FE /* AZDefaultErrorModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZDefaultErrorModel.m; path = AzureClientRuntime/Classes/AZDefaultErrorModel.m; sourceTree = "<group>"; };
+		C037733EE36E2F7C79B3540C64685589 /* ComputerVisionAzure.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = ComputerVisionAzure.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C26C6D8A76184E5B182F5C90525DCB1C /* CSCV_AdultInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_AdultInfo.h; sourceTree = "<group>"; };
+		C2E73DFF76AB04D9081E3655D5F7D67E /* ComputerVisionAzure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ComputerVisionAzure-umbrella.h"; sourceTree = "<group>"; };
 		C403087E2B58ABE99ED48871F34D7A40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		C492027484F99156F0648B7E6B6BA382 /* ImageTag.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ImageTag.h; sourceTree = "<group>"; };
-		CA035F8ABC6AA25C154351FA57E23C30 /* ComputerVisionAzure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ComputerVisionAzure.framework; path = ComputerVisionAzure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA827D9CAF2FEAF8A63A7ECBA5DE433E /* DomainModelResults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DomainModelResults.h; sourceTree = "<group>"; };
-		CDAABF29005826DC2975A897EBC8E9DA /* DefaultErrorModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DefaultErrorModel.h; path = AzureClientRuntime/Classes/DefaultErrorModel.h; sourceTree = "<group>"; };
+		C505FFBBD612C77A041DADB24320615B /* CSCV_ImageDescription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_ImageDescription.h; sourceTree = "<group>"; };
+		C830AF27C061B9984A56BA6791F44FF1 /* CSCV_CelebritiesModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_CelebritiesModel.m; sourceTree = "<group>"; };
+		C86E18574D5C951A1FDD80FCD8507CB8 /* CSCV_AdultInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_AdultInfo.m; sourceTree = "<group>"; };
+		CA035F8ABC6AA25C154351FA57E23C30 /* ComputerVisionAzure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComputerVisionAzure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB85512BFD73AE9C60C7B369984D7F7B /* AZJsonCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZJsonCoder.m; path = AzureClientRuntime/Classes/AZJsonCoder.m; sourceTree = "<group>"; };
+		CBDE8984B28461CD06766B9D0AF18727 /* CSCV_ImageMetadata.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_ImageMetadata.h; sourceTree = "<group>"; };
+		CC7C5050C2F9A656DAD2C7E8D45F75FF /* CSCV_ImageDescriptionDetails.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_ImageDescriptionDetails.m; sourceTree = "<group>"; };
+		CCFAB827B3F2B4CD430F05CA2282B02D /* CSCV_Category.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_Category.m; sourceTree = "<group>"; };
 		CE47F73C01542196AC42D3C6B48BE549 /* Pods-ComputerVisionAzure_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ComputerVisionAzure_Tests-dummy.m"; sourceTree = "<group>"; };
-		CF2D4C48A671CED54047C25AFF8EAAF8 /* AzureClientRuntime-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AzureClientRuntime-prefix.pch"; sourceTree = "<group>"; };
-		CF3F27CFBB3C359A2ED69211B3AFD234 /* ImageUrl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ImageUrl.h; sourceTree = "<group>"; };
-		D47DCE289DCA990C0D36796A62588044 /* JsonCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JsonCoder.m; path = AzureClientRuntime/Classes/JsonCoder.m; sourceTree = "<group>"; };
-		D67EF12C6CD3C7885850DE2F54641D53 /* VisualFeatureTypes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = VisualFeatureTypes.m; sourceTree = "<group>"; };
-		D6EF3A75DE50F7F78419FE3FC7EE95ED /* RequestHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RequestHelper.h; path = AzureClientRuntime/Classes/RequestHelper.h; sourceTree = "<group>"; };
-		D726C000FAA81CBBDD376CD964F49C75 /* RequestParameters.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RequestParameters.h; path = AzureClientRuntime/Classes/RequestParameters.h; sourceTree = "<group>"; };
-		DC1E76A4C550A2B8F995D6BCD6DCD065 /* FaceRectangle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FaceRectangle.h; sourceTree = "<group>"; };
+		CE8705840ABCE6E97449A8804FD758BA /* CSCV_Gender.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_Gender.m; sourceTree = "<group>"; };
+		CEF72B7375F9D873FDEFD7443EDB0405 /* CSCV_ImageAnalysis.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_ImageAnalysis.h; sourceTree = "<group>"; };
+		D44E1E2F6C3F4621F11B597911FF021C /* CSCV_LandmarkResults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_LandmarkResults.m; sourceTree = "<group>"; };
+		E1CBFAC896F8EE71C3FDB740513BF144 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3C11CF0773A402494D1A7B44F0F0459 /* Pods-ComputerVisionAzure_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ComputerVisionAzure_Example.modulemap"; sourceTree = "<group>"; };
-		E64D2EF083251DE32029573A2B93340D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		E72982C580EFC50B73DF80DD07A6F0A0 /* TextRecognitionMode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TextRecognitionMode.m; sourceTree = "<group>"; };
-		E7532195066946E64E1B4EF01A26E00C /* ComputerVisionError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ComputerVisionError.h; sourceTree = "<group>"; };
-		E8C85B5FCD9C74C55907F7A5AE8406EF /* ImageDescriptionDetails.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ImageDescriptionDetails.h; sourceTree = "<group>"; };
-		E962B0F3161462BE2AA88B6B0A46854C /* OperationError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OperationError.h; path = AzureClientRuntime/Classes/OperationError.h; sourceTree = "<group>"; };
-		EA8F6CA27D6F612F7C2C086A32FA0776 /* ColorInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ColorInfo.m; sourceTree = "<group>"; };
+		E9B001F5091F637A47784EDAECC6A166 /* CSCV_ComputerVisionClientService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSCV_ComputerVisionClientService.m; path = ComputerVisionAzure/Classes/CSCV_ComputerVisionClientService.m; sourceTree = "<group>"; };
+		EB87EA0A26A1BA4DA2BDE0644E43F27D /* CSCV_TextRecognitionMode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_TextRecognitionMode.m; sourceTree = "<group>"; };
+		EBB83B80266119168852C71ECFBE9DF3 /* CSCV_OcrLine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_OcrLine.h; sourceTree = "<group>"; };
+		EC2AAEA0560299B028D8F4CADB35FE07 /* AZRequestHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AZRequestHelper.m; path = AzureClientRuntime/Classes/AZRequestHelper.m; sourceTree = "<group>"; };
+		EE416F9CB6D83C3EE38B8352181C2A76 /* AzureClientRuntime-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AzureClientRuntime-prefix.pch"; sourceTree = "<group>"; };
 		EE4BA0D44173869933ADFD26DD1ED7FB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0F69BCFA23C70075E4573BE969E905F /* TextRecognitionMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TextRecognitionMode.h; sourceTree = "<group>"; };
-		F1E0B47CCDF41086F0490CEF08E0B537 /* ComputerVisionErrorCodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ComputerVisionErrorCodes.h; sourceTree = "<group>"; };
-		F20E185B5C4F4DE0D751895CEA410893 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		F5EB09351A2F7EBFCF6A08CCE4F1D249 /* Gender.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Gender.h; sourceTree = "<group>"; };
-		F74E679DD6BAC7C73E80A588BCB7C9B1 /* VisualFeatureTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VisualFeatureTypes.h; sourceTree = "<group>"; };
-		FA30CB84FC1619FB5DCE0ADDD9D0B4C9 /* ComputerVisionError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ComputerVisionError.m; sourceTree = "<group>"; };
-		FB87074A9BDC2C66C186423D2C6E14AE /* FaceDescription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FaceDescription.h; sourceTree = "<group>"; };
-		FFB20BE13A65A5D32E873C4644E5E61D /* LandmarkResults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LandmarkResults.h; sourceTree = "<group>"; };
+		F035AAAA8870ACE8A08DD0705234661C /* CSCV_LandmarksModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_LandmarksModel.h; sourceTree = "<group>"; };
+		F08FC9EF94B69A7B18A798FAF673D716 /* CSCV_CategoryDetail.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_CategoryDetail.m; sourceTree = "<group>"; };
+		F2B8C8577660C9A18D17A9832051C7BC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3A25600A2D6CACFAE9462B452615FFF /* CSCV_ModelDescription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_ModelDescription.h; sourceTree = "<group>"; };
+		F4ED2BBF7D9429714CAE87282E293261 /* ComputerVisionAzure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ComputerVisionAzure.modulemap; sourceTree = "<group>"; };
+		F616A7F3EF2DAFD737520093EDCC7373 /* CSCV_VisualFeatureTypes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_VisualFeatureTypes.m; sourceTree = "<group>"; };
+		F76F55EC7A090331E39233688A52D728 /* CSCV_ListModelsResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CSCV_ListModelsResult.h; sourceTree = "<group>"; };
+		FABFD59B1025A310C018FC29D4D9B7FD /* CSCV_FaceRectangle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_FaceRectangle.m; sourceTree = "<group>"; };
+		FB4E39057317EB2039E46374A9532620 /* CSCV_ComputerVisionErrorCodes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CSCV_ComputerVisionErrorCodes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +305,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C17078E55227AED149B8EA086175E3F /* AzureClientRuntime */ = {
+			isa = PBXGroup;
+			children = (
+				974A14947F618C253CAB4BE258DC33D2 /* AZCodable.h */,
+				422F6A3EEEBB2366C064AE9657CCED39 /* AZCoder.h */,
+				557C5E4486BB019431BC4006D3F676FB /* AZDefaultErrorModel.h */,
+				BE5C88E77F98D4E8DF7DBB399BCDF9FE /* AZDefaultErrorModel.m */,
+				2C03FF4316556F94CC30CA669F2591A7 /* AZJsonCoder.h */,
+				CB85512BFD73AE9C60C7B369984D7F7B /* AZJsonCoder.m */,
+				2C8F30502D6C67FA1DBA85306C40C4FC /* AZOperationError.h */,
+				AFF4DE84EC7412D829249BCC153692A5 /* AZOperationError.m */,
+				19C135D5FFB38ED9FA0B227628E81A48 /* AZRequestHelper.h */,
+				EC2AAEA0560299B028D8F4CADB35FE07 /* AZRequestHelper.m */,
+				4F415308B0C0B15856D1638E4B7B39EC /* AZRequestParameters.h */,
+				5E5A9C7D3D3CE2DEBA1E850FD87A32D6 /* AZRequestParameters.m */,
+				8E25183921AD5D8FA4DA0A9F3BF100CF /* AzureDate.h */,
+				A79019659894C76FFCA4530894195FCA /* AzureDate.m */,
+				4A58F27097EF96901AD1AFD51931EA7F /* AzureTypes.h */,
+				62719D5693BAF37600F35437832CF6FE /* AzureTypes.m */,
+				3BC749AE364DE16D1BAA7F22BB623265 /* Support Files */,
+			);
+			path = AzureClientRuntime;
+			sourceTree = "<group>";
+		};
 		178F87AD9CF76B37579AEF0320412386 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,23 +340,9 @@
 		2F18EC0F9D0C40B6222237331D99E71A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E0ECF864A424657B01C5C5E522B4FFC9 /* AzureClientRuntime */,
+				0C17078E55227AED149B8EA086175E3F /* AzureClientRuntime */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		3075B644E6BF6AC4F625B1C19A49D96F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C19F2FBBFA49E72C49BA432A58ABFB48 /* AzureClientRuntime.modulemap */,
-				3C0796455BF44C1B9363FD2CB05DA39C /* AzureClientRuntime.xcconfig */,
-				9DCF7391626FF1DF3170CFB3981A4E03 /* AzureClientRuntime-dummy.m */,
-				CF2D4C48A671CED54047C25AFF8EAAF8 /* AzureClientRuntime-prefix.pch */,
-				383FFAF73AB30B1B6782125945C49B54 /* AzureClientRuntime-umbrella.h */,
-				722D233E9ED7CCEBC84351C12E06D706 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/AzureClientRuntime";
 			sourceTree = "<group>";
 		};
 		339D0BDC5AB1C193C3DEFCE4898153C5 /* Targets Support Files */ = {
@@ -344,6 +354,30 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		3480D16D13FC2F96D37CB483DC00BDA4 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				C037733EE36E2F7C79B3540C64685589 /* ComputerVisionAzure.podspec */,
+				A8ACED2BDD47D6166FBB55CF4610176F /* LICENSE */,
+				ACCDB7F2A5A0BADEC8968B4FF842AF56 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		3BC749AE364DE16D1BAA7F22BB623265 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				48B6C390914D3AEE4CEC47ABB46798AB /* AzureClientRuntime.modulemap */,
+				8F1E9993059268CF9FF43A4FFB6C5E59 /* AzureClientRuntime.xcconfig */,
+				B0B79478533E4D249594B27DDD245759 /* AzureClientRuntime-dummy.m */,
+				EE416F9CB6D83C3EE38B8352181C2A76 /* AzureClientRuntime-prefix.pch */,
+				0E1C6C713EF029F16B046CB301BC1118 /* AzureClientRuntime-umbrella.h */,
+				E1CBFAC896F8EE71C3FDB740513BF144 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AzureClientRuntime";
+			sourceTree = "<group>";
+		};
 		425C7FBA79F136948B77A589D7DBAF2F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +387,94 @@
 				B6E82B07FE4D550AE4917109F033A5F4 /* Pods_ComputerVisionAzure_Tests.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		649ED6688D6E5D83E448DACD7182557A /* ComputerVisionAzure */ = {
+			isa = PBXGroup;
+			children = (
+				1B7A11B4A947FBE8344B3CE9F5137837 /* CSCV_ComputerVisionClientService.h */,
+				E9B001F5091F637A47784EDAECC6A166 /* CSCV_ComputerVisionClientService.m */,
+				22B2B4158C73CED763B9D333A514B67A /* ReplaceMe.m */,
+				6ECC2B0AADF954A39E638CB84ABBE35F /* Models */,
+				3480D16D13FC2F96D37CB483DC00BDA4 /* Pod */,
+				AB08DFE11B9E06BEBFA3B2D11D0DF11C /* Support Files */,
+			);
+			name = ComputerVisionAzure;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		6ECC2B0AADF954A39E638CB84ABBE35F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C26C6D8A76184E5B182F5C90525DCB1C /* CSCV_AdultInfo.h */,
+				C86E18574D5C951A1FDD80FCD8507CB8 /* CSCV_AdultInfo.m */,
+				BDD3EA114C04B8ED71A054578E37A8D2 /* CSCV_Category.h */,
+				CCFAB827B3F2B4CD430F05CA2282B02D /* CSCV_Category.m */,
+				71E221DA531924D06EB8152FDB320CC1 /* CSCV_CategoryDetail.h */,
+				F08FC9EF94B69A7B18A798FAF673D716 /* CSCV_CategoryDetail.m */,
+				B5AD454A2CBE1D400DBC32692CA48592 /* CSCV_CelebritiesModel.h */,
+				C830AF27C061B9984A56BA6791F44FF1 /* CSCV_CelebritiesModel.m */,
+				BDDCC3FD1F36E6D34B8504FA9C28B71F /* CSCV_CelebrityResults.h */,
+				0BB2505E367ED1574D746C7F1C542A1F /* CSCV_CelebrityResults.m */,
+				9788558DC28D43107DF759037AD1F64B /* CSCV_ColorInfo.h */,
+				2D0737B5C88C058884F98747F015B358 /* CSCV_ColorInfo.m */,
+				6BBF5E973B7611C8C9D4509A1EE05572 /* CSCV_ComputerVisionError.h */,
+				B863E91639CC381F4AA3A8ED7AA5985B /* CSCV_ComputerVisionError.m */,
+				B53774460107D52F0E0DA62013E5B88F /* CSCV_ComputerVisionErrorCodes.h */,
+				FB4E39057317EB2039E46374A9532620 /* CSCV_ComputerVisionErrorCodes.m */,
+				02EF4F7C54A8447E343E0C677701B862 /* CSCV_Details.h */,
+				AFE7CC57333ED9B8D5C4FF7B45D74BB9 /* CSCV_Details.m */,
+				BCE3C231B3C7EE84B86BF8A7FD08780D /* CSCV_DomainModelResults.h */,
+				50CBC5D3E18DC854314757E689646641 /* CSCV_DomainModelResults.m */,
+				1FF61411783C451C7F672B580F1C2117 /* CSCV_FaceDescription.h */,
+				88A821ED1FE1F024A559AE61CC131BCD /* CSCV_FaceDescription.m */,
+				8678682D55334666A480E58BD678A474 /* CSCV_FaceRectangle.h */,
+				FABFD59B1025A310C018FC29D4D9B7FD /* CSCV_FaceRectangle.m */,
+				4377A0530544673EF0CAB0325E369FA8 /* CSCV_Gender.h */,
+				CE8705840ABCE6E97449A8804FD758BA /* CSCV_Gender.m */,
+				CEF72B7375F9D873FDEFD7443EDB0405 /* CSCV_ImageAnalysis.h */,
+				610893D6540575CD45CD4C4CEC6C5A2B /* CSCV_ImageAnalysis.m */,
+				5C12D81F5BA2A1EA2617D3A55EB3B796 /* CSCV_ImageCaption.h */,
+				70EACF8274FF50F645F8B2879286E7FC /* CSCV_ImageCaption.m */,
+				C505FFBBD612C77A041DADB24320615B /* CSCV_ImageDescription.h */,
+				A0814B4B43647D1069B42C290D375012 /* CSCV_ImageDescription.m */,
+				28DCBFC730DE233C5063CBC158237954 /* CSCV_ImageDescriptionDetails.h */,
+				CC7C5050C2F9A656DAD2C7E8D45F75FF /* CSCV_ImageDescriptionDetails.m */,
+				CBDE8984B28461CD06766B9D0AF18727 /* CSCV_ImageMetadata.h */,
+				A271824B1396B6C7B7C0054054955936 /* CSCV_ImageMetadata.m */,
+				2DA13BBFB7BE69CB59F55F2C7AAF5AC9 /* CSCV_ImageTag.h */,
+				1A2D1662559AD4770003D2D404B1134F /* CSCV_ImageTag.m */,
+				B9CA3B830B2D8892EEAA79CF8298F2AF /* CSCV_ImageType.h */,
+				6152D38F35B9D82A27BDDDD5B7C5603E /* CSCV_ImageType.m */,
+				6E4A2F25E2E18F3E36DFFDD17193ADCA /* CSCV_ImageUrl.h */,
+				53D583EEB04435572B7DAFB83369582E /* CSCV_ImageUrl.m */,
+				6FC56355FA5F087C6EA73B493C81FCC5 /* CSCV_LandmarkResults.h */,
+				D44E1E2F6C3F4621F11B597911FF021C /* CSCV_LandmarkResults.m */,
+				F035AAAA8870ACE8A08DD0705234661C /* CSCV_LandmarksModel.h */,
+				08EAA67BCEE3F4BB0100B0A4047A199C /* CSCV_LandmarksModel.m */,
+				F76F55EC7A090331E39233688A52D728 /* CSCV_ListModelsResult.h */,
+				2660AC266529B9E984826859217AA5DE /* CSCV_ListModelsResult.m */,
+				F3A25600A2D6CACFAE9462B452615FFF /* CSCV_ModelDescription.h */,
+				59FA0234A09C22DD711F390B48113B29 /* CSCV_ModelDescription.m */,
+				17B2BA07149438EFE8EA575DC01D13E0 /* CSCV_OcrLanguages.h */,
+				071DBEB0BEEF76CA48EDDDA91E6899E2 /* CSCV_OcrLanguages.m */,
+				EBB83B80266119168852C71ECFBE9DF3 /* CSCV_OcrLine.h */,
+				AA768045140DEF377DD743293FB1055C /* CSCV_OcrLine.m */,
+				8BBD61D23F5E80ECA9B63D7729D609ED /* CSCV_OcrRegion.h */,
+				18E63F08B05D6DF28D8D69F72385D65A /* CSCV_OcrRegion.m */,
+				A4B6B011FBC9F698549913C0DC4935D7 /* CSCV_OcrResult.h */,
+				B4122709991531FADF5BE305F606DBA0 /* CSCV_OcrResult.m */,
+				41612C1FDDBFCAC73CA9ED04F70B4BA0 /* CSCV_OcrWord.h */,
+				B94C04FBE9D5EFEC1C166D2B04FB5848 /* CSCV_OcrWord.m */,
+				2DB9DA69439EF28C70D28A7546AD3444 /* CSCV_TagResult.h */,
+				5D8FDB52C687734F182F6012148AA864 /* CSCV_TagResult.m */,
+				21773DC506A586CC4D80C51BE049007F /* CSCV_TextRecognitionMode.h */,
+				EB87EA0A26A1BA4DA2BDE0644E43F27D /* CSCV_TextRecognitionMode.m */,
+				10B1A25C9CE048AA9C5752DE3F8CE944 /* CSCV_VisualFeatureTypes.h */,
+				F616A7F3EF2DAFD737520093EDCC7373 /* CSCV_VisualFeatureTypes.m */,
+			);
+			name = Models;
+			path = ComputerVisionAzure/Classes/Models;
 			sourceTree = "<group>";
 		};
 		7948D077C9016AC0EB96C5E298AF310F /* Frameworks */ = {
@@ -376,124 +498,26 @@
 			);
 			sourceTree = "<group>";
 		};
-		A9B24518F72D574C080B9D455B64248F /* Support Files */ = {
+		AB08DFE11B9E06BEBFA3B2D11D0DF11C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				67E88FEC597855C8B6E94A789629406A /* ComputerVisionAzure.modulemap */,
-				3EFCE0C4602A1209E251918420405763 /* ComputerVisionAzure.xcconfig */,
-				9073BBFF735C3077A3423463E00F53D4 /* ComputerVisionAzure-dummy.m */,
-				75B25557B83BC3F765884FB3FD510D4D /* ComputerVisionAzure-prefix.pch */,
-				838742E38F672B04BE0F713CF4F78DB7 /* ComputerVisionAzure-umbrella.h */,
-				B91591FA88D9AD53EAA6B17CDD3B16A7 /* Info.plist */,
+				F4ED2BBF7D9429714CAE87282E293261 /* ComputerVisionAzure.modulemap */,
+				2330A7AF6431783780F05593E5544D3E /* ComputerVisionAzure.xcconfig */,
+				44392BD313BD7FD9D757E2D70D0D2B2A /* ComputerVisionAzure-dummy.m */,
+				4AD2FAA3E879A60B1F7678141CF8EA2E /* ComputerVisionAzure-prefix.pch */,
+				C2E73DFF76AB04D9081E3655D5F7D67E /* ComputerVisionAzure-umbrella.h */,
+				F2B8C8577660C9A18D17A9832051C7BC /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/ComputerVisionAzure";
 			sourceTree = "<group>";
 		};
-		CA20551BE182A04AF68DB97F50BD4485 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				74C3DE10BC3F7DFA135D53E6F24E6FAD /* AdultInfo.h */,
-				55309A4696D063CF479173B82385FD7A /* AdultInfo.m */,
-				7EBBC2E9C6D7B3FE1374377684BE3C5E /* Category.h */,
-				7BEF4D69B77CEFB6C791F69C4DC0EA33 /* Category.m */,
-				842093B06BE9C33E08F9AA99A76321EC /* CategoryDetail.h */,
-				4E4055360CB2F4F36544FEBCFB0A1D38 /* CategoryDetail.m */,
-				A8D2BDA525320FB0EEC5053923306E62 /* CelebritiesModel.h */,
-				436950662FFA94F5B3E92098C9F35114 /* CelebritiesModel.m */,
-				8BBC264D52A619F25BD37CADFE4EB280 /* CelebrityResults.h */,
-				0843362DE5944DCEE84499CB378822B3 /* CelebrityResults.m */,
-				7F86FE1877085014F1CDDDC397A80118 /* ColorInfo.h */,
-				EA8F6CA27D6F612F7C2C086A32FA0776 /* ColorInfo.m */,
-				E7532195066946E64E1B4EF01A26E00C /* ComputerVisionError.h */,
-				FA30CB84FC1619FB5DCE0ADDD9D0B4C9 /* ComputerVisionError.m */,
-				F1E0B47CCDF41086F0490CEF08E0B537 /* ComputerVisionErrorCodes.h */,
-				4F1FD98FBFD464BAD41F8208F1D2534D /* ComputerVisionErrorCodes.m */,
-				836A75F008D44F20B8DF96045CCEA6C4 /* Details.h */,
-				675EFF4E22F6F188A81420EC4A2F5056 /* Details.m */,
-				CA827D9CAF2FEAF8A63A7ECBA5DE433E /* DomainModelResults.h */,
-				08FAA6613A94704E6772602128965CA4 /* DomainModelResults.m */,
-				FB87074A9BDC2C66C186423D2C6E14AE /* FaceDescription.h */,
-				0A30A2DA9C0F8C03ABBF9DC69B4CB5B2 /* FaceDescription.m */,
-				DC1E76A4C550A2B8F995D6BCD6DCD065 /* FaceRectangle.h */,
-				BE64432FABFEB3EA84EF3DE839AD6E99 /* FaceRectangle.m */,
-				F5EB09351A2F7EBFCF6A08CCE4F1D249 /* Gender.h */,
-				45BC506D2F3BF6AD18C26CB90D96377A /* Gender.m */,
-				729841391E8841A64E792F6CFAEF927F /* ImageAnalysis.h */,
-				90EF0D834D639FC3B030DF44AAD0F183 /* ImageAnalysis.m */,
-				5A5415F13D1EB43F8AACB8DBB64672E8 /* ImageCaption.h */,
-				3BBA921F9CAFA7368F69F0FF41C4BBCC /* ImageCaption.m */,
-				A3D887FF6A5A3DBDD444359521CCBBBF /* ImageDescription.h */,
-				00C54E7C30FD8A11B754E5159E5D5349 /* ImageDescription.m */,
-				E8C85B5FCD9C74C55907F7A5AE8406EF /* ImageDescriptionDetails.h */,
-				5FF6498B1F5A25195F7FA02CC9BBD904 /* ImageDescriptionDetails.m */,
-				17018E157D09240E5161B87271E29021 /* ImageMetadata.h */,
-				58684BF97246CF31E89E3A844E63CD5C /* ImageMetadata.m */,
-				C492027484F99156F0648B7E6B6BA382 /* ImageTag.h */,
-				48AC98B57FB5675BD4546F57EFB3FC33 /* ImageTag.m */,
-				1B88BFA7D3CC0BCA9C96A1EF910B9C2A /* ImageType.h */,
-				44A631FA80CAB6D63533605DCC09B9DD /* ImageType.m */,
-				CF3F27CFBB3C359A2ED69211B3AFD234 /* ImageUrl.h */,
-				4088826B9B6EAC1C8B8DCA886B948898 /* ImageUrl.m */,
-				FFB20BE13A65A5D32E873C4644E5E61D /* LandmarkResults.h */,
-				C066B6C851E29C691BDB7B0B3B833D0C /* LandmarkResults.m */,
-				B638F1977AA18F0256328D072B75C96E /* LandmarksModel.h */,
-				8225D73835C130CC556F12960A398169 /* LandmarksModel.m */,
-				A134CB89B435091A6BB5EE695FA8C4A8 /* ListModelsResult.h */,
-				783FD51971881A707536EF710A31D104 /* ListModelsResult.m */,
-				418C4CFAB53F57224689B39F50D7D83D /* ModelDescription.h */,
-				C2F5ACD28F1A93B5BBEBA6D55C229513 /* ModelDescription.m */,
-				33BE589E27206B98D214B7E9B8667606 /* OcrLanguages.h */,
-				48AF45F1B0A8FB1B9D45C7A0B8D0FD17 /* OcrLanguages.m */,
-				8B8110286BB753DDDFEDF5C48138D47F /* OcrLine.h */,
-				42FA9E5802BA7FDDAC06C1C7D8B0D426 /* OcrLine.m */,
-				97854C1122419329A2F84C75E44F8022 /* OcrRegion.h */,
-				012A36AB1EB6FF38F4B9319BD2CE44E9 /* OcrRegion.m */,
-				4ED0737AC34C58B384C4CA09599B5084 /* OcrResult.h */,
-				C0200578E9E8F875CC645091571C7127 /* OcrResult.m */,
-				A5F4DB47CEB18155FA0347A1A1749B1E /* OcrWord.h */,
-				77D3DE155751766E6245D4ECA18CFCA0 /* OcrWord.m */,
-				5529C36483FDDDA9F85BEC8FBA7F604E /* TagResult.h */,
-				2C082455F197BD3D5796D84755709863 /* TagResult.m */,
-				F0F69BCFA23C70075E4573BE969E905F /* TextRecognitionMode.h */,
-				E72982C580EFC50B73DF80DD07A6F0A0 /* TextRecognitionMode.m */,
-				F74E679DD6BAC7C73E80A588BCB7C9B1 /* VisualFeatureTypes.h */,
-				D67EF12C6CD3C7885850DE2F54641D53 /* VisualFeatureTypes.m */,
-			);
-			name = Models;
-			path = ComputerVisionAzure/Classes/Models;
-			sourceTree = "<group>";
-		};
 		CD0F15BC8E162B3C22EDB678E07196C7 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D30E6586E8326D25687B1B2BBE4BEDE0 /* ComputerVisionAzure */,
+				649ED6688D6E5D83E448DACD7182557A /* ComputerVisionAzure */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		CF70A7268BD41AA36D550EED72E3ECE8 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				7AEF9030D67FC53B600FE1E2FE7FF79F /* ComputerVisionAzure.podspec */,
-				F20E185B5C4F4DE0D751895CEA410893 /* LICENSE */,
-				E64D2EF083251DE32029573A2B93340D /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		D30E6586E8326D25687B1B2BBE4BEDE0 /* ComputerVisionAzure */ = {
-			isa = PBXGroup;
-			children = (
-				3C0AC1571483E478078B7F33289ED58E /* ComputerVisionClient.h */,
-				8A37710F4927FA2EB85468245FC1FD8D /* ComputerVisionClient.m */,
-				88B06B0283C8E2055E0F87FC62C6FAB2 /* ReplaceMe.m */,
-				CA20551BE182A04AF68DB97F50BD4485 /* Models */,
-				CF70A7268BD41AA36D550EED72E3ECE8 /* Pod */,
-				A9B24518F72D574C080B9D455B64248F /* Support Files */,
-			);
-			name = ComputerVisionAzure;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		D8D595C0574A9AF8225C98DA2AB7B9F3 /* Pods-ComputerVisionAzure_Tests */ = {
@@ -512,31 +536,6 @@
 			);
 			name = "Pods-ComputerVisionAzure_Tests";
 			path = "Target Support Files/Pods-ComputerVisionAzure_Tests";
-			sourceTree = "<group>";
-		};
-		E0ECF864A424657B01C5C5E522B4FFC9 /* AzureClientRuntime */ = {
-			isa = PBXGroup;
-			children = (
-				BAE8A664AD69DFB4545890EE874EBCA9 /* AzureDate.h */,
-				C3CEDFDE0717B171B50584A094004ABB /* AzureDate.m */,
-				604300106FF727446C3FD3D0B4B4710C /* AzureTypes.h */,
-				36FA404E59480862C99AE39CB203AC02 /* AzureTypes.m */,
-				1CCFA1E80144A0A71603570E45EB81D0 /* Codable.h */,
-				39D32CDE0B2F7B321B8359C57CAD4865 /* Coder.h */,
-				CDAABF29005826DC2975A897EBC8E9DA /* DefaultErrorModel.h */,
-				B21A13B5CCED8EC18343A091B08C3EA6 /* DefaultErrorModel.m */,
-				258210048EFA184EFC23A3CA40521652 /* JsonCoder.h */,
-				D47DCE289DCA990C0D36796A62588044 /* JsonCoder.m */,
-				E962B0F3161462BE2AA88B6B0A46854C /* OperationError.h */,
-				17D565BE006182CCD01818D6042852A4 /* OperationError.m */,
-				D6EF3A75DE50F7F78419FE3FC7EE95ED /* RequestHelper.h */,
-				394CC5BD0A47E8155504F45D15D81E66 /* RequestHelper.m */,
-				D726C000FAA81CBBDD376CD964F49C75 /* RequestParameters.h */,
-				AD60892DE985E6FB828002E0B424E188 /* RequestParameters.m */,
-				3075B644E6BF6AC4F625B1C19A49D96F /* Support Files */,
-			);
-			name = AzureClientRuntime;
-			path = AzureClientRuntime;
 			sourceTree = "<group>";
 		};
 		FF71416B05E22373FBEEE41098A36E32 /* Pods-ComputerVisionAzure_Example */ = {
@@ -560,6 +559,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		3D8C157AA9023D69CFFCCA1DBD7FC662 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0CC70CA0A9C576EA5A8DF00C475017D /* AZCodable.h in Headers */,
+				36E2E3D261B1B79A698BDFAF1CDE0962 /* AZCoder.h in Headers */,
+				76215408AA629372DA3B80581393D559 /* AZDefaultErrorModel.h in Headers */,
+				61B272BD791C732819EF5A21ED8BC5A9 /* AZJsonCoder.h in Headers */,
+				FAD76B3F982D5A85B9C4B3CBBA9AE4FE /* AZOperationError.h in Headers */,
+				6580A53E2728D096C39E4E7B11ECAF02 /* AZRequestHelper.h in Headers */,
+				5A3CDAA672B2034D45BB203D4862C85C /* AZRequestParameters.h in Headers */,
+				0DD2D2270B8257BFCF0B1E4DAE2C36DD /* AzureClientRuntime-umbrella.h in Headers */,
+				0DD6E87A24C981B52FD5819E477141F0 /* AzureDate.h in Headers */,
+				C0CA4D06410919FD54DAB36A1C97E5AD /* AzureTypes.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A29FD26E3020C51CEE646B7672B8E8F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -568,45 +584,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5C0A86208921A4F60B4E05DCF9B46897 /* Headers */ = {
+		94F2F0C34F568240864958B6474EBADE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C94823E697D968AAA228C461516FF0E4 /* AdultInfo.h in Headers */,
-				6D0620936556CACDDA4C33FDCC170E89 /* Category.h in Headers */,
-				FDA603567897FFC0F2F416A7A37667AE /* CategoryDetail.h in Headers */,
-				5714F91CF89B5964A49F96F784891E23 /* CelebritiesModel.h in Headers */,
-				80B9FCE83517784A9CA3576FE589A16F /* CelebrityResults.h in Headers */,
-				4FA6F1A6454C2A11C9034878A4DA9F93 /* ColorInfo.h in Headers */,
-				826BC21CE6AE65FBC8BFEBBF9739F4E2 /* ComputerVisionAzure-umbrella.h in Headers */,
-				4588423010BC734AC6B891112075D0B6 /* ComputerVisionClient.h in Headers */,
-				8AA7A91C8997AC60731CEB8350043CE8 /* ComputerVisionError.h in Headers */,
-				4FA5D50DDF94D503500C1112FFE2D2D8 /* ComputerVisionErrorCodes.h in Headers */,
-				86C632A51C50D3718B8C015DED3030F0 /* Details.h in Headers */,
-				E976BC7DB8CA8852C1FB2995A3D1C619 /* DomainModelResults.h in Headers */,
-				3AFF0B8C6261F0C9244E362D91E6F694 /* FaceDescription.h in Headers */,
-				68BE585BFED374FDBFD4A194494F0646 /* FaceRectangle.h in Headers */,
-				7A75B307E473102BA912D055265F7CC3 /* Gender.h in Headers */,
-				ADB79244E8FF3A4DE33EE78D9DAB2CA2 /* ImageAnalysis.h in Headers */,
-				F0F7AC633205DD4D2B6B49DD7646AB48 /* ImageCaption.h in Headers */,
-				A549AABF156CAE149ABB1949415A9607 /* ImageDescription.h in Headers */,
-				83D34010D497CF59A1E9E17A7A3A097F /* ImageDescriptionDetails.h in Headers */,
-				1F64D9CDE41B801ECDD3D45DCE2CCCFB /* ImageMetadata.h in Headers */,
-				3D03B0ADFFCAD71C51E7A81DEC523635 /* ImageTag.h in Headers */,
-				E9CB58D632AF9666FCE51002096F21BB /* ImageType.h in Headers */,
-				65E86590FB2EA891A0B05764CF1A80C4 /* ImageUrl.h in Headers */,
-				9A69225CA47411F9691D5C0803C0066F /* LandmarkResults.h in Headers */,
-				98EC8AB417D0C8048E243A4E1780CD88 /* LandmarksModel.h in Headers */,
-				F9EE83538FBC7E64494A946219DB813C /* ListModelsResult.h in Headers */,
-				01C2E3E60E25036C78C3558222F6DAC5 /* ModelDescription.h in Headers */,
-				33D1379CBF06547AA3A7730BEB5F0A2F /* OcrLanguages.h in Headers */,
-				E49333EC2296564D27F2E24E26F4E098 /* OcrLine.h in Headers */,
-				E83101C5FA92B431AB1FB5286911B137 /* OcrRegion.h in Headers */,
-				84FF4359077CED0BDB4B715D85884807 /* OcrResult.h in Headers */,
-				9C085047F68CD3AA4FDEDACE2AC313F2 /* OcrWord.h in Headers */,
-				119A14427F371C2FFC43486785033E84 /* TagResult.h in Headers */,
-				06EF57A36F0A98882200C35DEC88094E /* TextRecognitionMode.h in Headers */,
-				53CAD4153C7C10F09CA07DE466F023D2 /* VisualFeatureTypes.h in Headers */,
+				C41225D962B66E1A6940C802E58C2464 /* ComputerVisionAzure-umbrella.h in Headers */,
+				6BEAE4C0879CB629F523269DFEE0742D /* CSCV_AdultInfo.h in Headers */,
+				D5E0B1658878EEE76A55CD7C569B27B2 /* CSCV_Category.h in Headers */,
+				E6B5D2FBC60577890805CDD9DA5695CB /* CSCV_CategoryDetail.h in Headers */,
+				6DAF6D2B48D33E748AB7BD1743C53A5E /* CSCV_CelebritiesModel.h in Headers */,
+				F5FEBAA084C0730FCB758FF071256D6A /* CSCV_CelebrityResults.h in Headers */,
+				758E3815622BC92ED6F6558CC42AB81D /* CSCV_ColorInfo.h in Headers */,
+				5616FE34E06BBBA4E8C15AD701412018 /* CSCV_ComputerVisionClientService.h in Headers */,
+				6DE6C9F729289916EA4A20D9B0B90E6D /* CSCV_ComputerVisionError.h in Headers */,
+				0055BFDF5E96FC80A0F572C25895E28A /* CSCV_ComputerVisionErrorCodes.h in Headers */,
+				BDCD4CCC83718EB0BFAF230F37413828 /* CSCV_Details.h in Headers */,
+				7E4982173BC84E60EA376828E85715A2 /* CSCV_DomainModelResults.h in Headers */,
+				B928E0AE7354431CF3666D554706321F /* CSCV_FaceDescription.h in Headers */,
+				B77EA6309F1A147AE04688F04F0258F1 /* CSCV_FaceRectangle.h in Headers */,
+				C5886F9E7AC0FD9F33DEF5F939E7FB00 /* CSCV_Gender.h in Headers */,
+				395E5EEE0AFB4994836016BD9681E82B /* CSCV_ImageAnalysis.h in Headers */,
+				169BF3CCB15BC61474498704C02D8BC3 /* CSCV_ImageCaption.h in Headers */,
+				CC58FC116277A28747FDA12FFBE4E78C /* CSCV_ImageDescription.h in Headers */,
+				522F1035E7D710011B19542F14178567 /* CSCV_ImageDescriptionDetails.h in Headers */,
+				07477838796D2BF5B948E1CF6010AE48 /* CSCV_ImageMetadata.h in Headers */,
+				A00200011A53A24FBECF92B7B65DFC33 /* CSCV_ImageTag.h in Headers */,
+				D25C866D92605EA6F23EF37648E134C3 /* CSCV_ImageType.h in Headers */,
+				89252CF9B615B2130A606DBAC03A9E8E /* CSCV_ImageUrl.h in Headers */,
+				B2B4F65835645E645043E2D5C6940083 /* CSCV_LandmarkResults.h in Headers */,
+				04CF6E839A0D0E888BA204581B8592AF /* CSCV_LandmarksModel.h in Headers */,
+				1572A3BD2E49F00FE9A212071B8AF6ED /* CSCV_ListModelsResult.h in Headers */,
+				5AF7BC0B2AC456A23F18DDCCC7754AF6 /* CSCV_ModelDescription.h in Headers */,
+				8172B2CD4A602A4BCE140C75F3924CDF /* CSCV_OcrLanguages.h in Headers */,
+				6CA10B17BFF1C3A1D5A9368E103F27E9 /* CSCV_OcrLine.h in Headers */,
+				0CAC2D310BE1170AD732D8562493EF17 /* CSCV_OcrRegion.h in Headers */,
+				F17C553924548464F6066D7D02FBE318 /* CSCV_OcrResult.h in Headers */,
+				3519E665BA0F4B0491F29F884626BCDF /* CSCV_OcrWord.h in Headers */,
+				85C3C7775F02E37370BB2C574B830403 /* CSCV_TagResult.h in Headers */,
+				538BF93ABE4D59C1786A28AF3E34936D /* CSCV_TextRecognitionMode.h in Headers */,
+				4118CABCB15903CED6D61E6372FBF6F2 /* CSCV_VisualFeatureTypes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,23 +631,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8DD9F696F11D9A0CEF96549910DC437 /* Pods-ComputerVisionAzure_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CC3ADB29B3D96D4CF7380677FB0A5EEF /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3371D2B9AF0AA88CCB9895F9F80FD372 /* AzureClientRuntime-umbrella.h in Headers */,
-				26F5B07E1A82DAA1E715AACC903E5E58 /* AzureDate.h in Headers */,
-				93395699C55886506A98265794D3B957 /* AzureTypes.h in Headers */,
-				61C9CFDECF5965D6A7D83962358091B2 /* Codable.h in Headers */,
-				4CB78B45B087396A9B80339BF8E1310B /* Coder.h in Headers */,
-				82592A229534E47CC2E2B5E5ABBDC59A /* DefaultErrorModel.h in Headers */,
-				B0313D1E216C744DF87DEFA126ECA348 /* JsonCoder.h in Headers */,
-				60BCF6194438F912DEADCF8327722358 /* OperationError.h in Headers */,
-				5D887907DF357DD259E0496B3240EC90 /* RequestHelper.h in Headers */,
-				77ADDB4656A4BA8E286F30184B49F097 /* RequestParameters.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,8 +660,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B95E178C56886924D2585CF438FE8EE8 /* Build configuration list for PBXNativeTarget "AzureClientRuntime" */;
 			buildPhases = (
-				CC3ADB29B3D96D4CF7380677FB0A5EEF /* Headers */,
-				9EBF35339DA814D2FD1434B8BF48DC20 /* Sources */,
+				3D8C157AA9023D69CFFCCA1DBD7FC662 /* Headers */,
+				78836BFEA33E16B8782BE5B0302DC8BC /* Sources */,
 				1BABECDE42A8FFEFBF8FC3AE3F76C0E7 /* Frameworks */,
 				08BAAC5CB94899C6BBC389BA03C73BFF /* Resources */,
 			);
@@ -699,8 +698,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B37663AAE0A4AAA8E881CA5AE3AED8CA /* Build configuration list for PBXNativeTarget "ComputerVisionAzure" */;
 			buildPhases = (
-				5C0A86208921A4F60B4E05DCF9B46897 /* Headers */,
-				07F79B87A9E287645BA12AE86FFF192D /* Sources */,
+				94F2F0C34F568240864958B6474EBADE /* Headers */,
+				370402425195F765FB6EABC2DF6F90C5 /* Sources */,
 				4D65A3BF1E11B6F494758233CE0637AB /* Frameworks */,
 				351366CA26468036CE40701BACBF9E88 /* Resources */,
 			);
@@ -775,61 +774,61 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		07F79B87A9E287645BA12AE86FFF192D /* Sources */ = {
+		370402425195F765FB6EABC2DF6F90C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FF01A7AE25EF29A57170B27FE710084 /* AdultInfo.m in Sources */,
-				5F0CB1239B7E3EFF1EC6488F404BAC86 /* Category.m in Sources */,
-				BB95351D924E490F15C1B54C0D3DB915 /* CategoryDetail.m in Sources */,
-				C50701CE2606D30CB1DCC4777AFAA083 /* CelebritiesModel.m in Sources */,
-				E5253515653FFC8BB043806B3E0A5C91 /* CelebrityResults.m in Sources */,
-				84D20A92C6B8D0F485F23F0F15379C6C /* ColorInfo.m in Sources */,
-				3D620F80B8C638D93DD9D2AD1C86BD55 /* ComputerVisionAzure-dummy.m in Sources */,
-				EAEFE956F14E55537737666628515224 /* ComputerVisionClient.m in Sources */,
-				4B4E0E30D029C042FD5F53C382E41FD9 /* ComputerVisionError.m in Sources */,
-				43C912CA403D354A856A5C06B7FE8ACE /* ComputerVisionErrorCodes.m in Sources */,
-				2C9F81E61DC1DB3118A1CA7784767128 /* Details.m in Sources */,
-				5EACD88DFCE622CCE43BCEF5F1E6F143 /* DomainModelResults.m in Sources */,
-				E36435574CAFCF3C9CA64CA638D6EC95 /* FaceDescription.m in Sources */,
-				EA001A39BD0ABABDB5EC2DFB79D6EB57 /* FaceRectangle.m in Sources */,
-				E1ED8A7000F55FB86A20B0B8C3EDBC07 /* Gender.m in Sources */,
-				BC9A0ABB49754869982D9BBCBBBA5E86 /* ImageAnalysis.m in Sources */,
-				297962DC3E993AC094491C48F3AECDBA /* ImageCaption.m in Sources */,
-				92DC171E6149053E33AF6C9E313EFDCE /* ImageDescription.m in Sources */,
-				F0712AB3A11120B15AAE02A473F07554 /* ImageDescriptionDetails.m in Sources */,
-				466BADAF1FE7E463D80EF847104AC223 /* ImageMetadata.m in Sources */,
-				659300C745E862E04D899AE0D41B4492 /* ImageTag.m in Sources */,
-				32A5FD3367859C05B8D6B35FCBB85CC6 /* ImageType.m in Sources */,
-				BAEC1F45B16CA197720431680D310AD0 /* ImageUrl.m in Sources */,
-				1B59290BFEBB9D8F56D90896DF1D0510 /* LandmarkResults.m in Sources */,
-				446317D529D568A1D9A458F75C313229 /* LandmarksModel.m in Sources */,
-				DE622DEDA818780478A2A1E1B5F57495 /* ListModelsResult.m in Sources */,
-				0290AF8A2237ADB49CE7ABF8A400233A /* ModelDescription.m in Sources */,
-				B12E1231BD3A4F43B998709B77E98F37 /* OcrLanguages.m in Sources */,
-				AC792BEB14923CF4974D4972F4822E64 /* OcrLine.m in Sources */,
-				82D9CD457121BFB84B828BA59BBECA12 /* OcrRegion.m in Sources */,
-				0988E4B782A6AD0E267122C69BA2D401 /* OcrResult.m in Sources */,
-				6F97C118B50A2EDCB9C5BF19B4AD44E5 /* OcrWord.m in Sources */,
-				2A368B170F7BA9C5894C22295758E3FF /* ReplaceMe.m in Sources */,
-				C04974601EF70A4A162AFE23FC59422F /* TagResult.m in Sources */,
-				12D5A74D2E0E89B2763A8944652B3DE0 /* TextRecognitionMode.m in Sources */,
-				72A95DF03E6C74EE585B97F50F840FA2 /* VisualFeatureTypes.m in Sources */,
+				8ADC366F9E67F963F07802E3D39ACC45 /* ComputerVisionAzure-dummy.m in Sources */,
+				4DB0C5C20242F3CA05B1D2A1D5BB4720 /* CSCV_AdultInfo.m in Sources */,
+				7E9576506C3DE6DC48923058CF572ED6 /* CSCV_Category.m in Sources */,
+				FE72D34DE68B4DB8303F3A588EE1C172 /* CSCV_CategoryDetail.m in Sources */,
+				421D0AABC9D47DB71EAE8964282D17A3 /* CSCV_CelebritiesModel.m in Sources */,
+				3A536D5193DAFE8897409A6D5C64F2D7 /* CSCV_CelebrityResults.m in Sources */,
+				C761E90CBB40EDF791B13F5D3EFF0B5F /* CSCV_ColorInfo.m in Sources */,
+				B1A51841F11E5F458AB905763C18BFDA /* CSCV_ComputerVisionClientService.m in Sources */,
+				4B213145F772114EC0B27FA8529CABD4 /* CSCV_ComputerVisionError.m in Sources */,
+				B0E4827BB302007E3B3E70247B7221DE /* CSCV_ComputerVisionErrorCodes.m in Sources */,
+				E9C6EEC8094C11721E4BD234C005437C /* CSCV_Details.m in Sources */,
+				C3387175C2CAEC9DE230ED02A2ECD411 /* CSCV_DomainModelResults.m in Sources */,
+				7859511D01326094F7CE268670134054 /* CSCV_FaceDescription.m in Sources */,
+				5E9A762BB68B0E6B8E42050497079280 /* CSCV_FaceRectangle.m in Sources */,
+				DD7A48EC30952C7F1EF490AD0D5BAA3F /* CSCV_Gender.m in Sources */,
+				D51BA3E836002070D7953F2903F608CB /* CSCV_ImageAnalysis.m in Sources */,
+				65E7192FC5E2178E5A51A62AA1FB605E /* CSCV_ImageCaption.m in Sources */,
+				2C1006ECDBE15D8C1E22866CE781AB3B /* CSCV_ImageDescription.m in Sources */,
+				389C08DC9322F6685D1ADDBF57EC4FFA /* CSCV_ImageDescriptionDetails.m in Sources */,
+				2CFEB075329430A869B441B1E587C109 /* CSCV_ImageMetadata.m in Sources */,
+				FD53AA8D9228DA0A77235BDF9B343DC6 /* CSCV_ImageTag.m in Sources */,
+				C6F59C17C75DE1F1A7045F037AFD297E /* CSCV_ImageType.m in Sources */,
+				4708B1478281FDB4EBF15E6D9AEAB293 /* CSCV_ImageUrl.m in Sources */,
+				ADAC3093478DB54A28EC1B1075DD2ED2 /* CSCV_LandmarkResults.m in Sources */,
+				0BD19865CAF5DD141AB0F2C4CC7B61AC /* CSCV_LandmarksModel.m in Sources */,
+				2F544765B6B31EE15E43CD47A9785200 /* CSCV_ListModelsResult.m in Sources */,
+				FD05FAAD85DBBD310DD6ADBBBBD1281D /* CSCV_ModelDescription.m in Sources */,
+				9AEF9C768859B5B32EAB472A90D70922 /* CSCV_OcrLanguages.m in Sources */,
+				B113172E676E7B1BE2B859F7CC7D54E9 /* CSCV_OcrLine.m in Sources */,
+				121C88BF492150C9F08D721ABA9A6398 /* CSCV_OcrRegion.m in Sources */,
+				ED11E416870E06D78EAE7A3C53E58582 /* CSCV_OcrResult.m in Sources */,
+				10AE80647E31FC221FB475E705C994C3 /* CSCV_OcrWord.m in Sources */,
+				F70A9461282DBF34E826AF1C6683B200 /* CSCV_TagResult.m in Sources */,
+				3532D4CBD8C11E25388ABB9036DCF32E /* CSCV_TextRecognitionMode.m in Sources */,
+				B9FF8EF8D342AD668A0CCC14D45EEF68 /* CSCV_VisualFeatureTypes.m in Sources */,
+				9753C771C32368EAE3D0C963EF18E062 /* ReplaceMe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9EBF35339DA814D2FD1434B8BF48DC20 /* Sources */ = {
+		78836BFEA33E16B8782BE5B0302DC8BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88D81AA79E0D556218C7A7688E777E7D /* AzureClientRuntime-dummy.m in Sources */,
-				5328AE41C0889C871F2E218D5ACC9270 /* AzureDate.m in Sources */,
-				DB5AAEE0C1D0FE4A19A42DCDA03D9916 /* AzureTypes.m in Sources */,
-				2C578E9CDEC1DC4DFCDA048CE2B07F52 /* DefaultErrorModel.m in Sources */,
-				F75160C51B46DE33B78AAF9EAD8F4EDC /* JsonCoder.m in Sources */,
-				32A4BAE3200D22FE7A3618FD064FE84A /* OperationError.m in Sources */,
-				5AAEFC1988F9737B637B5F8206284471 /* RequestHelper.m in Sources */,
-				6457FA29CF827BD17C3EC5FD7F9E16C6 /* RequestParameters.m in Sources */,
+				16C84F43CDFBA2044A221538434CE551 /* AZDefaultErrorModel.m in Sources */,
+				6C7DC75535AEDEDEE8D13F255FCEBBCA /* AZJsonCoder.m in Sources */,
+				1D93B591433EDEC552486DA9B1E17E0E /* AZOperationError.m in Sources */,
+				5E1D15A66D89817D4FFBF80590A963A0 /* AZRequestHelper.m in Sources */,
+				123F2107E1B9652596A19D173C9C19A7 /* AZRequestParameters.m in Sources */,
+				1F85DCE88D75B679F1CD36DBB27FA9BE /* AzureClientRuntime-dummy.m in Sources */,
+				7065148843749B5D7D08C3FE8A377DD0 /* AzureDate.m in Sources */,
+				537F5FE0505C87159FEBF1F889C0EA9D /* AzureTypes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,7 +949,7 @@
 		};
 		160E1FBCD92229D0813C23AFC1C04ECE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EFCE0C4602A1209E251918420405763 /* ComputerVisionAzure.xcconfig */;
+			baseConfigurationReference = 2330A7AF6431783780F05593E5544D3E /* ComputerVisionAzure.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1104,7 +1103,7 @@
 		};
 		BBC03F797A1F3F3CC44FD3303F6A20BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EFCE0C4602A1209E251918420405763 /* ComputerVisionAzure.xcconfig */;
+			baseConfigurationReference = 2330A7AF6431783780F05593E5544D3E /* ComputerVisionAzure.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1134,7 +1133,7 @@
 		};
 		BE7292FFB593C1A095DA4EAEA7DE2CD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C0796455BF44C1B9363FD2CB05DA39C /* AzureClientRuntime.xcconfig */;
+			baseConfigurationReference = 8F1E9993059268CF9FF43A4FFB6C5E59 /* AzureClientRuntime.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1234,7 +1233,7 @@
 		};
 		EF52AE768C7544A70F43176089E8276C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C0796455BF44C1B9363FD2CB05DA39C /* AzureClientRuntime.xcconfig */;
+			baseConfigurationReference = 8F1E9993059268CF9FF43A4FFB6C5E59 /* AzureClientRuntime.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";

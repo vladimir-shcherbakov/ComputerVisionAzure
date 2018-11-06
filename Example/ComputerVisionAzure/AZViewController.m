@@ -51,8 +51,8 @@
     if (!key) {
         key = @"UNDEFINED";
     }
-    _service = [ComputerVisionClient createWithEndpoint:endpoing
-                                        withSubscriptionKey:key];
+    _service = [CSCV_ComputerVisionClientService createWithEndpoint:endpoing
+                                                withSubscriptionKey:key];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,7 +91,7 @@
     NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
     
     [self.service describeImageInStreamWithImage:imageData
-                                    withCallback:^(ImageDescription *imageDescription, OperationError *error) {
+                                    withCallback:^(CSCV_ImageDescription *imageDescription, AZOperationError *error) {
                                         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                                             [self->_textView setText:@""];
                                             if (error) {
@@ -111,7 +111,7 @@
                                                 [self->_textView insertText:@"--"];
                                             } else {
                                                 [self->_textView insertText:[NSString stringWithFormat:@"\n==== Captions\n"]];
-                                                for (ImageCaption* caption in imageDescription.captions) {
+                                                for (CSCV_ImageCaption* caption in imageDescription.captions) {
                                                     [self->_textView insertText:[NSString stringWithFormat:@"%@(%@) ", caption.text, caption.confidence]];
                                                 }
                                             }
@@ -130,7 +130,7 @@
     NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
     [self.service recognizePrintedTextInStreamWithDetectOrientation:AZ_YES
                                                           withImage:imageData
-                                                       withCallback:^(OcrResult * result, OperationError *error) {
+                                                       withCallback:^(CSCV_OcrResult * result, AZOperationError *error) {
                                                            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                                                                [self->_textView setText:@""];
                                                                if (error) {
@@ -141,9 +141,9 @@
                                                                    [self->_textView setText:@"No text found."];
                                                                    return;
                                                                }
-                                                               for (OcrRegion* region in result.regions) {
-                                                                   for (OcrLine* line in region.lines) {
-                                                                       for (OcrWord* word in line.words) {
+                                                               for (CSCV_OcrRegion* region in result.regions) {
+                                                                   for (CSCV_OcrLine* line in region.lines) {
+                                                                       for (CSCV_OcrWord* word in line.words) {
                                                                            [self->_textView insertText:[NSString stringWithFormat:@"%@\n", word.text]];
                                                                        }
                                                                    }

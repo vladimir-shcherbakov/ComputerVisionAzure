@@ -10,5 +10,5 @@
 #import "ComputerVisionAzure-umbrella.h"
 
 @interface AZViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-@property (readonly)id<ComputerVisionClientProtocol> service;
+@property (readonly)id<CSCV_ComputerVisionClientServiceProtocol> service;
 @end
