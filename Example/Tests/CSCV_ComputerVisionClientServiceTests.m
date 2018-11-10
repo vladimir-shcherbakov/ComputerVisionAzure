@@ -5,7 +5,9 @@
  */
 
 #import <XCTest/XCTest.h>
-#import "CSCV_ComputerVisionClientService.h"
+#import <AzureClientRuntime/AzureClientRuntime.h>
+#import <ComputerVisionAzure/ComputerVisionAzure-umbrella.h>
+
 @interface CSCV_ComputerVisionClientServiceTests : XCTestCase
 @property id<CSCV_ComputerVisionClientServiceProtocol> service;
 - (NSData*) readImageFileWithName: (NSString*) name ofType: (NSString*) type;
