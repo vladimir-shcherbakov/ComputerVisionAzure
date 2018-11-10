@@ -74,7 +74,6 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "SUBSCRIPTION_KEY"
-            value = "44af5a7da8b942bdbbaa3046f6a667d8"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
